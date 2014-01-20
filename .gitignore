@@ -1,2 +1,4 @@
 /.idea/**
 /.cordova/**
+
+/platforms/android/bin/**
