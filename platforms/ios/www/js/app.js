@@ -35,7 +35,7 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers'])
     })
 
     .state('tab.pet-detail', {
-      url: '/pet/:petId',
+      url: '/book/:isbn',
       views: {
         'pets-tab': {
           templateUrl: 'templates/pet-detail.html',

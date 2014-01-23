@@ -3,15 +3,15 @@
   It was wired up in the app config (app.js) 
   The 'pets' data comes from its $scope within PetIndexCtrl (controller.js)
 -->
-<view title="'Libr'">
+<view title="'来呗'">
     <content has-header="true" has-tabs="true">
         <div class="list">
-            <a ng-repeat="pet in pets" class="item item-thumbnail-left" href="#/tab/pet/{{pet.id}}">
-                <img ng-src="img/logo.png">
+            <a ng-repeat="book in books" class="item item-thumbnail-left" href="#/tab/book/{{book.isbn}}">
+                <img ng-src="{{book.image}}">
 
-                <h2>{{ pet.title }}</h2>
+                <h2>{{ book.name }}</h2>
 
-                <p>{{pet.description}}</p>
+                <p>{{book.author}}</p>
             </a>
         </div>
     </content>
