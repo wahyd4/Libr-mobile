@@ -7,7 +7,6 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.services', 'starter.controllers'])
 
-
 .config(function($stateProvider, $urlRouterProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states
@@ -29,7 +28,7 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers'])
       views: {
         'pets-tab': {
           templateUrl: 'templates/pet-index.html',
-          controller: 'PetIndexCtrl'
+          controller: 'HomeCtrl'
         }
       }
     })
@@ -64,6 +63,8 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers'])
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/pets');
+
+
 
 });
 
