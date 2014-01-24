@@ -33,15 +33,15 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers'])
       }
     })
 
-//    .state('tab.pet-detail', {
-//      url: '/book/:isbn',
-//      views: {
-//        'pets-tab': {
-//          templateUrl: 'templates/pet-detail.html',
-//          controller: 'BookDetailController'
-//        }
-//      }
-//    })
+    .state('tab.pet-detail', {
+      url: '/book/:isbn',
+      views: {
+        'pets-tab': {
+          templateUrl: 'templates/pet-detail.html',
+          controller: 'BookDetailController'
+        }
+      }
+    })
 
     .state('tab.adopt', {
       url: '/adopt',

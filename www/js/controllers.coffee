@@ -14,7 +14,6 @@ class HomeController
   @$inject: ['$scope', '$location', 'BookService']
 
   constructor: (@$scope, @$location, @BookService)->
-      console.log($scope, $location, BookService, "1111");
       BookService.getBooks().success (result)=>
         @$scope.books = result.books
         @$scope.enableBackButton = false
@@ -35,7 +34,7 @@ class HomeController
 
 
 class BookDetailController
-  @$inject: ['$scope', '$statParams', 'BookService']
+  @$inject: ['$scope', '$stateParams', 'BookService']
 
   constructor: (@$scope, @$stateParams, @BookService)->
 
