@@ -9,24 +9,49 @@
     <link rel="stylesheet" type="text/css" href="css/ionic.min.css"/>
     <title>来呗</title>
 </head>
-<body ng-app="starter" animation="slide-left-right-ios7">
+<body ng-app="starter" animation="slide-left-right-ios7" ng-controller="MainCtrl">
 
 <!--
   The nav bar that will be updated as we navigate between views
   Additional attributes set its look, nav-bar animation and icons
   Icons provided by Ionicons: http://ionicons.com/
--->
-<nav-bar type="bar-dark"
-         animation="nav-title-slide-ios7"
-         back-button-type="button-icon"
-         back-button-icon="icon ion-arrow-left-c">来呗</nav-bar>
+<!--&ndash;&gt;-->
+<!--<nav-bar type="bar-positive"-->
+         <!--animation="nav-title-slide-ios7"-->
+         <!--back-button-type="button-icon"-->
+         <!--back-button-icon="icon ion-arrow-left-c">来呗-->
+<!--</nav-bar>-->
+<side-menus>
+    <pane side-menu-content>
+        <nav-bar animation="nav-title-slide-android"
+                 type="bar-positive"
+                 back-button-type="button-icon" back-button-icon="ion-arrow-left-c"></nav-bar>
+        <nav-view animation="slide-left-right"></nav-view>
+    </pane>
+    <side-menu side="right">
+        <div class="bar bar-header bar-dark">
+            <h1 class="title">Menu</h1>
+        </div>
+        </div>
+        <content has-header="true">
+            <list>
+                <item ng-click="goTo('home')">Home</item>
+                <item ng-click="goTo('about')">About</item>
+            </list>
+        </content>
+    </side-menu>
+
+
+</side-menus>
+
 
 <!--
   The views will be rendered in the <nav-view> directive below
   Templates are in the /templates folder (but you could also
   have templates inline in this html file if you'd like).
 -->
-<nav-view></nav-view>
+<!--<nav-view></nav-view>-->
+
 <script type="text/javascript" src="js/ionic/ionic.min.js"></script>
 <script src="js/angular/angular.js"></script>
 <script src="js/angular/angular-animate.js"></script>
@@ -36,6 +61,8 @@
 <script src="js/angular/angular-resource.js"></script>
 <script src="js/angular-ui/angular-ui-router.js"></script>
 <script type="text/javascript" src="js/ionic/ionic-angular.min.js"></script>
+<script src="cordova.js"></script>
+
 <script type="text/javascript" src="js/libr.js"></script>
 <script src="js/app.js"></script>
 <script src="js/services.js"></script>

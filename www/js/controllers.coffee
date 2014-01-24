@@ -1,32 +1,59 @@
 libr = angular.module('starter.controllers', [])
 
+class MainController
+  @$inject: ['$scope', '$location']
 
-libr
-.controller('MainCtrl', ['$scope', '$location', ($scope, $location)->
-    $scope.goTo = (page)->
-      $scope.sideMenuController.toggleRight()
-      $location.url('/' + page)
-])
+  constructor: (@$scope, @$location) ->
+    console.log 'init...'
 
-.controller 'HomeCtrl', ($scope, BookService)->
-    BookService.getBooks().success (result)->
-      $scope.books = result.books
-      $scope.enableBackButton = false;
+  goTo: (page) ->
+    @$scope.sideMenuController.toggleRight()
+    @$location.url('/' + page)
 
-      $scope.rightButtons = [{
-        type: 'button-icon icon ion-navicon',
-        tap: (e)-> $scope.sideMenuController.toggleRight()
-      }]
-      $scope.leftButtons = []
+class HomeController
+  @$inject: ['$scope', '$location', 'BookService']
 
-.controller 'PetDetailCtrl', ($scope, $stateParams, BookService)->
-    BookService.getBook($stateParams.isbn)
-    .success (result) ->
-        $scope.book = result
-        $scope.enableBackButton = true;
-        $scope.rightButtons = [{
-          type: 'button-icon icon ion-navicon',
-          tap: (e)-> $scope.sideMenuController.toggleRight()
-        }]
-        $scope.leftButtons = [];
-        $scope.bookName = result.name
+  constructor: (@$scope, @$location, @BookService)->
+      console.log($scope, $location, BookService, "1111");
+      BookService.getBooks().success (result)=>
+        @$scope.books = result.books
+        @$scope.enableBackButton = false
+        @$scope.rightButtons = [
+          {
+            type: 'button-icon icon ion-navicon',
+            tap: (e)->
+              $scope.sideMenuController.toggleRight()
+          }
+        ]
+        @$scope.leftButtons = [
+          {
+            type: 'button-icon icon ion-camera'
+            tap: (e) ->
+              alert 'Hello'
+          }
+          ]
+
+
+class BookDetailController
+  @$inject: ['$scope', '$statParams', 'BookService']
+
+  constructor: (@$scope, @$stateParams, @BookService)->
+
+      BookService.getBook(@$stateParams.isbn).success (result) =>
+          @$scope.book = result
+          @$scope.enableBackButton = true;
+          @$scope.rightButtons = [
+            {
+              type: 'button-icon icon ion-navicon',
+              tap: (e)->
+                @$scope.sideMenuController.toggleRight()
+            }
+          ]
+          @$scope.leftButtons = [];
+          @$scope.bookName = result.name
+
+
+libr.controller 'BookDetailController', BookDetailController
+libr.controller 'HomeCtrl', HomeController
+libr.controller 'MainCtrl', MainController
+

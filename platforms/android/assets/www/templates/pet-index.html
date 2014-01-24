@@ -1,13 +1,9 @@
-<!-- 
-  This template gets placed in the Pet tab's <nav-view> directive.
-  It was wired up in the app config (app.js) 
-  The 'pets' data comes from its $scope within PetIndexCtrl (controller.js)
--->
-<view title="'来呗'">
-    <content has-header="true" has-tabs="true">
+
+<view title="'来吧'"  hide-back-button="false" left-buttons="leftButtons" right-buttons="rightButtons" >
+    <content has-header="true" has-tabs="true" padding="true">
         <div class="list">
             <a ng-repeat="book in books" class="item item-thumbnail-left" href="#/tab/book/{{book.isbn}}">
-                <img ng-src="{{book.image}}">
+                <img src="{{book.image}}">
 
                 <h2>{{ book.name }}</h2>
 
