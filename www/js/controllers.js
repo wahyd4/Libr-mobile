@@ -45,7 +45,7 @@
           {
             type: 'button-icon icon ion-camera',
             tap: function(e) {
-              return alert('Hello');
+              return scan();
             }
           }
         ];

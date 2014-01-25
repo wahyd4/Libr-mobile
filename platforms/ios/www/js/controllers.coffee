@@ -14,43 +14,41 @@ class HomeController
   @$inject: ['$scope', '$location', 'BookService']
 
   constructor: (@$scope, @$location, @BookService)->
-      console.log($scope, $location, BookService, "1111");
-      BookService.getBooks().success (result)=>
-        @$scope.books = result.books
-        @$scope.enableBackButton = false
-        @$scope.rightButtons = [
-          {
-            type: 'button-icon icon ion-navicon',
-            tap: (e)->
-              $scope.sideMenuController.toggleRight()
-          }
-        ]
-        @$scope.leftButtons = [
-          {
-            type: 'button-icon icon ion-camera'
-            tap: (e) ->
-              alert 'Hello'
-          }
-          ]
+    BookService.getBooks().success (result)=>
+      @$scope.books = result.books
+      @$scope.enableBackButton = false
+      @$scope.rightButtons = [
+        {
+          type: 'button-icon icon ion-navicon',
+          tap: (e)->
+            $scope.sideMenuController.toggleRight()
+        }
+      ]
+      @$scope.leftButtons = [
+        {
+          type: 'button-icon icon ion-camera'
+          tap: (e) ->
+            scan()
+        }
+      ]
 
 
 class BookDetailController
-  @$inject: ['$scope', '$statParams', 'BookService']
+  @$inject: ['$scope', '$stateParams', 'BookService']
 
   constructor: (@$scope, @$stateParams, @BookService)->
-
-      BookService.getBook(@$stateParams.isbn).success (result) =>
-          @$scope.book = result
-          @$scope.enableBackButton = true;
-          @$scope.rightButtons = [
-            {
-              type: 'button-icon icon ion-navicon',
-              tap: (e)->
-                @$scope.sideMenuController.toggleRight()
-            }
-          ]
-          @$scope.leftButtons = [];
-          @$scope.bookName = result.name
+    BookService.getBook(@$stateParams.isbn).success (result) =>
+      @$scope.book = result
+      @$scope.enableBackButton = true;
+      @$scope.rightButtons = [
+        {
+          type: 'button-icon icon ion-navicon',
+          tap: (e)->
+            @$scope.sideMenuController.toggleRight()
+        }
+      ]
+      @$scope.leftButtons = [];
+      @$scope.bookName = result.name
 
 
 libr.controller 'BookDetailController', BookDetailController

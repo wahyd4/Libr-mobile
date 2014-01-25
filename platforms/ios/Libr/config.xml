@@ -16,6 +16,9 @@
     <feature name="LocalStorage">
         <param name="ios-package" value="CDVLocalStorage" />
     </feature>
+    <feature name="BarcodeScanner">
+        <param name="ios-package" value="CDVBarcodeScanner" />
+    </feature>
     <name>Libr</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.

@@ -30,7 +30,6 @@
       this.$scope = $scope;
       this.$location = $location;
       this.BookService = BookService;
-      console.log($scope, $location, BookService, "1111");
       BookService.getBooks().success(function(result) {
         _this.$scope.books = result.books;
         _this.$scope.enableBackButton = false;
@@ -46,7 +45,7 @@
           {
             type: 'button-icon icon ion-camera',
             tap: function(e) {
-              return alert('Hello');
+              return scan();
             }
           }
         ];
@@ -58,7 +57,7 @@
   })();
 
   BookDetailController = (function() {
-    BookDetailController.$inject = ['$scope', '$statParams', 'BookService'];
+    BookDetailController.$inject = ['$scope', '$stateParams', 'BookService'];
 
     function BookDetailController($scope, $stateParams, BookService) {
       var _this = this;
