@@ -31,19 +31,3 @@ function onError(error) {
     alert('code: ' + error.code + '\n' +
         'message: ' + error.message + '\n');
 }
-
-
-function scan() {
-    alert('into scan');
-    cordova.plugins.barcodeScanner.scan(
-        function (result) {
-            alert("We got a barcode\n" +
-                "Result: " + result.text + "\n" +
-                "Format: " + result.format + "\n" +
-                "Cancelled: " + result.cancelled);
-        },
-        function (error) {
-            alert("Scanning failed: " + error);
-        }
-    );
-}

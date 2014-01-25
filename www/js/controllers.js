@@ -23,13 +23,12 @@
   })();
 
   HomeController = (function() {
-    HomeController.$inject = ['$scope', '$location', 'BookService'];
+    HomeController.$inject = ['$scope', '$location', 'BookService', 'ScanService'];
 
-    function HomeController($scope, $location, BookService) {
+    function HomeController($scope, $location, BookService, ScanService) {
       var _this = this;
       this.$scope = $scope;
       this.$location = $location;
-      this.BookService = BookService;
       BookService.getBooks().success(function(result) {
         _this.$scope.books = result.books;
         _this.$scope.enableBackButton = false;
@@ -45,7 +44,7 @@
           {
             type: 'button-icon icon ion-camera',
             tap: function(e) {
-              return scan();
+              return ScanService.scan();
             }
           }
         ];

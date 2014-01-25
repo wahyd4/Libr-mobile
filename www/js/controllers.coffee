@@ -11,9 +11,9 @@ class MainController
     @$location.url('/' + page)
 
 class HomeController
-  @$inject: ['$scope', '$location', 'BookService']
+  @$inject: ['$scope', '$location', 'BookService', 'ScanService']
 
-  constructor: (@$scope, @$location, @BookService)->
+  constructor: (@$scope, @$location, BookService, ScanService)->
     BookService.getBooks().success (result)=>
       @$scope.books = result.books
       @$scope.enableBackButton = false
@@ -28,7 +28,7 @@ class HomeController
         {
           type: 'button-icon icon ion-camera'
           tap: (e) ->
-            scan()
+            ScanService.scan()
         }
       ]
 
