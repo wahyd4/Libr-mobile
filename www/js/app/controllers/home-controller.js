@@ -2,19 +2,23 @@
 (function() {
   var HomeController, libr;
 
-  libr = angular.module('libr.controllers.home', []);
+  libr = angular.module('libr.controllers.home', ['ionic']);
 
   HomeController = (function() {
-    HomeController.$inject = ['$scope', '$location', 'BookService', 'ScanService'];
+    var showLoading;
 
-    function HomeController($scope, $location, BookService, ScanService) {
+    HomeController.$inject = ['$scope', '$location', 'BookService', 'ScanService', '$ionicLoading'];
+
+    function HomeController($scope, $location, BookService, ScanService, $ionicLoading) {
       var _this = this;
       this.$scope = $scope;
       this.$location = $location;
+      this.$ionicLoading = $ionicLoading;
+      showLoading(this.$scope, this.$ionicLoading);
       BookService.getBooks().success(function(result) {
         _this.$scope.books = result.books;
         _this.$scope.enableBackButton = false;
-        return _this.$scope.rightButtons = [
+        _this.$scope.rightButtons = [
           {
             type: 'button-icon icon ion-camera',
             tap: function(e) {
@@ -22,8 +26,19 @@
             }
           }
         ];
+        return _this.$scope.loading.hide();
       });
     }
+
+    showLoading = function($scope, $ionicLoading) {
+      return $scope.loading = $ionicLoading.show({
+        content: '加载中',
+        animation: 'fade-in',
+        showBackdrop: true,
+        maxWidth: 200,
+        showDelay: 500
+      });
+    };
 
     return HomeController;
 
