@@ -8,7 +8,6 @@ class MainController
     GeolocationService.getCurrentLocation
 
   goTo: (page) ->
-    @$scope.sideMenuController.toggleRight()
     @$location.url('/' + page)
 
 
@@ -18,16 +17,12 @@ class BookDetailController
   constructor: (@$scope, @$stateParams, @BookService)->
     BookService.getBook(@$stateParams.isbn).success (result) =>
       @$scope.book = result
-      @$scope.enableBackButton = true;
-      @$scope.rightButtons = [
-        {
-          type: 'button-icon icon ion-navicon',
-          tap: (e)->
-            @$scope.sideMenuController.toggleRight()
-        }
-      ]
-      @$scope.leftButtons = [];
-      @$scope.bookName = result.name
+      @$scope.bookName = @$scope.book.name
+      @$scope.enableBackButton = true
+      @$scope.rightButtons = []
+      @$scope.leftButtons = []
+      console.log @$scope
+      return
 
 
 libr.controller 'BookDetailController', BookDetailController

@@ -14,6 +14,7 @@
       BookService.getBooks().success(function(result) {
         _this.$scope.books = result.books;
         _this.$scope.enableBackButton = false;
+        _this.$scope.leftButtons = [];
         return _this.$scope.rightButtons = [
           {
             type: 'button-icon icon ion-camera',

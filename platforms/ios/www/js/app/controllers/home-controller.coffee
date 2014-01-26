@@ -7,6 +7,7 @@ class HomeController
     BookService.getBooks().success (result)=>
       @$scope.books = result.books
       @$scope.enableBackButton = false
+      @$scope.leftButtons = []
       @$scope.rightButtons = [
         {
           type: 'button-icon icon ion-camera'
