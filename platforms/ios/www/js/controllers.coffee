@@ -5,35 +5,11 @@ class MainController
 
   constructor: (@$scope, @$location, GeolocationService) ->
     console.log 'init...'
-    GeolocationService.getCurrentLocation (result)->
-      @$scope.position = result
-      console.log result
-
+    GeolocationService.getDetailAddress (position)=>
+      console.log position
+      @$scope.address = position.result.formatted_address
   goTo: (page) ->
-    @$scope.sideMenuController.toggleRight()
     @$location.url('/' + page)
-
-class HomeController
-  @$inject: ['$scope', '$location', 'BookService', 'ScanService']
-
-  constructor: (@$scope, @$location, BookService, ScanService)->
-    BookService.getBooks().success (result)=>
-      @$scope.books = result.books
-      @$scope.enableBackButton = false
-      @$scope.rightButtons = [
-        {
-          type: 'button-icon icon ion-navicon',
-          tap: (e)->
-            $scope.sideMenuController.toggleRight()
-        }
-      ]
-      @$scope.leftButtons = [
-        {
-          type: 'button-icon icon ion-camera'
-          tap: (e) ->
-            ScanService.scan()
-        }
-      ]
 
 
 class BookDetailController
@@ -42,19 +18,14 @@ class BookDetailController
   constructor: (@$scope, @$stateParams, @BookService)->
     BookService.getBook(@$stateParams.isbn).success (result) =>
       @$scope.book = result
-      @$scope.enableBackButton = true;
-      @$scope.rightButtons = [
-        {
-          type: 'button-icon icon ion-navicon',
-          tap: (e)->
-            @$scope.sideMenuController.toggleRight()
-        }
-      ]
-      @$scope.leftButtons = [];
-      @$scope.bookName = result.name
+      @$scope.bookName = @$scope.book.name
+      @$scope.enableBackButton = true
+      @$scope.rightButtons = []
+      @$scope.leftButtons = []
+      console.log @$scope
+      return
 
 
 libr.controller 'BookDetailController', BookDetailController
-libr.controller 'HomeCtrl', HomeController
 libr.controller 'MainCtrl', MainController
 

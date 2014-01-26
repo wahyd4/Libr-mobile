@@ -11,28 +11,15 @@
 </head>
 <body ng-app="libr" animation="slide-left-right-ios7" ng-controller="MainCtrl">
 
-<side-menus>
-    <pane side-menu-content>
-        <nav-bar animation="nav-title-slide-android"
-                 type="bar-positive"
-                 back-button-type="button-icon" back-button-icon="ion-arrow-left-c"></nav-bar>
-        <nav-view animation="slide-left-right"></nav-view>
-    </pane>
-    <side-menu side="right">
-        <div class="bar bar-header bar-dark">
-            <h1 class="title">Menu</h1>
-        </div>
-        </div>
-        <content has-header="true">
-            <list>
-                <item ng-click="goTo('home')">Home</item>
-                <item ng-click="goTo('about')">About</item>
-                <item>{{position.Latitude}}是LAT</item>
-            </list>
-        </content>
-    </side-menu>
+<pane>
+    <nav-bar animation="nav-title-slide-android"
+             type="bar-positive"
+             back-button-type="button-icon" back-button-icon="ion-arrow-left-c">
 
-</side-menus>
+    </nav-bar>
+
+    <nav-view animation="slide-left-right"></nav-view>
+</pane>
 
 <script type="text/javascript" src="js/ionic/ionic.min.js"></script>
 <script src="js/angular/angular.js"></script>
@@ -51,6 +38,7 @@
 <script src="js/app/services/scan-service.js"></script>
 <script src="js/app/services/geolocation.js"></script>
 <script src="js/controllers.js"></script>
+<script src="js/app/controllers/home-controller.js"></script>
 </body>
 
 </html>
