@@ -5,8 +5,9 @@ class MainController
 
   constructor: (@$scope, @$location, GeolocationService) ->
     console.log 'init...'
-    GeolocationService.getCurrentLocation
-
+    GeolocationService.getDetailAddress (position)=>
+      console.log position
+      @$scope.address = position.result.formatted_address
   goTo: (page) ->
     @$location.url('/' + page)
 

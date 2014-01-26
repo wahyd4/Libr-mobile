@@ -8,10 +8,14 @@
     MainController.$inject = ['$scope', '$location', 'GeolocationService'];
 
     function MainController($scope, $location, GeolocationService) {
+      var _this = this;
       this.$scope = $scope;
       this.$location = $location;
       console.log('init...');
-      GeolocationService.getCurrentLocation;
+      GeolocationService.getDetailAddress(function(position) {
+        console.log(position);
+        return _this.$scope.address = position.result.formatted_address;
+      });
     }
 
     MainController.prototype.goTo = function(page) {

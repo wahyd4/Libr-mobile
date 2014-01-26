@@ -8,14 +8,17 @@
     MainController.$inject = ['$scope', '$location', 'GeolocationService'];
 
     function MainController($scope, $location, GeolocationService) {
+      var _this = this;
       this.$scope = $scope;
       this.$location = $location;
       console.log('init...');
-      GeolocationService.getCurrentLocation;
+      GeolocationService.getDetailAddress(function(position) {
+        console.log(position);
+        return _this.$scope.address = position.result.formatted_address;
+      });
     }
 
     MainController.prototype.goTo = function(page) {
-      this.$scope.sideMenuController.toggleRight();
       return this.$location.url('/' + page);
     };
 
@@ -33,17 +36,11 @@
       this.BookService = BookService;
       BookService.getBook(this.$stateParams.isbn).success(function(result) {
         _this.$scope.book = result;
+        _this.$scope.bookName = _this.$scope.book.name;
         _this.$scope.enableBackButton = true;
-        _this.$scope.rightButtons = [
-          {
-            type: 'button-icon icon ion-navicon',
-            tap: function(e) {
-              return this.$scope.sideMenuController.toggleRight();
-            }
-          }
-        ];
+        _this.$scope.rightButtons = [];
         _this.$scope.leftButtons = [];
-        return _this.$scope.bookName = result.name;
+        console.log(_this.$scope);
       });
     }
 

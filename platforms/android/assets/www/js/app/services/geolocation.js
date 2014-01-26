@@ -7,7 +7,11 @@
   GeolocationService = (function() {
     var onError, onSuccess;
 
-    function GeolocationService() {}
+    GeolocationService.$inject = ['$http'];
+
+    function GeolocationService($http) {
+      this.$http = $http;
+    }
 
     onSuccess = function(position) {
       alert('lat' + position.coords.latitude);
@@ -27,8 +31,21 @@
       throw "code:  " + error.code + " \n message: " + error.message;
     };
 
-    GeolocationService.prototype.getCurrentLocation = function(callback) {
-      navigator.geolocation.getCurrentPosition(callback, onError);
+    GeolocationService.prototype.getCurrentLocation = function(callback, error) {
+      return navigator.geolocation.getCurrentPosition(callback, error);
+    };
+
+    GeolocationService.prototype.getDetailAddress = function(callback, error) {
+      var baseUrl,
+        _this = this;
+      baseUrl = 'http://libr.herokuapp.com/api/v1/location';
+      return this.getCurrentLocation(function(position) {
+        return _this.$http.get("" + baseUrl + "?lat=" + position.coords.latitude + "&lng=" + position.coords.longitude).success(function(data, status, headers, config) {
+          return callback(data);
+        });
+      }, function(error) {
+        throw Error(error);
+      });
     };
 
     return GeolocationService;

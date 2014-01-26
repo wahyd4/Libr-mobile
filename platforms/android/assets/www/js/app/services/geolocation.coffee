@@ -1,6 +1,10 @@
 libr = angular.module 'libr.services.geolocation', []
 
 class GeolocationService
+
+  @$inject: ['$http']
+  constructor: (@$http)->
+
   onSuccess = (position)->
     alert 'lat' + position.coords.latitude
     {
@@ -17,8 +21,17 @@ class GeolocationService
   onError = (error) ->
     throw "code:  #{error.code} \n message: #{error.message}"
 
-  getCurrentLocation: (callback)->
-    navigator.geolocation.getCurrentPosition(callback, onError);
-    return
+  getCurrentLocation: (callback, error)->
+    navigator.geolocation.getCurrentPosition(callback, error);
+
+  getDetailAddress: (callback, error) ->
+    baseUrl = 'http://libr.herokuapp.com/api/v1/location'
+    this.getCurrentLocation (position)=>
+      @$http.get("#{baseUrl}?lat=#{position.coords.latitude}&lng=#{position.coords.longitude}")
+      .success (data, status, headers, config)->
+          callback data
+    , (error)->
+      throw Error error
+
 
 libr.service 'GeolocationService', GeolocationService
