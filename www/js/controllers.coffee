@@ -1,36 +1,15 @@
-libr = angular.module('starter.controllers', [])
+libr = angular.module('libr.controllers', [])
 
 class MainController
-  @$inject: ['$scope', '$location']
+  @$inject: ['$scope', '$location', 'GeolocationService']
 
-  constructor: (@$scope, @$location) ->
+  constructor: (@$scope, @$location, GeolocationService) ->
     console.log 'init...'
+    GeolocationService.getCurrentLocation
 
   goTo: (page) ->
     @$scope.sideMenuController.toggleRight()
     @$location.url('/' + page)
-
-class HomeController
-  @$inject: ['$scope', '$location', 'BookService', 'ScanService']
-
-  constructor: (@$scope, @$location, BookService, ScanService)->
-    BookService.getBooks().success (result)=>
-      @$scope.books = result.books
-      @$scope.enableBackButton = false
-      @$scope.rightButtons = [
-        {
-          type: 'button-icon icon ion-navicon',
-          tap: (e)->
-            $scope.sideMenuController.toggleRight()
-        }
-      ]
-      @$scope.leftButtons = [
-        {
-          type: 'button-icon icon ion-camera'
-          tap: (e) ->
-            ScanService.scan()
-        }
-      ]
 
 
 class BookDetailController
@@ -52,6 +31,5 @@ class BookDetailController
 
 
 libr.controller 'BookDetailController', BookDetailController
-libr.controller 'HomeCtrl', HomeController
 libr.controller 'MainCtrl', MainController
 

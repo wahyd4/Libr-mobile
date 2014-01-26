@@ -1,4 +1,4 @@
-libr = angular.module 'starter.services', ['ngResource']
+libr = angular.module 'libr.services', ['ngResource']
 
 class BookService
   @$inject: ['$http']

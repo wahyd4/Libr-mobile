@@ -2,7 +2,7 @@
 (function() {
   var ScanService, libr;
 
-  libr = angular.module('starter.services.scan', []);
+  libr = angular.module('libr.services.scan', []);
 
   ScanService = (function() {
     function ScanService() {}

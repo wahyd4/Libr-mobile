@@ -1,4 +1,4 @@
-libr = angular.module 'starter.services.scan', []
+libr = angular.module 'libr.services.scan', []
 
 class ScanService
 

@@ -2,15 +2,19 @@
 (function() {
   var BookDetailController, HomeController, MainController, libr;
 
-  libr = angular.module('starter.controllers', []);
+  libr = angular.module('libr.controllers', []);
 
   MainController = (function() {
-    MainController.$inject = ['$scope', '$location'];
+    MainController.$inject = ['$scope', '$location', 'GeolocationService'];
 
-    function MainController($scope, $location) {
+    function MainController($scope, $location, GeolocationService) {
       this.$scope = $scope;
       this.$location = $location;
       console.log('init...');
+      GeolocationService.getCurrentLocation(function(result) {
+        this.$scope.position = result;
+        return console.log(result);
+      });
     }
 
     MainController.prototype.goTo = function(page) {
@@ -23,13 +27,12 @@
   })();
 
   HomeController = (function() {
-    HomeController.$inject = ['$scope', '$location', 'BookService'];
+    HomeController.$inject = ['$scope', '$location', 'BookService', 'ScanService'];
 
-    function HomeController($scope, $location, BookService) {
+    function HomeController($scope, $location, BookService, ScanService) {
       var _this = this;
       this.$scope = $scope;
       this.$location = $location;
-      this.BookService = BookService;
       BookService.getBooks().success(function(result) {
         _this.$scope.books = result.books;
         _this.$scope.enableBackButton = false;
@@ -45,7 +48,7 @@
           {
             type: 'button-icon icon ion-camera',
             tap: function(e) {
-              return scan();
+              return ScanService.scan();
             }
           }
         ];

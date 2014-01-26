@@ -1,19 +1,22 @@
-libr = angular.module('starter.controllers', [])
+libr = angular.module('libr.controllers', [])
 
 class MainController
-  @$inject: ['$scope', '$location']
+  @$inject: ['$scope', '$location', 'GeolocationService']
 
-  constructor: (@$scope, @$location) ->
+  constructor: (@$scope, @$location, GeolocationService) ->
     console.log 'init...'
+    GeolocationService.getCurrentLocation (result)->
+      @$scope.position = result
+      console.log result
 
   goTo: (page) ->
     @$scope.sideMenuController.toggleRight()
     @$location.url('/' + page)
 
 class HomeController
-  @$inject: ['$scope', '$location', 'BookService']
+  @$inject: ['$scope', '$location', 'BookService', 'ScanService']
 
-  constructor: (@$scope, @$location, @BookService)->
+  constructor: (@$scope, @$location, BookService, ScanService)->
     BookService.getBooks().success (result)=>
       @$scope.books = result.books
       @$scope.enableBackButton = false
@@ -28,7 +31,7 @@ class HomeController
         {
           type: 'button-icon icon ion-camera'
           tap: (e) ->
-            scan()
+            ScanService.scan()
         }
       ]
 

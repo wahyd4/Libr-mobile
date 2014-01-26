@@ -2,7 +2,7 @@
 (function() {
   var BookService, libr;
 
-  libr = angular.module('starter.services', ['ngResource']);
+  libr = angular.module('libr.services', ['ngResource']);
 
   BookService = (function() {
     BookService.$inject = ['$http'];
