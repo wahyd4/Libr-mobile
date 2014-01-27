@@ -1,13 +1,14 @@
 <!--
   This template loads for the 'tab.about' state (app.js)
 -->
-<view title="'About Ionic'">
+<view title="'设置'">
     <content has-header="true" has-tabs="true" padding="true">
         <div class="list">
 
             <a class="item item-icon-left" href="#">
                 <i class="icon ion-email"></i>
                 Check mail
+                <span class="badge badge-assertive">0</span>
             </a>
 
             <a class="item item-icon-left item-icon-right" href="#">
@@ -21,10 +22,9 @@
                 Record album
                 <span class="item-note">Grammy</span>
             </a>
-            <a class="item item-icon-left" href="#">
+            <a class="item item-icon-left" ng-click="login()">
                 <i class="icon ion-person-stalker"></i>
-                Friends
-                <span class="badge badge-assertive">0</span>
+                登录
             </a>
 
         </div>

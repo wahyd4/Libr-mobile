@@ -156,3 +156,10 @@ objc[22319]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.a
 2014-01-26 17:44:12.577 Libr[22319:80b] Unlimited access to network resources
 2014-01-26 17:44:12.867 Libr[22319:80b] Resetting plugins due to page load.
 2014-01-26 17:44:13.987 Libr[22319:80b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/E435A833-5B4F-40F4-8EE2-7A2ED8B57CD0/Libr.app/www/index.html#/tab/pets
+objc[1625]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-01-27 13:03:49.988 Libr[1625:80b] Cannot find executable for CFBundle 0xa779050 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-01-27 13:03:50.016 Libr[1625:80b] Cannot find executable for CFBundle 0xa578750 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-01-27 13:03:50.084 Libr[1625:80b] Multi-tasking -> Device: YES, App: YES
+2014-01-27 13:03:50.109 Libr[1625:80b] Unlimited access to network resources
+2014-01-27 13:03:50.476 Libr[1625:80b] Resetting plugins due to page load.
+2014-01-27 13:03:51.153 Libr[1625:80b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/E435A833-5B4F-40F4-8EE2-7A2ED8B57CD0/Libr.app/www/index.html#/tab/pets

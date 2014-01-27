@@ -5,7 +5,9 @@
 // 'libr.controllers' is found in controllers.js
 angular.module('libr', ['ionic', 'libr.services', 'libr.controllers', 'libr.services.scan',
         'libr.services.geolocation',
-        'libr.controllers.home'
+        'libr.controllers.home',
+        'libr.controllers.main',
+        'libr.controllers.settings'
     ])
 
     .config(function ($stateProvider, $urlRouterProvider) {
@@ -57,7 +59,8 @@ angular.module('libr', ['ionic', 'libr.services', 'libr.controllers', 'libr.serv
                 url: '/settings',
                 views: {
                     'settings-tab': {
-                        templateUrl: 'templates/settings.html'
+                        templateUrl: 'templates/settings.html',
+                        controller: 'SettingsController'
                     }
                 }
             });
