@@ -5,9 +5,11 @@
 // 'libr.controllers' is found in controllers.js
 angular.module('libr', ['ionic', 'libr.services', 'libr.controllers', 'libr.services.scan',
         'libr.services.geolocation',
+        'libr.services.auth',
         'libr.controllers.home',
         'libr.controllers.main',
-        'libr.controllers.settings'
+        'libr.controllers.settings',
+        'libr.controllers.books'
     ])
 
     .config(function ($stateProvider, $urlRouterProvider) {
@@ -30,7 +32,7 @@ angular.module('libr', ['ionic', 'libr.services', 'libr.controllers', 'libr.serv
                 url: '/pets',
                 views: {
                     'pets-tab': {
-                        templateUrl: 'templates/pet-index.html',
+                        templateUrl: 'templates/libr-index.html',
                         controller: 'HomeCtrl'
                     }
                 }
@@ -46,11 +48,12 @@ angular.module('libr', ['ionic', 'libr.services', 'libr.controllers', 'libr.serv
                 }
             })
 
-            .state('tab.adopt', {
-                url: '/adopt',
+            .state('tab.books', {
+                url: '/books',
                 views: {
-                    'adopt-tab': {
-                        templateUrl: 'templates/adopt.html'
+                    'books-tab': {
+                        templateUrl: 'templates/my-books.html',
+                        controller: 'BooksController'
                     }
                 }
             })

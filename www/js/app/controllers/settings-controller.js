@@ -6,30 +6,42 @@
   libr = angular.module('libr.controllers.settings', ['ionic']);
 
   SettingsController = (function() {
-    SettingsController.$inject = ['$scope', '$ionicModal'];
+    SettingsController.$inject = ['$scope', '$ionicModal', 'AuthService'];
 
-    function SettingsController($scope, $ionicModal) {
+    function SettingsController($scope, $ionicModal, AuthService) {
       var _this = this;
       this.$scope = $scope;
       this.$ionicModal = $ionicModal;
-      this.closeModal = __bind(this.closeModal, this);
+      this.AuthService = AuthService;
       this.login = __bind(this.login, this);
+      this.closeModal = __bind(this.closeModal, this);
+      this.loginForm = __bind(this.loginForm, this);
       this.$ionicModal.fromTemplateUrl('templates/modal/login.html', function(modal) {
         return _this.$scope.modal = modal;
       }, {
         scope: this.$scope,
         animation: 'slide-in-up'
       });
-      this.$scope.login = this.login;
+      this.$scope.loginForm = this.loginForm;
       this.$scope.closeModal = this.closeModal;
+      this.$scope.login = this.login;
     }
 
-    SettingsController.prototype.login = function() {
+    SettingsController.prototype.loginForm = function() {
       return this.$scope.modal.show();
     };
 
     SettingsController.prototype.closeModal = function() {
       return this.$scope.modal.hide();
+    };
+
+    SettingsController.prototype.login = function(user) {
+      var _this = this;
+      console.log(user);
+      return this.AuthService.login(user, function(result) {
+        localStorage.setItem('token', result.token);
+        return _this.closeModal();
+      });
     };
 
     return SettingsController;
