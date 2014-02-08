@@ -9,7 +9,8 @@ angular.module('libr', ['ionic', 'libr.services', 'libr.controllers', 'libr.serv
         'libr.controllers.home',
         'libr.controllers.main',
         'libr.controllers.settings',
-        'libr.controllers.books'
+        'libr.controllers.books',
+        'libr.controllers.location'
     ])
 
     .config(function ($stateProvider, $urlRouterProvider) {
@@ -58,6 +59,15 @@ angular.module('libr', ['ionic', 'libr.services', 'libr.controllers', 'libr.serv
                 }
             })
 
+            .state('tab.locations', {
+                url: '/locations',
+                views: {
+                    'locations-tab': {
+                        templateUrl: 'templates/locations.html',
+                        controller: 'LocationController'
+                    }
+                }
+            })
             .state('tab.settings', {
                 url: '/settings',
                 views: {

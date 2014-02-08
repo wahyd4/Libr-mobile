@@ -4,18 +4,23 @@ class HomeController
   @$inject: ['$scope', '$location', 'BookService', 'ScanService', '$ionicLoading']
 
   constructor: (@$scope, @$location, BookService, ScanService, @$ionicLoading)->
-    showLoading(@$scope, @$ionicLoading)
-    BookService.getBooks().success (result)=>
-      @$scope.books = result.books
-      @$scope.enableBackButton = false
-      @$scope.rightButtons = [
-        {
-          type: 'button-icon icon ion-camera'
-          tap: (e) ->
-            ScanService.scan()
-        }
-      ]
-      @$scope.loading.hide();
+    if isUserLogedIn()
+      showLoading(@$scope, @$ionicLoading)
+      BookService.getBooks().success (result)=>
+        @$scope.books = result.books
+        @$scope.enableBackButton = false
+        @$scope.rightButtons = [
+          {
+            type: 'button-icon icon ion-camera'
+            tap: (e) ->
+              ScanService.scan()
+          }
+        ]
+        @$scope.loading.hide();
+    else
+      console.log 'ssssssssssssss'
+      @$location.path '/tab/settings'
+      return
 
   showLoading = ($scope, $ionicLoading)->
     $scope.loading = $ionicLoading.show {
@@ -25,6 +30,9 @@ class HomeController
       maxWidth: 200,
       showDelay: 500
     }
-
-
+  isUserLogedIn = ()->
+    if localStorage.getItem('token') isnt null and localStorage.getItem('email') isnt null
+      true
+    else
+      false
 libr.controller 'HomeCtrl', HomeController

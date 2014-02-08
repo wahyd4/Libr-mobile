@@ -13,7 +13,9 @@ class SettingsController
     @$scope.loginForm = @loginForm
     @$scope.closeModal = @closeModal
     @$scope.login = @login
-  loginForm: () =>
+    if isUserLogedIn() then @$scope.isLogedIn = true else @$scope.isLogedIn = false
+
+  loginForm: ()=>
     @$scope.modal.show()
   closeModal: ()=>
     @$scope.modal.hide()
@@ -24,6 +26,12 @@ class SettingsController
       localStorage.setItem 'token', result.token
       localStorage.setItem 'email', user.email
       @closeModal()
+
+  isUserLogedIn = ()->
+    if localStorage.getItem('token') isnt null and localStorage.getItem('email') isnt null
+      true
+    else
+      false
 
 
 libr.controller 'SettingsController', SettingsController

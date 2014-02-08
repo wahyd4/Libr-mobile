@@ -9,6 +9,5 @@ class MainController
       @$scope.address = position.result.formatted_address
     console.log @$scope
 
-
 libr.controller 'MainCtrl', MainController
 

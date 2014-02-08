@@ -6,6 +6,8 @@
   libr = angular.module('libr.controllers.settings', ['ionic']);
 
   SettingsController = (function() {
+    var isUserLogedIn;
+
     SettingsController.$inject = ['$scope', '$ionicModal', 'AuthService'];
 
     function SettingsController($scope, $ionicModal, AuthService) {
@@ -25,6 +27,11 @@
       this.$scope.loginForm = this.loginForm;
       this.$scope.closeModal = this.closeModal;
       this.$scope.login = this.login;
+      if (isUserLogedIn()) {
+        this.$scope.isLogedIn = true;
+      } else {
+        this.$scope.isLogedIn = false;
+      }
     }
 
     SettingsController.prototype.loginForm = function() {
@@ -40,8 +47,17 @@
       console.log(user);
       return this.AuthService.login(user, function(result) {
         localStorage.setItem('token', result.token);
+        localStorage.setItem('email', user.email);
         return _this.closeModal();
       });
+    };
+
+    isUserLogedIn = function() {
+      if (localStorage.getItem('token') !== null && localStorage.getItem('email') !== null) {
+        return true;
+      } else {
+        return false;
+      }
     };
 
     return SettingsController;
