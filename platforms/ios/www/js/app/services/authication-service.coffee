@@ -6,7 +6,7 @@ class AuthicationService
     console.log 'init auth service'
 
   login: (user, callback)=>
-    baseUrl = 'http://localhost:3000/api/v1/sessions'
+    baseUrl = 'http://libr.herokuapp.com/api/v1/sessions'
     @$http({
       method: 'POST',
       url: baseUrl,

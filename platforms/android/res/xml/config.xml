@@ -22,4 +22,7 @@
         <param name="android-package" value="org.apache.cordova.geolocation.GeoBroker" />
         <param name="ios-package" value="CDVLocation" />
     </feature>
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
 </widget>

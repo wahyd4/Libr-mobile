@@ -16,7 +16,7 @@
 
     AuthicationService.prototype.login = function(user, callback) {
       var baseUrl;
-      baseUrl = 'http://localhost:3000/api/v1/sessions';
+      baseUrl = 'http://libr.herokuapp.com/api/v1/sessions';
       return this.$http({
         method: 'POST',
         url: baseUrl,

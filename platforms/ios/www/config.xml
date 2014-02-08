@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.toozhao.libr" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.toozhao.libr" version="0.0.1" xmlns="http://www.w3.org/ns/widgets"
+        xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Libr</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
@@ -7,14 +8,14 @@
     <author email="dev@cordova.apache.org" href="http://cordova.io">
         Apache Cordova Team
     </author>
-    <content src="index.html" />
-    <access origin="*" />
+    <content src="index.html"/>
+    <access origin="*"/>
     <preference name="SplashScreen" value="libr"/>
 
     <feature name="Geolocation">
-        <param name="android-package" value="org.apache.cordova.geolocation.GeoBroker" />
+        <param name="android-package" value="org.apache.cordova.geolocation.GeoBroker"/>
     </feature>
     <feature name="Geolocation">
-        <param name="ios-package" value="CDVLocation" />
+        <param name="ios-package" value="CDVLocation"/>
     </feature>
 </widget>

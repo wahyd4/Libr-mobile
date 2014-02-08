@@ -5,7 +5,12 @@
 // 'libr.controllers' is found in controllers.js
 angular.module('libr', ['ionic', 'libr.services', 'libr.controllers', 'libr.services.scan',
         'libr.services.geolocation',
-        'libr.controllers.home'
+        'libr.services.auth',
+        'libr.controllers.home',
+        'libr.controllers.main',
+        'libr.controllers.settings',
+        'libr.controllers.books',
+        'libr.controllers.location'
     ])
 
     .config(function ($stateProvider, $urlRouterProvider) {
@@ -28,7 +33,7 @@ angular.module('libr', ['ionic', 'libr.services', 'libr.controllers', 'libr.serv
                 url: '/pets',
                 views: {
                     'pets-tab': {
-                        templateUrl: 'templates/pet-index.html',
+                        templateUrl: 'templates/libr-index.html',
                         controller: 'HomeCtrl'
                     }
                 }
@@ -44,20 +49,31 @@ angular.module('libr', ['ionic', 'libr.services', 'libr.controllers', 'libr.serv
                 }
             })
 
-            .state('tab.adopt', {
-                url: '/adopt',
+            .state('tab.books', {
+                url: '/books',
                 views: {
-                    'adopt-tab': {
-                        templateUrl: 'templates/adopt.html'
+                    'books-tab': {
+                        templateUrl: 'templates/my-books.html',
+                        controller: 'BooksController'
                     }
                 }
             })
 
+            .state('tab.locations', {
+                url: '/locations',
+                views: {
+                    'locations-tab': {
+                        templateUrl: 'templates/locations.html',
+                        controller: 'LocationController'
+                    }
+                }
+            })
             .state('tab.settings', {
                 url: '/settings',
                 views: {
                     'settings-tab': {
-                        templateUrl: 'templates/settings.html'
+                        templateUrl: 'templates/settings.html',
+                        controller: 'SettingsController'
                     }
                 }
             });
