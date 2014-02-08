@@ -40,6 +40,7 @@
       console.log(user);
       return this.AuthService.login(user, function(result) {
         localStorage.setItem('token', result.token);
+        localStorage.setItem('email', user.email);
         return _this.closeModal();
       });
     };

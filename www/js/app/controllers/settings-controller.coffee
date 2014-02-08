@@ -22,6 +22,7 @@ class SettingsController
     console.log user
     @AuthService.login user, (result)=>
       localStorage.setItem 'token', result.token
+      localStorage.setItem 'email', user.email
       @closeModal()
 
 
