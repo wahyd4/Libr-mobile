@@ -5,18 +5,12 @@
   libr = angular.module('libr.controllers.main', ['ionic']);
 
   MainController = (function() {
-    MainController.$inject = ['$scope', '$location', 'GeolocationService', '$ionicModal'];
+    MainController.$inject = ['$scope', '$location', '$ionicModal'];
 
-    function MainController($scope, $location, GeolocationService, $ionicModal) {
-      var _this = this;
+    function MainController($scope, $location, $ionicModal) {
       this.$scope = $scope;
       this.$location = $location;
       this.$ionicModal = $ionicModal;
-      GeolocationService.getDetailAddress(function(position) {
-        console.log(position);
-        return _this.$scope.address = position.result.formatted_address;
-      });
-      console.log(this.$scope);
     }
 
     return MainController;

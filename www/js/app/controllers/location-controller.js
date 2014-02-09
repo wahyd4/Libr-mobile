@@ -5,11 +5,34 @@
   libr = angular.module('libr.controllers.location', []);
 
   LocationController = (function() {
-    LocationController.$inject = ['$scope'];
+    LocationController.$inject = ['$scope', '$location', 'GeolocationService'];
 
-    function LocationController($scope) {
+    function LocationController($scope, $location, GeolocationService) {
+      var _this = this;
       this.$scope = $scope;
-      this.$scope.location = '成都';
+      this.$location = $location;
+      this.$scope.enableBackButton = false;
+      this.$scope.rightButtons = [
+        {
+          type: 'button-icon icon ion-ios7-plus',
+          tap: function(e) {
+            return alert('add location');
+          }
+        }
+      ];
+      GeolocationService.getLocations(function(locations) {
+        return _this.$scope.locations = [
+          {
+            name: 'xx'
+          }, {
+            name: 'yy'
+          }
+        ];
+      });
+      GeolocationService.getDetailAddress(function(position) {
+        localStorage.setItem('address_detail', position.result.formatted_address);
+        return _this.$scope.address = position.result.formatted_address;
+      });
     }
 
     return LocationController;

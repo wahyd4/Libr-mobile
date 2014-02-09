@@ -38,12 +38,24 @@
     GeolocationService.prototype.getDetailAddress = function(callback, error) {
       var baseUrl,
         _this = this;
-      baseUrl = 'http://libr.herokuapp.com/api/v1/location';
+      baseUrl = 'http://libr.herokuapp.com/api/v1/locations/detail';
       return this.getCurrentLocation(function(position) {
         return _this.$http.get("" + baseUrl + "?lat=" + position.coords.latitude + "&lng=" + position.coords.longitude).success(function(data, status, headers, config) {
           return callback(data);
         });
       }, function(error) {
+        throw Error(error);
+      });
+    };
+
+    GeolocationService.prototype.getLocations = function(callback, error) {
+      var baseUrl, email, token;
+      baseUrl = 'http://libr.herokuapp.com/api/v1/locations';
+      email = localStorage.getItem('email');
+      token = localStorage.getItem('token');
+      return this.$http.get("" + baseUrl + "?user_email=" + email + "&user_token=" + token).success(function(data, status, headers, config) {
+        return callback(data);
+      }).error(function(data) {
         throw Error(error);
       });
     };
