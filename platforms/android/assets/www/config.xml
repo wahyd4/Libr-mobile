@@ -18,4 +18,5 @@
     <feature name="Geolocation">
         <param name="ios-package" value="CDVLocation"/>
     </feature>
+    <gap:plugin name="com.phonegap.plugins.barcodescanner"/>
 </widget>
