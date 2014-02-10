@@ -1,0 +1,13 @@
+{
+    "version": "0.6.0",
+    "name": "com.phonegap.plugins.barcodescanner",
+    "cordova_name": "BarcodeScanner",
+    "description": "Scans Barcodes.",
+    "license": "MIT",
+    "engines": [
+        {
+            "name": "cordova",
+            "version": ">=2.0.0"
+        }
+    ]
+}

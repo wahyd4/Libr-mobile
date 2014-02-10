@@ -11,8 +11,8 @@
         <div class="item item-divider">
             我的常用位置
         </div>
-        <div class="list">
-            <a ng-repeat="location in locations" href="#/" class="item">{{location.name}}</a>
-        </div>
+        <list class="list" option-buttons="itemButtons">
+            <item ng-repeat="location in locations" class="item" item="location">{{location.address}}</item>
+        </list>
     </content>
 </view>
