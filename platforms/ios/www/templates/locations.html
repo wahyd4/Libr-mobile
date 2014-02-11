@@ -1,0 +1,18 @@
+<view title="'我的位置'" hide-back-button="false" left-buttons="leftButtons" right-buttons="rightButtons">
+    <content has-header="true" has-tabs="true" padding="true">
+        <div class="item item-divider">
+            当前位置
+        </div>
+        <div class="item-balanced">
+            <div class="item item-text-wrap balanced">
+                <span class="ion-location"></span> {{address}}
+            </div>
+        </div>
+        <div class="item item-divider">
+            我的常用位置
+        </div>
+        <list class="list" option-buttons="itemButtons">
+            <item ng-repeat="location in locations" class="item" item="location">{{location.address}}</item>
+        </list>
+    </content>
+</view>
