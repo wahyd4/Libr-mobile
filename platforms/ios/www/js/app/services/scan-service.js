@@ -11,12 +11,13 @@
     }
 
     ScanService.prototype.scan = function() {
-      alert('即将使用摄像头获取ISBN编号');
-      return cordova.plugins.barcodeScanner.scan(function(result) {
-        return alert("We got a barcode\n Result: " + result.text + " \n Format: " + result.format + " \n Cancelled: " + result.cancelled, function(error) {
-          return alert("Scanning failed:" + error + " ");
+      return setTimeout(function() {
+        return cordova.plugins.barcodeScanner.scan(function(result) {
+          return alert("We got a barcode\n Result: " + result.text + " \n Format: " + result.format + " \n Cancelled: " + result.cancelled, function(error) {
+            return alert("Scanning failed:" + error + " ");
+          });
         });
-      });
+      }, 700);
     };
 
     return ScanService;
