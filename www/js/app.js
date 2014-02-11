@@ -10,7 +10,8 @@ angular.module('libr', ['ionic', 'libr.services', 'libr.controllers', 'libr.serv
         'libr.controllers.main',
         'libr.controllers.settings',
         'libr.controllers.books',
-        'libr.controllers.location'
+        'libr.controllers.location',
+        'libr.controllers.login'
     ])
 
     .config(function ($stateProvider, $urlRouterProvider) {
@@ -29,10 +30,10 @@ angular.module('libr', ['ionic', 'libr.services', 'libr.controllers', 'libr.serv
             })
 
             // the pet tab has its own child nav-view and history
-            .state('tab.pet-index', {
-                url: '/pets',
+            .state('tab.home', {
+                url: '/home',
                 views: {
-                    'pets-tab': {
+                    'home-tab': {
                         templateUrl: 'templates/libr-index.html',
                         controller: 'HomeCtrl'
                     }
@@ -42,7 +43,7 @@ angular.module('libr', ['ionic', 'libr.services', 'libr.controllers', 'libr.serv
             .state('tab.pet-detail', {
                 url: '/book/:isbn',
                 views: {
-                    'pets-tab': {
+                    'home-tab': {
                         templateUrl: 'templates/pet-detail.html',
                         controller: 'BookDetailController'
                     }
@@ -68,6 +69,11 @@ angular.module('libr', ['ionic', 'libr.services', 'libr.controllers', 'libr.serv
                     }
                 }
             })
+            .state('login', {
+                url: '/login',
+                templateUrl: 'templates/login.html',
+                controller: 'LoginController'
+            })
             .state('tab.settings', {
                 url: '/settings',
                 views: {
@@ -79,7 +85,7 @@ angular.module('libr', ['ionic', 'libr.services', 'libr.controllers', 'libr.serv
             });
 
         // if none of the above states are matched, use this as the fallback
-        $urlRouterProvider.otherwise('/tab/pets');
+        $urlRouterProvider.otherwise('/login');
 
 
     });
