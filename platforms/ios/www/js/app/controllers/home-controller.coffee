@@ -11,14 +11,13 @@ class HomeController
         @$scope.enableBackButton = false
         @$scope.rightButtons = [
           {
-            type: 'button-icon icon ion-camera'
+            type: 'button  icon ion-camera'
             tap: (e) ->
               ScanService.scan()
           }
         ]
         @$scope.loading.hide();
     else
-      console.log 'ssssssssssssss'
       @$location.path '/tab/settings'
       return
 

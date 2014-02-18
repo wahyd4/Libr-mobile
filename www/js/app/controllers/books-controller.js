@@ -5,15 +5,15 @@
   libr = angular.module('libr.controllers.books', []);
 
   BooksController = (function() {
-    BooksController.$inject = ['$scope'];
+    BooksController.$inject = ['$scope', 'Books'];
 
-    function BooksController($scope) {
+    function BooksController($scope, Books) {
+      var _this = this;
       this.$scope = $scope;
-      if (!(localStorage.token && localStorage.email)) {
-        console.log('请先登录');
-      } else {
-        console.log('已经登录');
-      }
+      this.Books = Books;
+      console.log('==', this.Books.query({}, function(data) {
+        return _this.$scope.books = data.books;
+      }));
     }
 
     return BooksController;

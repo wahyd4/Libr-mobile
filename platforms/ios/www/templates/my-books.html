@@ -2,10 +2,8 @@
     <content has-header="true" has-tabs="true" padding="true">
         <div class="list">
             <a ng-repeat="book in books" class="item item-thumbnail-left" href="#/tab/book/{{book.isbn}}">
-                <img src="{{book.image}}">
-
+                <img data-ng-src="{{book.image}}">
                 <h2>{{ book.name }}</h2>
-
                 <p>{{book.author}}</p>
             </a>
         </div>

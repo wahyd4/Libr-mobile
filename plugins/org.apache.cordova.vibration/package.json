@@ -1,0 +1,14 @@
+{
+    "version": "0.3.7",
+    "name": "org.apache.cordova.vibration",
+    "cordova_name": "Vibration",
+    "description": "Cordova Vibration Plugin",
+    "license": "Apache 2.0",
+    "repo": "https://git-wip-us.apache.org/repos/asf/cordova-plugin-vibration.git",
+    "issue": "https://issues.apache.org/jira/browse/CB/component/12320639",
+    "keywords": [
+        "cordova",
+        "vibration"
+    ],
+    "engines": []
+}

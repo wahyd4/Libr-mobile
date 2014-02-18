@@ -6,6 +6,7 @@
 angular.module('libr', ['ionic', 'libr.services', 'libr.controllers', 'libr.services.scan',
         'libr.services.geolocation',
         'libr.services.auth',
+        'libr.services.books',
         'libr.controllers.home',
         'libr.controllers.main',
         'libr.controllers.settings',
@@ -43,7 +44,7 @@ angular.module('libr', ['ionic', 'libr.services', 'libr.controllers', 'libr.serv
             .state('tab.pet-detail', {
                 url: '/book/:isbn',
                 views: {
-                    'home-tab': {
+                    'books-tab': {
                         templateUrl: 'templates/pet-detail.html',
                         controller: 'BookDetailController'
                     }

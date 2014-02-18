@@ -21,7 +21,7 @@
           _this.$scope.enableBackButton = false;
           _this.$scope.rightButtons = [
             {
-              type: 'button-icon icon ion-camera',
+              type: 'button  icon ion-camera',
               tap: function(e) {
                 return ScanService.scan();
               }
@@ -30,7 +30,6 @@
           return _this.$scope.loading.hide();
         });
       } else {
-        console.log('ssssssssssssss');
         this.$location.path('/tab/settings');
         return;
       }
