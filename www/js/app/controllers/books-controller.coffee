@@ -11,8 +11,7 @@ class BooksController
         type: 'button  icon ion-camera'
         tap: (e) ->
           ScanService.scan (result)->
-            console.log '成功回调。。。'
-            alert "添加图书《#{result.book.name}》成功"
+            navigator.notification.alert "添加图书《#{result.book.name}》成功", null, "Libr", "确定"
 
       }
     ]

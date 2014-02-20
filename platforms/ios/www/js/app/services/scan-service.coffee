@@ -5,15 +5,14 @@ class ScanService
   @$inject: ['Books']
   constructor: (@Books)->
 
-  scan: ->
+  scan: (callback)->
     setTimeout () =>
       cordova.plugins.barcodeScanner.scan (result)=>
-#        alert "We got a barcode\n Result: #{result.text} \n Format: #{result.format} \n Cancelled: #{result.cancelled}"
         @Books.save {isbn: result.text}, null, (data)->
           if data.status is 'error'
             alert '不能找到该书'
           else
-            alert '添加图书成功'
+            callback(data)
         , (error)->
           alert '添加图书失败'
       , (error)->

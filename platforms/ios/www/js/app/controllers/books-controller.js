@@ -20,8 +20,7 @@
           type: 'button  icon ion-camera',
           tap: function(e) {
             return ScanService.scan(function(result) {
-              console.log('成功回调。。。');
-              return alert("添加图书《" + result.book.name + "》成功");
+              return navigator.notification.alert("添加图书" + result.book.name + "成功", null, "Libr", "确定");
             });
           }
         }

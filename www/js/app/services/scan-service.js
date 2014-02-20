@@ -11,7 +11,7 @@
       this.Books = Books;
     }
 
-    ScanService.prototype.scan = function() {
+    ScanService.prototype.scan = function(callback) {
       return setTimeout((function(_this) {
         return function() {
           return cordova.plugins.barcodeScanner.scan(function(result) {
@@ -21,7 +21,7 @@
               if (data.status === 'error') {
                 return alert('不能找到该书');
               } else {
-                return alert('添加图书成功');
+                return callback(data);
               }
             }, function(error) {
               return alert('添加图书失败');
