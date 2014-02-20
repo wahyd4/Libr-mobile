@@ -9,9 +9,10 @@ class BooksController
     @$scope.rightButtons = [
       {
         type: 'button  icon ion-camera'
-        tap: (e) ->
-          ScanService.scan (result)->
-            navigator.notification.alert "添加图书#{result.book.name}成功", null, "Libr", "确定"
+        tap: (e) =>
+          ScanService.scan (result)=>
+            navigator.notification.alert "添加图书《#{result.book.name}》成功", null, "Libr", "确定"
+            @$scope.books.unshift result.book
 
       }
     ]

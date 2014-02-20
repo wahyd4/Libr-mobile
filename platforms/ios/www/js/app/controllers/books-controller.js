@@ -18,11 +18,14 @@
       this.$scope.rightButtons = [
         {
           type: 'button  icon ion-camera',
-          tap: function(e) {
-            return ScanService.scan(function(result) {
-              return navigator.notification.alert("添加图书" + result.book.name + "成功", null, "Libr", "确定");
-            });
-          }
+          tap: (function(_this) {
+            return function(e) {
+              return ScanService.scan(function(result) {
+                navigator.notification.alert("添加图书《" + result.book.name + "》成功", null, "Libr", "确定");
+                return _this.$scope.books.unshift(result.book);
+              });
+            };
+          })(this)
         }
       ];
     }
