@@ -2,13 +2,30 @@ libr = angular.module 'libr.services.scan', []
 
 class ScanService
 
-  scan: =>
-#    alert '即将使用摄像头获取ISBN编号'
-    setTimeout ()->
-      cordova.plugins.barcodeScanner.scan (result)->
-        alert "We got a barcode\n Result: #{result.text} \n Format: #{result.format} \n Cancelled: #{result.cancelled}"
+  @$inject: ['Books']
+  constructor: (@Books)->
+
+  scan: ->
+    setTimeout () =>
+      cordova.plugins.barcodeScanner.scan (result)=>
+#        alert "We got a barcode\n Result: #{result.text} \n Format: #{result.format} \n Cancelled: #{result.cancelled}"
+        @Books.save {isbn: result.text}, null, (data)->
+          if data.status is 'error'
+            alert '不能找到该书'
+          else
+            alert '添加图书成功'
         , (error)->
-          alert "Scanning failed:#{error} "
+          alert '添加图书失败'
+      , (error)->
+        alert "Scanning failed:#{error} "
     , 700
+
+  save: ->
+    @Books.save {isbn: '9787550221116'}, null, (result)->
+      if result.status is 'error'
+        alert '不能找到该书'
+      else
+        alert '添加图书成功'
+
 
 libr.service 'ScanService', ScanService
