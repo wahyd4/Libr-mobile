@@ -16,6 +16,14 @@ class BooksController
 
       }
     ]
+    @$scope.onRefresh = @refresh
+
+  refresh: ()=>
+    @Books.query {}, (data)=>
+#      unless data.books[0].name is @$scope.books[0].name
+#        @$scope.books.unshift data.books
+#      else
+    alert '没有新书了。。。'
 
 
 libr.controller 'BooksController', BooksController

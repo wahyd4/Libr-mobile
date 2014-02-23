@@ -1,5 +1,6 @@
 <view title="'我的书籍'" hide-back-button="false" left-buttons="leftButtons" right-buttons="rightButtons">
-    <content has-header="true" has-tabs="true" padding="true">
+    <content has-header="true" has-tabs="true" padding="true" on-refresh="onRefresh()">
+        <refresher></refresher>
         <div class="list">
             <a ng-repeat="book in books" class="item item-thumbnail-left" href="#/tab/book/{{book.isbn}}">
                 <img data-ng-src="{{book.image}}">

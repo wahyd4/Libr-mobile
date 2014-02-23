@@ -16,6 +16,10 @@ class BooksController
 
       }
     ]
+    @$scope.onRefresh = @refresh
+
+  refresh: ()=>
+    @Books.query {}, (data)=>
 
 
 libr.controller 'BooksController', BooksController
