@@ -11,9 +11,13 @@
     function BooksController($scope, Books, ScanService) {
       this.$scope = $scope;
       this.Books = Books;
+      this.loadMore = __bind(this.loadMore, this);
       this.refresh = __bind(this.refresh, this);
       this.Books.query({}, (function(_this) {
         return function(data) {
+          localStorage.setItem('user_max_book_id', data.books[0].id);
+          localStorage.setItem('user_min_book_id', data.books[data.books.length - 1].id);
+          localStorage.setItem('user_books_current_page', data.current_page);
           return _this.$scope.books = data.books;
         };
       })(this));
@@ -31,13 +35,44 @@
         }
       ];
       this.$scope.onRefresh = this.refresh;
+      this.$scope.loadMore = this.loadMore;
     }
 
     BooksController.prototype.refresh = function() {
-      this.Books.query({}, (function(_this) {
-        return function(data) {};
+      var afterBookId;
+      afterBookId = localStorage.getItem('user_max_book_id');
+      return this.Books.fetchNew({
+        afterId: afterBookId
+      }, (function(_this) {
+        return function(data) {
+          _this.$scope.$broadcast('scroll.refreshComplete');
+          if (data.books.length !== 0) {
+            localStorage.setItem('user_max_book_id', data.books[0].id);
+            return data.books.forEach(function(item, index, array) {
+              return _this.$scope.books.push(item);
+            });
+          }
+        };
       })(this));
-      return alert('没有新书了。。。');
+    };
+
+    BooksController.prototype.loadMore = function() {
+      var currentPage;
+      currentPage = localStorage.getItem('user_books_current_page');
+      return this.Books.query({
+        page: currentPage + 1
+      }, (function(_this) {
+        return function(data) {
+          if (data.books.length === 0) {
+            return alert('没有再多的书了...');
+          } else {
+            localStorage.setItem('user_books_current_page', data.current_page);
+            return data.books.forEach(function(item, index, array) {
+              return _this.$scope.books.push(item);
+            });
+          }
+        };
+      })(this));
     };
 
     return BooksController;

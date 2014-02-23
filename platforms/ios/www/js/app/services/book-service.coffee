@@ -13,11 +13,14 @@ class Books
         user_token: token
       },
       {
-        'update':
-          method: 'PUT'
         'query':
           method: 'GET'
           isArray: false
+          cache: true
+        'fetchNew':
+          method: 'GET'
+          isArray: false
+          url: 'http://libr.herokuapp.com/api/v1/books/newbooks/:afterId'
       })
 
 libr.factory 'Books', ['$resource', Books]
