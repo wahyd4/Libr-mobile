@@ -6,7 +6,7 @@
   libr = angular.module('libr.controllers.books', []);
 
   BooksController = (function() {
-    BooksController.$inject = ['$scope', 'Books', 'ScanService'];
+    BooksController.$inject = ['$scope', 'Books', 'ScanService', '$timeout'];
 
     function BooksController($scope, Books, ScanService) {
       this.$scope = $scope;
@@ -56,21 +56,21 @@
       })(this));
     };
 
-    BooksController.prototype.loadMore = function() {
+    BooksController.prototype.loadMore = function(done) {
       var currentPage;
       currentPage = localStorage.getItem('user_books_current_page');
+      currentPage = parseInt(currentPage);
       return this.Books.query({
         page: currentPage + 1
       }, (function(_this) {
         return function(data) {
-          if (data.books.length === 0) {
-            return alert('没有再多的书了...');
-          } else {
+          if (data.books.length !== 0) {
             localStorage.setItem('user_books_current_page', data.current_page);
-            return data.books.forEach(function(item, index, array) {
+            data.books.forEach(function(item, index, array) {
               return _this.$scope.books.push(item);
             });
           }
+          return done();
         };
       })(this));
     };

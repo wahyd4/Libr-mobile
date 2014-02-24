@@ -2,7 +2,7 @@
     <content has-header="true" has-tabs="true" padding="true" on-refresh="onRefresh()" on-infinite-scroll="loadMore">
         <refresher></refresher>
         <div class="list">
-            <a ng-repeat="book in books | orderBy: 'id' :true" class="item item-thumbnail-left"
+            <a ng-repeat="book in books | orderBy: 'sort_id' :true" class="item item-thumbnail-left"
                href="#/tab/book/{{book.isbn}}">
                 <img data-ng-src="{{book.image}}">
 
@@ -11,5 +11,6 @@
                 <p>{{book.author}}</p>
             </a>
         </div>
+        <infinite-scroll></infinite-scroll>
     </content>
 </view>

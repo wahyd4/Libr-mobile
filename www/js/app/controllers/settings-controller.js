@@ -8,12 +8,13 @@
   SettingsController = (function() {
     var isUserLogedIn;
 
-    SettingsController.$inject = ['$scope', '$ionicModal', 'AuthService'];
+    SettingsController.$inject = ['$scope', '$ionicModal', 'AuthService', '$state'];
 
-    function SettingsController($scope, $ionicModal, AuthService) {
+    function SettingsController($scope, $ionicModal, AuthService, $state) {
       this.$scope = $scope;
       this.$ionicModal = $ionicModal;
       this.AuthService = AuthService;
+      this.$state = $state;
       this.login = __bind(this.login, this);
       this.closeModal = __bind(this.closeModal, this);
       this.loginForm = __bind(this.loginForm, this);
@@ -28,6 +29,7 @@
       this.$scope.loginForm = this.loginForm;
       this.$scope.closeModal = this.closeModal;
       this.$scope.login = this.login;
+      this.$scope.logout = this.logout;
       if (isUserLogedIn()) {
         this.$scope.isLogedIn = true;
       } else {
@@ -52,6 +54,12 @@
           return _this.closeModal();
         };
       })(this));
+    };
+
+    SettingsController.prototype.logout = function() {
+      localStorage.removeItem('email');
+      localStorage.removeItem('token');
+      return this.$state.go('login');
     };
 
     isUserLogedIn = function() {
