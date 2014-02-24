@@ -12,9 +12,12 @@
     }
 
     ScanService.prototype.scan = function(callback) {
-      return setTimeout((function(_this) {
+      setTimeout((function(_this) {
         return function() {
           return cordova.plugins.barcodeScanner.scan(function(result) {
+            if (result.cancelled === 1) {
+              return;
+            }
             return _this.Books.save({
               isbn: result.text
             }, null, function(data) {
@@ -30,7 +33,8 @@
             return alert("Scanning failed:" + error + " ");
           });
         };
-      })(this), 700);
+      })(this), 600);
+      return navigator.notification.vibrate(50);
     };
 
     ScanService.prototype.save = function() {
