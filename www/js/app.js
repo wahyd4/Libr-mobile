@@ -41,16 +41,6 @@ angular.module('libr', ['ionic', 'libr.services', 'libr.controllers', 'libr.serv
                 }
             })
 
-            .state('tab.pet-detail', {
-                url: '/book/:isbn',
-                views: {
-                    'books-tab': {
-                        templateUrl: 'templates/pet-detail.html',
-                        controller: 'BookDetailController'
-                    }
-                }
-            })
-
             .state('tab.books', {
                 url: '/books',
                 views: {
@@ -75,6 +65,12 @@ angular.module('libr', ['ionic', 'libr.services', 'libr.controllers', 'libr.serv
                 templateUrl: 'templates/login.html',
                 controller: 'LoginController'
             })
+            .state('book-detail', {
+                url: '/book/:isbn',
+                templateUrl: 'templates/book-detail.html',
+                controller: 'BookDetailController'
+            })
+
             .state('tab.settings', {
                 url: '/settings',
                 views: {

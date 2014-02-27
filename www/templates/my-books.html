@@ -3,7 +3,7 @@
         <refresher></refresher>
         <div class="list">
             <a ng-repeat="book in books | orderBy: 'sort_id' :true" class="item item-thumbnail-left"
-               href="#/tab/book/{{book.isbn}}">
+               href="#/book/{{book.isbn}}">
                 <img data-ng-src="{{book.image}}">
 
                 <h2>{{ book.name }}</h2>
