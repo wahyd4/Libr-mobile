@@ -1,5 +1,5 @@
 <ion-view title="'我的书籍'" hide-back-button="false" left-buttons="leftButtons" right-buttons="rightButtons">
-    <ion-content has-header="true" has-tabs="true" padding="true" on-refresh="onRefresh()" on-infinite-scroll="loadMore">
+    <ion-content has-header="true" has-tabs="true" padding="true" on-refresh="onRefresh()" on-infinite-scroll="loadMore()">
         <ion-refresher></ion-refresher>
         <div class="list">
             <a ng-repeat="book in books | orderBy: 'sort_id' :true" class="item item-thumbnail-left"

@@ -13,8 +13,6 @@ class Books
         user_token: token
       },
       {
-        'get':
-          cache: true
         'query':
           method: 'GET'
           isArray: false

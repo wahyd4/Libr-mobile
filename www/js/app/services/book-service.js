@@ -21,9 +21,6 @@
         user_email: email,
         user_token: token
       }, {
-        'get': {
-          cache: true
-        },
         'query': {
           method: 'GET',
           isArray: false

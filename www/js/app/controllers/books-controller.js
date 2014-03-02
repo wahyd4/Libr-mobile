@@ -9,18 +9,13 @@
     BooksController.$inject = ['$scope', 'Books', 'ScanService', '$timeout'];
 
     function BooksController($scope, Books, ScanService) {
+      var currentPage;
       this.$scope = $scope;
       this.Books = Books;
       this.loadMore = __bind(this.loadMore, this);
       this.refresh = __bind(this.refresh, this);
-      this.Books.query({}, (function(_this) {
-        return function(data) {
-          localStorage.setItem('user_max_book_id', data.books[0].id);
-          localStorage.setItem('user_min_book_id', data.books[data.books.length - 1].id);
-          localStorage.setItem('user_books_current_page', data.current_page);
-          return _this.$scope.books = data.books;
-        };
-      })(this));
+      currentPage = localStorage.setItem('user_books_current_page', 0);
+      this.$scope.books = [];
       this.$scope.rightButtons = [
         {
           type: 'button  icon ion-camera',
@@ -57,22 +52,29 @@
     };
 
     BooksController.prototype.loadMore = function() {
-      var currentPage;
+      var currentPage, maxPage;
       currentPage = localStorage.getItem('user_books_current_page');
+      maxPage = localStorage.getItem('user_books_max_page');
+      maxPage = parseInt(maxPage);
       currentPage = parseInt(currentPage);
-      return this.Books.query({
-        page: currentPage + 1
-      }, (function(_this) {
-        return function(data) {
-          _this.$scope.$broadcast('scroll.infiniteScrollComplete');
-          if (data.books.length !== 0) {
-            localStorage.setItem('user_books_current_page', data.current_page);
-            return data.books.forEach(function(item, index, array) {
-              return _this.$scope.books.push(item);
-            });
-          }
-        };
-      })(this));
+      if (!(currentPage >= maxPage)) {
+        return this.Books.query({
+          page: currentPage + 1
+        }, (function(_this) {
+          return function(data) {
+            _this.$scope.$broadcast('scroll.infiniteScrollComplete');
+            if (data.books.length !== 0) {
+              localStorage.setItem('user_books_current_page', data.current_page);
+              localStorage.setItem('user_books_max_page', data.total_page);
+              return data.books.forEach(function(item, index, array) {
+                return _this.$scope.books.push(item);
+              });
+            }
+          };
+        })(this));
+      } else {
+        return this.$scope.$broadcast('scroll.infiniteScrollComplete');
+      }
     };
 
     return BooksController;

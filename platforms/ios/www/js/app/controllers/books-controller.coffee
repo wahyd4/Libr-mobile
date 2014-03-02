@@ -4,11 +4,8 @@ class BooksController
 
   @$inject: ['$scope', 'Books', 'ScanService', '$timeout']
   constructor: (@$scope, @Books, ScanService)->
-    @Books.query {}, (data)=>
-      localStorage.setItem 'user_max_book_id', data.books[0].id
-      localStorage.setItem 'user_min_book_id', data.books[data.books.length - 1].id
-      localStorage.setItem 'user_books_current_page', data.current_page
-      @$scope.books = data.books
+    currentPage = localStorage.setItem 'user_books_current_page', 0
+    @$scope.books = []
     @$scope.rightButtons = [
       {
         type: 'button  icon ion-camera'
@@ -33,13 +30,20 @@ class BooksController
 
   loadMore: ()=>
     currentPage = localStorage.getItem 'user_books_current_page'
+    maxPage = localStorage.getItem 'user_books_max_page'
+    maxPage = parseInt maxPage
     currentPage = parseInt currentPage
-    @Books.query {page: currentPage + 1}, (data) =>
+
+    unless currentPage >= maxPage
+      @Books.query {page: currentPage + 1}, (data) =>
+        @$scope.$broadcast('scroll.infiniteScrollComplete');
+        unless data.books.length is 0
+          localStorage.setItem 'user_books_current_page', data.current_page
+          localStorage.setItem 'user_books_max_page', data.total_page
+          data.books.forEach (item, index, array)=>
+            @$scope.books.push item
+    else
       @$scope.$broadcast('scroll.infiniteScrollComplete');
-      unless data.books.length is 0
-        localStorage.setItem 'user_books_current_page', data.current_page
-        data.books.forEach (item, index, array)=>
-          @$scope.books.push item
 
 
 libr.controller 'BooksController', BooksController
