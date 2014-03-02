@@ -9,13 +9,17 @@ class ScanService
     setTimeout () =>
       cordova.plugins.barcodeScanner.scan (result)=>
         if result.cancelled is 1 then return
+        if result.format isnt 'EAN_13'
+          alert '条形码类型不匹配，请确认所扫为书籍，并尝试更换角度'
+          return
         @Books.save {isbn: result.text}, null, (data)->
           if data.status is 'error'
-            alert '不能找到该书'
+            alert data.message
           else
             callback(data)
         , (error)->
-          alert '添加图书失败'
+          console.log error
+          alert '添加图书失败' + error.toString()
       , (error)->
         alert "Scanning failed:#{error} "
     , 600

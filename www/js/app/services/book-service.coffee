@@ -18,7 +18,6 @@ class Books
         'query':
           method: 'GET'
           isArray: false
-          cache: true
         'fetchNew':
           method: 'GET'
           isArray: false

@@ -18,16 +18,21 @@
             if (result.cancelled === 1) {
               return;
             }
+            if (result.format !== 'EAN_13') {
+              alert('条形码类型不匹配，请确认所扫为书籍，并尝试更换角度');
+              return;
+            }
             return _this.Books.save({
               isbn: result.text
             }, null, function(data) {
               if (data.status === 'error') {
-                return alert('不能找到该书');
+                return alert(data.message);
               } else {
                 return callback(data);
               }
             }, function(error) {
-              return alert('添加图书失败');
+              console.log(error);
+              return alert('添加图书失败' + error.toString());
             });
           }, function(error) {
             return alert("Scanning failed:" + error + " ");

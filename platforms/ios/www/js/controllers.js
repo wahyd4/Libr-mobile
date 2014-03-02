@@ -5,9 +5,9 @@
   libr = angular.module('libr.controllers', []);
 
   BookDetailController = (function() {
-    BookDetailController.$inject = ['$scope', '$stateParams', 'BookService'];
+    BookDetailController.$inject = ['$scope', '$stateParams', 'BookService', '$window'];
 
-    function BookDetailController($scope, $stateParams, BookService) {
+    function BookDetailController($scope, $stateParams, BookService, $window) {
       this.$scope = $scope;
       this.$stateParams = $stateParams;
       this.BookService = BookService;
@@ -17,7 +17,17 @@
           _this.$scope.bookName = _this.$scope.book.name;
           _this.$scope.enableBackButton = true;
           _this.$scope.rightButtons = [];
-          _this.$scope.leftButtons = [];
+          _this.$scope.leftButtons = [
+            {
+              type: 'button-icon icon ion-ios7-plus',
+              tap: function() {
+                return $window.history.back();
+              },
+              swipe: function() {
+                return alert('swipe triggered');
+              }
+            }
+          ];
           console.log(_this.$scope);
         };
       })(this));

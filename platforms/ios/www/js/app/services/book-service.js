@@ -26,8 +26,7 @@
         },
         'query': {
           method: 'GET',
-          isArray: false,
-          cache: true
+          isArray: false
         },
         'fetchNew': {
           method: 'GET',
