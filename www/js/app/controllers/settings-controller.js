@@ -18,6 +18,7 @@
       this.login = __bind(this.login, this);
       this.$scope.login = this.login;
       this.$scope.logout = this.logout;
+      this.$scope.feedback = this.feedback;
       if (isUserLogedIn()) {
         this.$scope.isLogedIn = true;
       } else {
@@ -40,6 +41,10 @@
       localStorage.removeItem('email');
       localStorage.removeItem('token');
       return this.$state.go('login');
+    };
+
+    SettingsController.prototype.feedback = function() {
+      return window.open('https://jinshuju.net/f/F96z3s', '_blank', 'location=no');
     };
 
     isUserLogedIn = function() {

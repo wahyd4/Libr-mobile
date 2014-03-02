@@ -55,6 +55,13 @@ module.exports = [
         "merges": [
             "navigator.notification"
         ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.inappbrowser/www/InAppBrowser.js",
+        "id": "org.apache.cordova.inappbrowser.InAppBrowser",
+        "clobbers": [
+            "window.open"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -64,7 +71,8 @@ module.exports.metadata =
     "org.apache.cordova.device": "0.2.7",
     "org.apache.cordova.geolocation": "0.3.5",
     "org.apache.cordova.dialogs": "0.2.6",
-    "org.apache.cordova.vibration": "0.3.7"
+    "org.apache.cordova.vibration": "0.3.7",
+    "org.apache.cordova.inappbrowser": "0.3.1"
 }
 // BOTTOM OF METADATA
 });

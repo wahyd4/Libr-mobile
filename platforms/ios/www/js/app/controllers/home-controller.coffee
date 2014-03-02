@@ -6,17 +6,22 @@ class HomeController
   constructor: (@$scope, @$location, BookService, ScanService, @$ionicLoading, @$ionicActionSheet, @RecommendService)->
     if isUserLogedIn()
       showLoading(@$scope, @$ionicLoading)
-      BookService.getBooks().success (result)=>
-        @$scope.books = result.books
-        @$scope.enableBackButton = false
-        @$scope.rightButtons = [
-          {
-            type: 'button  icon ion-shuffle'
-            tap: (e) =>
-              @showRecommendActionSheet()
-          }
-        ]
-        @$scope.loading.hide();
+      @$scope.title = 'Libr - 你可能喜欢的书'
+      @$scope.enableBackButton = false
+      @$scope.rightButtons = [
+        {
+          type: 'button  icon ion-shuffle'
+          tap: (e) =>
+            @showRecommendActionSheet()
+        }
+      ]
+      @RecommendService.popularBooksForMe (result)=>
+        if result.length is 0
+          alert '请先添加一些你阅读的书，再来查看推荐吧'
+          return
+        else
+          @$scope.books = result
+          @$scope.loading.hide();
     else
       @$location.path '/tab/settings'
       return
@@ -42,11 +47,19 @@ class HomeController
       cancelText: '取消'
       cancel: ()->
         console.log('CANCELLED')
-      buttonClicked: (index)->
-        console.log('BUTTON CLICKED', index)
+      buttonClicked: (index)=>
+        console.log "#{index} has been taped"
+        @changeRecommend index
         true
       destructiveButtonClicked: ()->
-        console.log('DESTRUCT')
         true
     }
+  changeRecommend: (index)=>
+    @RecommendService.changeRecommendAction index, (result)=>
+      if result.length is 0
+        alert '喔，看来附近还没有好书推荐，快去推荐你的朋友也来使用吧！'
+      else
+        @$scope.books = result
+        listArray = JSON.parse(localStorage.getItem 'recommend_action_sheet_full_arr')
+        @$scope.title = 'Libr-' + listArray[index].text
 libr.controller 'HomeCtrl', HomeController

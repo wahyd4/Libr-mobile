@@ -16,22 +16,30 @@
       this.$ionicLoading = $ionicLoading;
       this.$ionicActionSheet = $ionicActionSheet;
       this.RecommendService = RecommendService;
+      this.changeRecommend = __bind(this.changeRecommend, this);
       this.showRecommendActionSheet = __bind(this.showRecommendActionSheet, this);
       if (isUserLogedIn()) {
         showLoading(this.$scope, this.$ionicLoading);
-        BookService.getBooks().success((function(_this) {
+        this.$scope.title = 'Libr - 你可能喜欢的书';
+        this.$scope.enableBackButton = false;
+        this.$scope.rightButtons = [
+          {
+            type: 'button  icon ion-shuffle',
+            tap: (function(_this) {
+              return function(e) {
+                return _this.showRecommendActionSheet();
+              };
+            })(this)
+          }
+        ];
+        this.RecommendService.popularBooksForMe((function(_this) {
           return function(result) {
-            _this.$scope.books = result.books;
-            _this.$scope.enableBackButton = false;
-            _this.$scope.rightButtons = [
-              {
-                type: 'button  icon ion-shuffle',
-                tap: function(e) {
-                  return _this.showRecommendActionSheet();
-                }
-              }
-            ];
-            return _this.$scope.loading.hide();
+            if (result.length === 0) {
+              alert('请先添加一些你阅读的书，再来查看推荐吧');
+            } else {
+              _this.$scope.books = result;
+              return _this.$scope.loading.hide();
+            }
           };
         })(this));
       } else {
@@ -67,15 +75,32 @@
         cancel: function() {
           return console.log('CANCELLED');
         },
-        buttonClicked: function(index) {
-          console.log('BUTTON CLICKED', index);
-          return true;
-        },
+        buttonClicked: (function(_this) {
+          return function(index) {
+            console.log("" + index + " has been taped");
+            _this.changeRecommend(index);
+            return true;
+          };
+        })(this),
         destructiveButtonClicked: function() {
-          console.log('DESTRUCT');
           return true;
         }
       });
+    };
+
+    HomeController.prototype.changeRecommend = function(index) {
+      return this.RecommendService.changeRecommendAction(index, (function(_this) {
+        return function(result) {
+          var listArray;
+          if (result.length === 0) {
+            return alert('喔，看来附近还没有好书推荐，快去推荐你的朋友也来使用吧！');
+          } else {
+            _this.$scope.books = result;
+            listArray = JSON.parse(localStorage.getItem('recommend_action_sheet_full_arr'));
+            return _this.$scope.title = 'Libr-' + listArray[index].text;
+          }
+        };
+      })(this));
     };
 
     return HomeController;

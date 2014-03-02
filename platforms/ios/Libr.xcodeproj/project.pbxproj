@@ -33,6 +33,7 @@
 		0F97F9F0F6884BEE9E6014E2 /* CDVNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 784FE9E354CA4B52B5B71807 /* CDVNotification.m */; };
 		D944CA2667DF41AD8C037F9D /* CDVNotification.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5D9C1FE54F5040609267B2C0 /* CDVNotification.bundle */; };
 		46F5C9534FF04371A003E27C /* CDVVibration.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E9518E634B49ABB71DCE40 /* CDVVibration.m */; };
+		5E7AD5A8E68E484BA4751B09 /* CDVInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3029EFFBE94840E08BFF1E33 /* CDVInAppBrowser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,8 @@
 		5D9C1FE54F5040609267B2C0 /* CDVNotification.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = "CDVNotification.bundle"; path = "CDVNotification.bundle"; sourceTree = "<group>"; };
 		20E9518E634B49ABB71DCE40 /* CDVVibration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVVibration.m"; path = "org.apache.cordova.vibration/CDVVibration.m"; sourceTree = "<group>"; fileEncoding = 4; };
 		F3801EA4411E4664A8EC53CF /* CDVVibration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVVibration.h"; path = "org.apache.cordova.vibration/CDVVibration.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		3029EFFBE94840E08BFF1E33 /* CDVInAppBrowser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVInAppBrowser.m"; path = "org.apache.cordova.inappbrowser/CDVInAppBrowser.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		BA1E591F7B4746239462E69D /* CDVInAppBrowser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVInAppBrowser.h"; path = "org.apache.cordova.inappbrowser/CDVInAppBrowser.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +239,8 @@
 				B4B66470AFF74BF2A8571EE1 /* CDVNotification.h */,
 				20E9518E634B49ABB71DCE40 /* CDVVibration.m */,
 				F3801EA4411E4664A8EC53CF /* CDVVibration.h */,
+				3029EFFBE94840E08BFF1E33 /* CDVInAppBrowser.m */,
+				BA1E591F7B4746239462E69D /* CDVInAppBrowser.h */,
 			);
 			name = Plugins;
 			path = Libr/Plugins;
@@ -389,6 +394,7 @@
 				80E040B65D8840F1AC5D77E9 /* CDVLocation.m in Sources */,
 				0F97F9F0F6884BEE9E6014E2 /* CDVNotification.m in Sources */,
 				46F5C9534FF04371A003E27C /* CDVVibration.m in Sources */,
+				5E7AD5A8E68E484BA4751B09 /* CDVInAppBrowser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
