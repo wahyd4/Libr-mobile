@@ -1,8 +1,5 @@
-<!--
-  This template loads for the 'tab.about' state (app.js)
--->
-<view title="'设置'">
-    <content has-header="true" has-tabs="true" padding="true">
+x<ion-view title="'设置'">
+    <ion-content has-header="true" has-tabs="true" padding="true">
         <div class="list">
 
             <a class="item item-icon-left" href="#">
@@ -17,7 +14,7 @@
                 <i class="icon ion-ios7-telephone-outline"></i>
             </a>
 
-            <a class="item item-icon-left" ng-click="loginForm()">
+            <a class="item item-icon-left">
                 <i class="icon ion-person-stalker"></i>
                 {{isLogedIn === true? '用户已登录': '请先登录' }}
             </a>
@@ -27,5 +24,5 @@
                 注销登录
             </a>
         </div>
-    </content>
-</view>
+    </ion-content>
+</ion-view>

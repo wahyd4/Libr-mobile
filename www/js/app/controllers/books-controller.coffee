@@ -31,15 +31,15 @@ class BooksController
         data.books.forEach (item, index, array)=>
           @$scope.books.push item
 
-  loadMore: (done)=>
+  loadMore: ()=>
     currentPage = localStorage.getItem 'user_books_current_page'
     currentPage = parseInt currentPage
     @Books.query {page: currentPage + 1}, (data) =>
+      @$scope.$broadcast('scroll.infiniteScrollComplete');
       unless data.books.length is 0
         localStorage.setItem 'user_books_current_page', data.current_page
         data.books.forEach (item, index, array)=>
           @$scope.books.push item
-      done()
 
 
 libr.controller 'BooksController', BooksController

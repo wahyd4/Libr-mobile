@@ -4,22 +4,10 @@ class SettingsController
 
   @$inject: ['$scope', '$ionicModal', 'AuthService', '$state']
   constructor: (@$scope, @$ionicModal, @AuthService, @$state) ->
-    @$ionicModal.fromTemplateUrl 'templates/modal/login.html', (modal)=>
-      @$scope.modal = modal;
-    , {
-        scope: @$scope,
-        animation: 'slide-in-up'
-      }
-    @$scope.loginForm = @loginForm
-    @$scope.closeModal = @closeModal
     @$scope.login = @login
     @$scope.logout = @logout
     if isUserLogedIn() then @$scope.isLogedIn = true else @$scope.isLogedIn = false
 
-  loginForm: ()=>
-    @$scope.modal.show()
-  closeModal: ()=>
-    @$scope.modal.hide()
 
   login: (user)=>
     console.log user

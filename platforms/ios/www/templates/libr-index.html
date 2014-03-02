@@ -1,5 +1,5 @@
-<view title="'Libr'" hide-back-button="false" left-buttons="leftButtons" right-buttons="rightButtons">
-    <content has-header="true" has-tabs="true" padding="true">
+<ion-view title="'Libr'" hide-back-button="false" left-buttons="leftButtons" right-buttons="rightButtons">
+    <ion-content has-header="true" has-tabs="true" padding="true">
         <div class="list">
             <a ng-repeat="book in books" class="item item-thumbnail-left" href="#/book/{{book.isbn}}">
                 <img data-ng-src="{{book.image}}">
@@ -9,5 +9,5 @@
                 <p>{{book.author}}</p>
             </a>
         </div>
-    </content>
-</view>
+    </ion-content>
+</ion-view>

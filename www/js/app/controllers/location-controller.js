@@ -16,7 +16,7 @@
       this.$scope.enableBackButton = false;
       this.$scope.rightButtons = [
         {
-          type: 'button-icon icon ion-ios7-plus',
+          type: 'button icon ion-ios7-plus',
           tap: (function(_this) {
             return function(e) {
               return _this.addLocation();

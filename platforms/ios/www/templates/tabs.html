@@ -1,28 +1,20 @@
-<!--
-  Create tabs with an icon and label, using the tabs-positive style. 
-  Each tab's child <nav-view> directive will have its own 
-  navigation history that also transitions its views in and out.
--->
-<tabs tabs-style="tabs-icon-top" tabs-type="tabs-positive">
 
+<ion-tabs tabs-style="tabs-icon-top" tabs-type="tabs-positive">
 
-    <tab title="首页" icon="icon ion-home" href="#/tab/home">
-        <nav-view name="home-tab"></nav-view>
-    </tab>
+    <ion-tab title="首页" icon="icon ion-home" href="#/tab/home">
+        <ion-nav-view name="home-tab"></ion-nav-view>
+    </ion-tab>
 
+    <ion-tab title="书籍" icon="icon ion-ios7-bookmarks" href="#/tab/books">
+        <ion-nav-view name="books-tab"></ion-nav-view>
+    </ion-tab>
 
-    <tab title="书籍" icon="icon ion-ios7-bookmarks" href="#/tab/books">
-        <nav-view name="books-tab"></nav-view>
-    </tab>
+    <ion-tab title="位置" icon="icon ion-navigate" href="#/tab/locations">
+        <ion-nav-view name="locations-tab"></ion-nav-view>
+    </ion-tab>
 
+    <ion-tab title="设置" icon="icon ion-settings" href="#/tab/settings">
+        <ion-nav-view name="settings-tab"></ion-nav-view>
+    </ion-tab>
 
-    <tab title="位置" icon="icon ion-navigate" href="#/tab/locations">
-        <nav-view name="locations-tab"></nav-view>
-    </tab>
-
-    <tab title="设置" icon="icon ion-settings" href="#/tab/settings">
-        <nav-view name="settings-tab"></nav-view>
-    </tab>
-
-
-</tabs>
+</ion-tabs>

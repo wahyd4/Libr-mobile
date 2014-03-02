@@ -56,7 +56,7 @@
       })(this));
     };
 
-    BooksController.prototype.loadMore = function(done) {
+    BooksController.prototype.loadMore = function() {
       var currentPage;
       currentPage = localStorage.getItem('user_books_current_page');
       currentPage = parseInt(currentPage);
@@ -64,13 +64,13 @@
         page: currentPage + 1
       }, (function(_this) {
         return function(data) {
+          _this.$scope.$broadcast('scroll.infiniteScrollComplete');
           if (data.books.length !== 0) {
             localStorage.setItem('user_books_current_page', data.current_page);
-            data.books.forEach(function(item, index, array) {
+            return data.books.forEach(function(item, index, array) {
               return _this.$scope.books.push(item);
             });
           }
-          return done();
         };
       })(this));
     };

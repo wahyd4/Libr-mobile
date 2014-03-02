@@ -16,18 +16,6 @@
       this.AuthService = AuthService;
       this.$state = $state;
       this.login = __bind(this.login, this);
-      this.closeModal = __bind(this.closeModal, this);
-      this.loginForm = __bind(this.loginForm, this);
-      this.$ionicModal.fromTemplateUrl('templates/modal/login.html', (function(_this) {
-        return function(modal) {
-          return _this.$scope.modal = modal;
-        };
-      })(this), {
-        scope: this.$scope,
-        animation: 'slide-in-up'
-      });
-      this.$scope.loginForm = this.loginForm;
-      this.$scope.closeModal = this.closeModal;
       this.$scope.login = this.login;
       this.$scope.logout = this.logout;
       if (isUserLogedIn()) {
@@ -36,14 +24,6 @@
         this.$scope.isLogedIn = false;
       }
     }
-
-    SettingsController.prototype.loginForm = function() {
-      return this.$scope.modal.show();
-    };
-
-    SettingsController.prototype.closeModal = function() {
-      return this.$scope.modal.hide();
-    };
 
     SettingsController.prototype.login = function(user) {
       console.log(user);

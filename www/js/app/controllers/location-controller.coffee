@@ -8,7 +8,7 @@ class LocationController
     @$scope.enableBackButton = false
     @$scope.rightButtons = [
       {
-        type: 'button-icon icon ion-ios7-plus'
+        type: 'button icon ion-ios7-plus'
         tap: (e) =>
           @addLocation()
       }

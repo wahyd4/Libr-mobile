@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html ng-app="libr">
 <head>
-    <meta charset="utf-8"/>
-    <meta name="format-detection" content="telephone=no"/>
-    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-    <meta name="viewport"
-          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1,target-densitydpi=device-dpi"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <link rel="stylesheet" type="text/css" href="css/main.css"/>
     <link rel="stylesheet" type="text/css" href="css/ionic.min.css"/>
     <title>Libr</title>
     <script src="cordova.js"></script>
-    <script type="text/javascript" src="js/ionic/ionic.min.js"></script>
-    <script src="js/angular/angular.min.js"></script>
+    <script type="text/javascript" src="js/ionic/ionic.bundle.min.js"></script>
+    <!--<script src="http://code.ionicframework.com/nightly/js/ionic.bundle.min.js"></script>-->
     <script>
         document.addEventListener('deviceready', function () {
             ionic.Platform.detect();
@@ -20,23 +17,14 @@
 </head>
 <body animation="slide-left-right-ios7" ng-controller="MainCtrl">
 
-<pane>
-    <nav-bar animation="nav-title-slide-android"
-             type="bar-positive"
-             back-button-type="button-icon" back-button-icon="ion-arrow-left-c">
 
-    </nav-bar>
+<ion-nav-bar class="nav-title-slide-ios7" type="bar-positive"
+             back-button-type="button-icon" back-button-icon="icon ion-arrow-left-c"></ion-nav-bar>
 
-    <nav-view animation="slide-left-right"></nav-view>
-</pane>
 
-<script src="js/angular/angular-animate.js"></script>
-<script src="js/angular/angular-route.js"></script>
-<script src="js/angular/angular-touch.js"></script>
-<script src="js/angular/angular-sanitize.js"></script>
+<ion-nav-view animation="slide-left-right"></ion-nav-view>
+
 <script src="js/angular/angular-resource.js"></script>
-<script src="js/angular-ui/angular-ui-router.js"></script>
-<script type="text/javascript" src="js/ionic/ionic-angular.min.js"></script>
 <script type="text/javascript" src="js/libr.js"></script>
 <script src="js/app.js"></script>
 <script src="js/services.js"></script>
@@ -51,7 +39,7 @@
 <script src="js/app/controllers/books-controller.js"></script>
 <script src="js/app/controllers/location-controller.js"></script>
 <script src="js/app/controllers/login-controller.js"></script>
-<script src="http://192.168.0.102:8080/target/target-script-min.js#anonymous"></script>
+<!--<script src="http://192.168.0.102:8080/target/target-script-min.js#anonymous"></script>-->
 </body>
 
 </html>
