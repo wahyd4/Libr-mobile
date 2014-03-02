@@ -6,7 +6,11 @@ class BookService
     baseUrl = 'http://libr.herokuapp.com/api'
     bookFactory = {}
     bookFactory.getBooks = () ->
-      $http.get(baseUrl + '/books?user_email=wahyd4@qq.com&user_token=5w1snRq8QgxBfxayzTa2')
+      $http(
+        url: baseUrl + '/books?user_email=wahyd4@qq.com&user_token=5w1snRq8QgxBfxayzTa2'
+        cache: true
+        method: 'GET'
+      )
     bookFactory.getBook = (isbn) ->
       $http.get baseUrl + '/bookinfo/' + isbn
     return bookFactory

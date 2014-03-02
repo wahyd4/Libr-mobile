@@ -12,7 +12,11 @@
       baseUrl = 'http://libr.herokuapp.com/api';
       bookFactory = {};
       bookFactory.getBooks = function() {
-        return $http.get(baseUrl + '/books?user_email=wahyd4@qq.com&user_token=5w1snRq8QgxBfxayzTa2');
+        return $http({
+          url: baseUrl + '/books?user_email=wahyd4@qq.com&user_token=5w1snRq8QgxBfxayzTa2',
+          cache: true,
+          method: 'GET'
+        });
       };
       bookFactory.getBook = function(isbn) {
         return $http.get(baseUrl + '/bookinfo/' + isbn);

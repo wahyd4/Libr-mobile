@@ -1,9 +1,9 @@
 libr = angular.module 'libr.controllers.home', ['ionic']
 
 class HomeController
-  @$inject: ['$scope', '$location', 'BookService', 'ScanService', '$ionicLoading']
-
-  constructor: (@$scope, @$location, BookService, ScanService, @$ionicLoading)->
+  @$inject: ['$scope', '$location', 'BookService', 'ScanService', '$ionicLoading', '$ionicActionSheet',
+             'RecommendService']
+  constructor: (@$scope, @$location, BookService, ScanService, @$ionicLoading, @$ionicActionSheet, @RecommendService)->
     if isUserLogedIn()
       showLoading(@$scope, @$ionicLoading)
       BookService.getBooks().success (result)=>
@@ -11,9 +11,9 @@ class HomeController
         @$scope.enableBackButton = false
         @$scope.rightButtons = [
           {
-            type: 'button  icon ion-camera'
-            tap: (e) ->
-              ScanService.scan()
+            type: 'button  icon ion-shuffle'
+            tap: (e) =>
+              @showRecommendActionSheet()
           }
         ]
         @$scope.loading.hide();
@@ -34,4 +34,19 @@ class HomeController
       true
     else
       false
+  showRecommendActionSheet: =>
+    @$ionicActionSheet.show {
+      titleText: '推荐'
+      buttons: @RecommendService.getActionSheetList()
+      destructiveText: '删除'
+      cancelText: '取消'
+      cancel: ()->
+        console.log('CANCELLED')
+      buttonClicked: (index)->
+        console.log('BUTTON CLICKED', index)
+        true
+      destructiveButtonClicked: ()->
+        console.log('DESTRUCT')
+        true
+    }
 libr.controller 'HomeCtrl', HomeController

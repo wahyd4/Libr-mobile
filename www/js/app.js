@@ -7,6 +7,7 @@ angular.module('libr', ['ionic', 'libr.services', 'libr.controllers', 'libr.serv
         'libr.services.geolocation',
         'libr.services.auth',
         'libr.services.books',
+        'libr.services.recommend',
         'libr.controllers.home',
         'libr.controllers.main',
         'libr.controllers.settings',

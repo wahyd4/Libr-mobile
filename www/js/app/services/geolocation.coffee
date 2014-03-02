@@ -28,7 +28,10 @@ class GeolocationService
   getDetailAddress: (callback, error) ->
     baseUrl = 'http://libr.herokuapp.com/api/v1/locations/detail'
     this.getCurrentLocation (position)=>
-      @$http.get("#{baseUrl}?lat=#{position.coords.latitude}&lng=#{position.coords.longitude}")
+      @$http(
+        url: "#{baseUrl}?lat=#{position.coords.latitude}&lng=#{position.coords.longitude}"
+        cache: true
+        method: 'GET')
       .success (data, status, headers, config)->
           callback data
     , (error)->
@@ -38,7 +41,11 @@ class GeolocationService
     baseUrl = 'http://libr.herokuapp.com/api/v1/locations'
     email = localStorage.getItem 'email'
     token = localStorage.getItem 'token'
-    @$http.get("#{baseUrl}?user_email=#{email}&user_token=#{token}")
+    @$http(
+      url: "#{baseUrl}?user_email=#{email}&user_token=#{token}"
+      method: 'GET'
+      cache: true
+    )
     .success (data, status, headers, config)->
         callback data
     .error (data)->

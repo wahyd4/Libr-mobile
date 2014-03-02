@@ -40,7 +40,11 @@
       baseUrl = 'http://libr.herokuapp.com/api/v1/locations/detail';
       return this.getCurrentLocation((function(_this) {
         return function(position) {
-          return _this.$http.get("" + baseUrl + "?lat=" + position.coords.latitude + "&lng=" + position.coords.longitude).success(function(data, status, headers, config) {
+          return _this.$http({
+            url: "" + baseUrl + "?lat=" + position.coords.latitude + "&lng=" + position.coords.longitude,
+            cache: true,
+            method: 'GET'
+          }).success(function(data, status, headers, config) {
             return callback(data);
           });
         };
@@ -54,7 +58,11 @@
       baseUrl = 'http://libr.herokuapp.com/api/v1/locations';
       email = localStorage.getItem('email');
       token = localStorage.getItem('token');
-      return this.$http.get("" + baseUrl + "?user_email=" + email + "&user_token=" + token).success(function(data, status, headers, config) {
+      return this.$http({
+        url: "" + baseUrl + "?user_email=" + email + "&user_token=" + token,
+        method: 'GET',
+        cache: true
+      }).success(function(data, status, headers, config) {
         return callback(data);
       }).error(function(data) {
         throw Error(error);
