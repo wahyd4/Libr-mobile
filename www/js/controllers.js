@@ -19,7 +19,7 @@
           _this.$scope.rightButtons = [];
           _this.$scope.leftButtons = [
             {
-              type: 'button-icon icon ion-ios7-plus',
+              type: 'button-icon icon ion-arrow-left-c',
               tap: function() {
                 return $window.history.back();
               },

@@ -11,7 +11,7 @@ class BookDetailController
       @$scope.rightButtons = []
       @$scope.leftButtons = [
         {
-          type: 'button-icon icon ion-ios7-plus'
+          type: 'button-icon icon ion-arrow-left-c'
           tap: =>
             $window.history.back();
           swipe: =>
