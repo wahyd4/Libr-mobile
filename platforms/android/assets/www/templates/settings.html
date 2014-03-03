@@ -1,0 +1,30 @@
+x<ion-view title="'设置'">
+    <ion-content has-header="true" has-tabs="true" padding="true">
+        <div class="list">
+
+            <a class="item item-icon-left">
+                <i class="icon ion-person-stalker"></i>
+                {{isLogedIn === true? '用户已登录': '请先登录' }}
+            </a>
+
+            <a class="item item-icon-left" ng-click="logout()" href="#">
+                <i class="icon ion-log-out"></i>
+                注销登录
+            </a>
+            <a class="item item-icon-left" href="#">
+                <i class="icon ion-email"></i>
+                系统消息
+                <span class="badge badge-assertive">0</span>
+            </a>
+            <a class="item item-icon-left" href="#" ng-click="feedback()">
+                <i class="icon ion-heart"></i>
+                给我们提供反馈
+            </a>
+            <a class="item item-icon-left" href="#">
+                <i class="icon ion-information-circled"></i>
+                关于
+            </a>
+
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,19 @@
+<ion-view title="bookName" hide-back-button="false" left-buttons="leftButtons" right-buttons="rightButtons">
+    <ion-content has-header="true" padding="true">
+
+
+        <div class="list card">
+            <div class="item item-avatar">
+                <h2>{{book.name}}</h2>
+
+                <p>{{book.author}}</p>
+
+                <p>{{book.isbn}}</p>
+            </div>
+            <div class="item item-image">
+                <img data-ng-src="{{book.image}}">
+            </div>
+        </div>
+        <p><a class="button button-small icon ion-arrow-left-b" href="#/tab/books"> All books</a></p>
+    </ion-content>
+</ion-view>

@@ -15,6 +15,7 @@
       this.$ionicModal = $ionicModal;
       this.AuthService = AuthService;
       this.$state = $state;
+      this.logout = __bind(this.logout, this);
       this.login = __bind(this.login, this);
       this.$scope.login = this.login;
       this.$scope.logout = this.logout;

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="libr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="css/ionic.min.css"/>
+    <title>Libr</title>
+    <script src="cordova.js"></script>
+    <script type="text/javascript" src="js/ionic/ionic.bundle.min.js"></script>
+    <!--<script src="http://code.ionicframework.com/nightly/js/ionic.bundle.min.js"></script>-->
+    <script>
+        document.addEventListener('deviceready', function () {
+            ionic.Platform.detect();
+        });
+    </script>
+</head>
+<body animation="slide-left-right-ios7" ng-controller="MainCtrl">
+
+
+<ion-nav-bar class="nav-title-slide-ios7" type="bar-positive"
+             back-button-type="button-icon" back-button-icon="icon ion-arrow-left-c"></ion-nav-bar>
+
+
+<ion-nav-view animation="slide-left-right"></ion-nav-view>
+
+<script src="js/angular/angular-resource.js"></script>
+<script type="text/javascript" src="js/libr.js"></script>
+<script src="js/app.js"></script>
+<script src="js/services.js"></script>
+<script src="js/app/services/authication-service.js"></script>
+<script src="js/app/services/scan-service.js"></script>
+<script src="js/app/services/geolocation.js"></script>
+<script src="js/app/services/book-service.js"></script>
+<script src="js/app/services/recommend-service.js"></script>
+<script src="js/controllers.js"></script>
+<script src="js/app/controllers/home-controller.js"></script>
+<script src="js/app/controllers/main-controller.js"></script>
+<script src="js/app/controllers/settings-controller.js"></script>
+<script src="js/app/controllers/books-controller.js"></script>
+<script src="js/app/controllers/location-controller.js"></script>
+<script src="js/app/controllers/login-controller.js"></script>
+<!--<script src="http://192.168.0.102:8080/target/target-script-min.js#anonymous"></script>-->
+</body>
+
+</html>

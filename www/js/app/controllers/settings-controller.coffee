@@ -17,7 +17,7 @@ class SettingsController
       localStorage.setItem 'email', user.email
       @closeModal()
 
-  logout: ->
+  logout: =>
     localStorage.removeItem 'email'
     localStorage.removeItem 'token'
     @$state.go 'login'
