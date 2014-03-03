@@ -18,8 +18,7 @@ class SettingsController
       @closeModal()
 
   logout: =>
-    localStorage.removeItem 'email'
-    localStorage.removeItem 'token'
+    localStorage.clear()
     @$state.go 'login'
 
   feedback: ->

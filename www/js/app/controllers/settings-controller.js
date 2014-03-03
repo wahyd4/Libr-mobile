@@ -39,8 +39,7 @@
     };
 
     SettingsController.prototype.logout = function() {
-      localStorage.removeItem('email');
-      localStorage.removeItem('token');
+      localStorage.clear();
       return this.$state.go('login');
     };
 
