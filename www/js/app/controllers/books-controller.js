@@ -64,6 +64,7 @@
           return function(data) {
             _this.$scope.$broadcast('scroll.infiniteScrollComplete');
             if (data.books.length !== 0) {
+              localStorage.setItem('user_max_book_id', data.books[0].id);
               localStorage.setItem('user_books_current_page', data.current_page);
               localStorage.setItem('user_books_max_page', data.total_page);
               return data.books.forEach(function(item, index, array) {

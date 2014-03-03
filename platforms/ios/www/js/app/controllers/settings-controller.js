@@ -8,13 +8,15 @@
   SettingsController = (function() {
     var isUserLogedIn;
 
-    SettingsController.$inject = ['$scope', '$ionicModal', 'AuthService', '$state'];
+    SettingsController.$inject = ['$scope', '$ionicModal', 'AuthService', '$state', '$cacheFactory'];
 
-    function SettingsController($scope, $ionicModal, AuthService, $state) {
+    function SettingsController($scope, $ionicModal, AuthService, $state, $cacheFactory) {
       this.$scope = $scope;
       this.$ionicModal = $ionicModal;
       this.AuthService = AuthService;
       this.$state = $state;
+      this.$cacheFactory = $cacheFactory;
+      this.logout = __bind(this.logout, this);
       this.login = __bind(this.login, this);
       this.$scope.login = this.login;
       this.$scope.logout = this.logout;
@@ -38,8 +40,11 @@
     };
 
     SettingsController.prototype.logout = function() {
-      localStorage.removeItem('email');
-      localStorage.removeItem('token');
+      var httpDefaultCache;
+      localStorage.clear();
+      httpDefaultCache = this.$cacheFactory.get('$http');
+      console.log('cacheFactory', httpDefaultCache);
+      httpDefaultCache.removeAll();
       return this.$state.go('login');
     };
 

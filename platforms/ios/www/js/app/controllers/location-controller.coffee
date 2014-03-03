@@ -31,8 +31,11 @@ class LocationController
       @$scope.address = position.result.formatted_address
 
   addLocation: () =>
-    @GeolocationService.createLocation (result)=>
-      @$scope.locations.push result
+    if @$scope.locations.length >= 3
+      alert '只能创建3个常用的地址哦，你可以尝试删除部分，再添加'
+    else
+      @GeolocationService.createLocation (result)=>
+        @$scope.locations.push result
 
 
 libr.controller 'LocationController', LocationController

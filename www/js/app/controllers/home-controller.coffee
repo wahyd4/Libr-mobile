@@ -18,10 +18,9 @@ class HomeController
       @RecommendService.popularBooksForMe (result)=>
         if result.length is 0
           alert '请先添加一些你阅读的书，再来查看推荐吧'
-          return
         else
           @$scope.books = result
-          @$scope.loading.hide();
+        @$scope.loading.hide()
     else
       @$location.path '/tab/settings'
       return

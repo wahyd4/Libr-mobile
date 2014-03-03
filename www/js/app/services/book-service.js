@@ -5,12 +5,6 @@
   libr = angular.module('libr.services.books', ['ngResource']);
 
   Books = (function() {
-    var email, token;
-
-    email = localStorage.getItem('email');
-
-    token = localStorage.getItem('token');
-
     Books.$inject = ['$http', '$resource'];
 
     function Books($resource) {
@@ -18,8 +12,8 @@
       this.$resource = $resource;
       baseUrl = 'http://libr.herokuapp.com/api/v1/books/:book_id';
       return this.$resource(baseUrl, {
-        user_email: email,
-        user_token: token
+        user_email: localStorage.getItem('email'),
+        user_token: localStorage.getItem('token')
       }, {
         'query': {
           method: 'GET',

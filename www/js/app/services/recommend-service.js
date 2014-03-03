@@ -6,13 +6,9 @@
   libr = angular.module('libr.services.recommend', []);
 
   RecommendService = (function() {
-    var baseUrl, email, token;
+    var baseUrl;
 
     baseUrl = 'http://libr.herokuapp.com/api/v1';
-
-    email = localStorage.getItem('email');
-
-    token = localStorage.getItem('token');
 
     RecommendService.$injector = ['GeolocationService', '$http'];
 
@@ -48,6 +44,9 @@
     };
 
     RecommendService.prototype.popularBooksForMe = function(callback, error) {
+      var email, token;
+      email = localStorage.getItem('email');
+      token = localStorage.getItem('token');
       return this.$http({
         url: "" + baseUrl + "/recommend/me?user_email=" + email + "&user_token=" + token,
         method: 'GET',
@@ -60,6 +59,9 @@
     };
 
     RecommendService.prototype.popularBooksAroundMe = function(locationId, callback, error) {
+      var email, token;
+      email = localStorage.getItem('email');
+      token = localStorage.getItem('token');
       return this.$http({
         url: "" + baseUrl + "/recommend/locations/" + locationId + "?user_email=" + email + "&user_token=" + token,
         method: 'GET',
