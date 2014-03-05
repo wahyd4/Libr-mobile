@@ -1,3 +1,14 @@
 header button.button-icon:before {
     font-size: 32px !important;
 }
+
+textarea.comment-container {
+    border: 1px solid gray;
+    margin: 0 auto;
+    height: 8em;
+    color: #000000;
+}
+
+::-webkit-input-placeholder {
+    color:    #000000;
+}

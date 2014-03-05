@@ -3,17 +3,30 @@
 
 
         <div class="list card">
-            <div class="item item-avatar">
+            <div class="item ">
                 <h2>{{book.name}}</h2>
 
-                <p>{{book.author}}</p>
+                <p><b>作者:</b>{{book.author}}</p>
 
-                <p>{{book.isbn}}</p>
+                <p><b>ISBN:</b>{{book.isbn}}</p>
             </div>
             <div class="item item-image">
                 <img data-ng-src="{{book.image}}">
             </div>
+            <div class="item tabs tabs-secondary tabs-icon-left">
+                <a class="tab-item" href="#">
+                    <i class="icon ion-thumbsup"></i>
+                    喜欢
+                </a>
+                <a class="tab-item" ng-click="openDialog()">
+                    <i class="icon ion-chatbox"></i>
+                    评论
+                </a>
+                <a class="tab-item" href="#">
+                    <i class="icon ion-share"></i>
+                    分享
+                </a>
+            </div>
         </div>
-        <p><a class="button button-small icon ion-arrow-left-b" href="#/tab/books"> All books</a></p>
     </ion-content>
 </ion-view>
