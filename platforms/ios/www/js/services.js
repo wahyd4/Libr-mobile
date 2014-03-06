@@ -9,15 +9,8 @@
 
     function BookService($http) {
       var baseUrl, bookFactory;
-      baseUrl = 'http://libr.herokuapp.com/api';
+      baseUrl = 'http://libr.herokuapp.com/api/v1/books';
       bookFactory = {};
-      bookFactory.getBooks = function() {
-        return $http({
-          url: baseUrl + '/books?user_email=wahyd4@qq.com&user_token=5w1snRq8QgxBfxayzTa2',
-          cache: true,
-          method: 'GET'
-        });
-      };
       bookFactory.getBook = function(isbn) {
         return $http.get(baseUrl + '/bookinfo/' + isbn);
       };

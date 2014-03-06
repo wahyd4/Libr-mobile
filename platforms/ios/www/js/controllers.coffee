@@ -1,11 +1,12 @@
 libr = angular.module('libr.controllers', ['ionic'])
 
 class BookDetailController
-  @$inject: ['$scope', '$stateParams', 'BookService', '$window', '$ionicModal']
+  @$inject: ['$scope', '$stateParams', 'BookService', '$window', '$ionicModal', 'Comments']
 
-  constructor: (@$scope, @$stateParams, @BookService, $window, @$ionicModal) ->
+  constructor: (@$scope, @$stateParams, @BookService, $window, @$ionicModal, @Comments) ->
     @$scope.openDialog = @openCommentDialog
     @$scope.closeDialog = @closeCommentDialog
+    @$scope.doComment = @doComment
 
     @$scope.rightButtons = []
     @$scope.leftButtons = [
@@ -24,15 +25,35 @@ class BookDetailController
     BookService.getBook(@$stateParams.isbn).success (result) =>
       @$scope.book = result
       @$scope.bookName = @$scope.book.name
+      @Comments.query {book_id: result.id}, (data)=>
+        console.log data
+        @$scope.comments = data
+
 
     @$scope.$on '$destroy', ()=>
       @$scope.modal.remove()
+
 
   openCommentDialog: ()=>
     @$scope.modal.show()
   closeCommentDialog: ()=>
     @$scope.modal.hide()
-
+  doComment: ()=>
+    text = angular.element(document.getElementById('comment')).val()
+    if text.trim() is ''
+      alert '请输入有效字符'
+      return false
+    else
+      @Comments.save {
+        book_id: @$scope.book.id
+        content: text
+      }, null, (data)=>
+        if data.status isnt 'success'
+          alert '添加图书失败'
+        else
+          console.log '成功。。。。。。。'
+          @$scope.comments.push data.comment
+          @closeCommentDialog()
 
 
 libr.controller 'BookDetailController', BookDetailController

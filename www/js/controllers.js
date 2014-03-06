@@ -46,7 +46,8 @@
           return _this.Comments.query({
             book_id: result.id
           }, function(data) {
-            return this.$scope.comments = data;
+            console.log(data);
+            return _this.$scope.comments = data;
           });
         };
       })(this));
@@ -72,7 +73,20 @@
         alert('请输入有效字符');
         return false;
       } else {
-
+        return this.Comments.save({
+          book_id: this.$scope.book.id,
+          content: text
+        }, null, (function(_this) {
+          return function(data) {
+            if (data.status !== 'success') {
+              return alert('添加图书失败');
+            } else {
+              console.log('成功。。。。。。。');
+              _this.$scope.comments.push(data.comment);
+              return _this.closeCommentDialog();
+            }
+          };
+        })(this));
       }
     };
 

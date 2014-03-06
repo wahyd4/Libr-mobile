@@ -1,7 +1,5 @@
 <ion-view title="bookName" hide-back-button="false" left-buttons="leftButtons" right-buttons="rightButtons">
     <ion-content has-header="true" padding="true">
-
-
         <div class="list card">
             <div class="item ">
                 <h2>{{book.name}}</h2>
@@ -27,17 +25,16 @@
                     分享
                 </a>
             </div>
+            <!-- comments -->
+            <div class="item item-divider"> 评论：</div>
+            <a class="item item-avatar" ng-repeat="comment in comments | orderBy: 'id' :false">
+                <img src="img/default.jpg">
+
+                <h2>Tom</h2>
+
+                <p>{{comment.body}}</p>
+            </a>
+
         </div>
     </ion-content>
-
-    <hr>
-    <div class="list" ng-repeat="comment in comments | orderBy: 'id' :false">
-        <a class="item item-avatar" href="#">
-            <img src="img/default.jpg">
-
-            <h2>Tom</h2>
-
-            <p>{{comment.body}}</p>
-        </a>
-    </div>
 </ion-view>

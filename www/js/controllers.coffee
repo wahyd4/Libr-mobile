@@ -25,7 +25,8 @@ class BookDetailController
     BookService.getBook(@$stateParams.isbn).success (result) =>
       @$scope.book = result
       @$scope.bookName = @$scope.book.name
-      @Comments.query {book_id: result.id}, (data)->
+      @Comments.query {book_id: result.id}, (data)=>
+        console.log data
         @$scope.comments = data
 
 
@@ -43,6 +44,16 @@ class BookDetailController
       alert '请输入有效字符'
       return false
     else
+      @Comments.save {
+        book_id: @$scope.book.id
+        content: text
+      }, null, (data)=>
+        if data.status isnt 'success'
+          alert '添加图书失败'
+        else
+          console.log '成功。。。。。。。'
+          @$scope.comments.push data.comment
+          @closeCommentDialog()
 
 
 libr.controller 'BookDetailController', BookDetailController

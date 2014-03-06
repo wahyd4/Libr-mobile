@@ -6,17 +6,20 @@
   libr = angular.module('libr.controllers', ['ionic']);
 
   BookDetailController = (function() {
-    BookDetailController.$inject = ['$scope', '$stateParams', 'BookService', '$window', '$ionicModal'];
+    BookDetailController.$inject = ['$scope', '$stateParams', 'BookService', '$window', '$ionicModal', 'Comments'];
 
-    function BookDetailController($scope, $stateParams, BookService, $window, $ionicModal) {
+    function BookDetailController($scope, $stateParams, BookService, $window, $ionicModal, Comments) {
       this.$scope = $scope;
       this.$stateParams = $stateParams;
       this.BookService = BookService;
       this.$ionicModal = $ionicModal;
+      this.Comments = Comments;
+      this.doComment = __bind(this.doComment, this);
       this.closeCommentDialog = __bind(this.closeCommentDialog, this);
       this.openCommentDialog = __bind(this.openCommentDialog, this);
       this.$scope.openDialog = this.openCommentDialog;
       this.$scope.closeDialog = this.closeCommentDialog;
+      this.$scope.doComment = this.doComment;
       this.$scope.rightButtons = [];
       this.$scope.leftButtons = [
         {
@@ -39,7 +42,13 @@
       BookService.getBook(this.$stateParams.isbn).success((function(_this) {
         return function(result) {
           _this.$scope.book = result;
-          return _this.$scope.bookName = _this.$scope.book.name;
+          _this.$scope.bookName = _this.$scope.book.name;
+          return _this.Comments.query({
+            book_id: result.id
+          }, function(data) {
+            console.log(data);
+            return _this.$scope.comments = data;
+          });
         };
       })(this));
       this.$scope.$on('$destroy', (function(_this) {
@@ -55,6 +64,30 @@
 
     BookDetailController.prototype.closeCommentDialog = function() {
       return this.$scope.modal.hide();
+    };
+
+    BookDetailController.prototype.doComment = function() {
+      var text;
+      text = angular.element(document.getElementById('comment')).val();
+      if (text.trim() === '') {
+        alert('请输入有效字符');
+        return false;
+      } else {
+        return this.Comments.save({
+          book_id: this.$scope.book.id,
+          content: text
+        }, null, (function(_this) {
+          return function(data) {
+            if (data.status !== 'success') {
+              return alert('添加图书失败');
+            } else {
+              console.log('成功。。。。。。。');
+              _this.$scope.comments.push(data.comment);
+              return _this.closeCommentDialog();
+            }
+          };
+        })(this));
+      }
     };
 
     return BookDetailController;
