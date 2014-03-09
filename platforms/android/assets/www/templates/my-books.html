@@ -11,6 +11,6 @@
                 <p>{{book.author}}</p>
             </a>
         </div>
-        <ion-infinite-scroll></ion-infinite-scroll>
+        <ion-infinite-scroll ng-if="moreItemsAvailable" ></ion-infinite-scroll>
     </ion-content>
 </ion-view>

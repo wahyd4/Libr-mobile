@@ -24,6 +24,7 @@ class BookDetailController
       }
     BookService.getBook(@$stateParams.isbn).success (result) =>
       @$scope.book = result
+      @$scope.usersAccount = result.users.length
       @$scope.bookName = @$scope.book.name
       @Comments.query {book_id: result.id}, (data)=>
         console.log data

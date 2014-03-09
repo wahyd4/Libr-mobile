@@ -17,7 +17,7 @@
             <div class="item tabs tabs-secondary tabs-icon-left">
                 <a class="tab-item">
                     <i class="icon ion-ios7-people"></i>
-                    {{book.users.length+"人看过"}}
+                    <span>{{usersAccount}}人看过</span>
                 </a>
                 <a class="tab-item" ng-click="openDialog()">
                     <i class="icon ion-chatbox"></i>
@@ -30,7 +30,7 @@
             </div>
             <!-- comments -->
             <div class="item item-divider"> 评论：</div>
-            <a class="item item-avatar" ng-repeat="comment in comments | orderBy: 'id' :false">
+            <a class="item item-avatar comment-item" ng-repeat="comment in comments | orderBy: 'id' :false">
                 <img data-ng-src="{{comment.user.avatar}}">
 
                 <h2>{{comment.user.preferred_name == null ? '匿名': comment.user.preferred_name}}</h2>

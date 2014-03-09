@@ -44,7 +44,7 @@ class GeolocationService
     @$http(
       url: "#{baseUrl}?user_email=#{email}&user_token=#{token}"
       method: 'GET'
-      cache: true
+      cache: false
     )
     .success (data, status, headers, config)->
         callback data

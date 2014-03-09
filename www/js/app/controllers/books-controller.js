@@ -16,6 +16,7 @@
       this.refresh = __bind(this.refresh, this);
       currentPage = localStorage.setItem('user_books_current_page', 0);
       this.$scope.books = [];
+      this.$scope.moreItemsAvailable = true;
       this.$scope.rightButtons = [
         {
           type: 'button  icon ion-camera',
@@ -62,19 +63,22 @@
           page: currentPage + 1
         }, (function(_this) {
           return function(data) {
-            _this.$scope.$broadcast('scroll.infiniteScrollComplete');
             if (data.books.length !== 0) {
               localStorage.setItem('user_max_book_id', data.books[0].id);
               localStorage.setItem('user_books_current_page', data.current_page);
               localStorage.setItem('user_books_max_page', data.total_page);
-              return data.books.forEach(function(item, index, array) {
+              data.books.forEach(function(item, index, array) {
                 return _this.$scope.books.push(item);
               });
+            } else {
+              _this.$scope.moreItemsAvailable = false;
             }
+            return _this.$scope.$broadcast('scroll.infiniteScrollComplete');
           };
         })(this));
       } else {
-        return this.$scope.$broadcast('scroll.infiniteScrollComplete');
+        this.$scope.$broadcast('scroll.infiniteScrollComplete');
+        return this.$scope.moreItemsAvailable = false;
       }
     };
 

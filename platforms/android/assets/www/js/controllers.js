@@ -42,6 +42,7 @@
       BookService.getBook(this.$stateParams.isbn).success((function(_this) {
         return function(result) {
           _this.$scope.book = result;
+          _this.$scope.usersAccount = result.users.length;
           _this.$scope.bookName = _this.$scope.book.name;
           return _this.Comments.query({
             book_id: result.id

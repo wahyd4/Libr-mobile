@@ -61,7 +61,7 @@
       return this.$http({
         url: "" + baseUrl + "?user_email=" + email + "&user_token=" + token,
         method: 'GET',
-        cache: true
+        cache: false
       }).success(function(data, status, headers, config) {
         return callback(data);
       }).error(function(data) {

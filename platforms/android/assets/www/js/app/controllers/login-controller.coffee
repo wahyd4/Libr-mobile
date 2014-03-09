@@ -6,6 +6,7 @@ class LoginController
   constructor: (@$scope, @AuthService, @$state)->
     if isUserLogedIn() then @$state.go('tab.home')
     @$scope.login = @login
+    @$scope.register = @register
 
   login: (user)=>
     console.log user
@@ -21,6 +22,9 @@ class LoginController
       true
     else
       false
+
+  register: ->
+    window.open('http://libr.herokuapp.com/users/sign_up', '_blank', 'location=no')
 
 
 libr.controller 'LoginController', LoginController

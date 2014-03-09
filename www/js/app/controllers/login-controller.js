@@ -19,6 +19,7 @@
         this.$state.go('tab.home');
       }
       this.$scope.login = this.login;
+      this.$scope.register = this.register;
     }
 
     LoginController.prototype.login = function(user) {
@@ -40,6 +41,10 @@
       } else {
         return false;
       }
+    };
+
+    LoginController.prototype.register = function() {
+      return window.open('http://libr.herokuapp.com/users/sign_up', '_blank', 'location=no');
     };
 
     return LoginController;

@@ -17,11 +17,13 @@
       }, {
         'query': {
           method: 'GET',
-          isArray: false
+          isArray: false,
+          cache: false
         },
         'fetchNew': {
           method: 'GET',
           isArray: false,
+          cache: false,
           url: 'http://libr.herokuapp.com/api/v1/books/newbooks/:afterId'
         }
       });
