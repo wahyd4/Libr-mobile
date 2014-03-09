@@ -24,6 +24,7 @@ class BookDetailController
       }
     BookService.getBook(@$stateParams.isbn).success (result) =>
       @$scope.book = result
+      @$scope.usersAccount = result.users.length
       @$scope.bookName = @$scope.book.name
       @Comments.query {book_id: result.id}, (data)=>
         console.log data
@@ -48,11 +49,11 @@ class BookDetailController
         book_id: @$scope.book.id
         content: text
       }, null, (data)=>
-        if data.status isnt 'success'
+        if data.id is null
           alert '添加图书失败'
         else
           console.log '成功。。。。。。。'
-          @$scope.comments.push data.comment
+          @$scope.comments.push data
           @closeCommentDialog()
 
 

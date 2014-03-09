@@ -10,5 +10,9 @@ textarea.comment-container {
 }
 
 ::-webkit-input-placeholder {
-    color:    #000000;
+    color: #000000;
+}
+
+.comment-item {
+    overflow: auto !important;
 }

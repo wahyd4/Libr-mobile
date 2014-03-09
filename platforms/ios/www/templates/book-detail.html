@@ -7,30 +7,33 @@
                 <p><b>作者:</b>{{book.author}}</p>
 
                 <p><b>ISBN:</b>{{book.isbn}}</p>
+
+                <p><b>出版社:</b>{{book.publisher}}</p>
+
             </div>
             <div class="item item-image">
-                <img data-ng-src="{{book.image}}">
+                <img data-ng-src="{{book.image_large !== null && book.image_large || book.image}}">
             </div>
             <div class="item tabs tabs-secondary tabs-icon-left">
-                <a class="tab-item" href="#">
-                    <i class="icon ion-thumbsup"></i>
-                    喜欢
+                <a class="tab-item">
+                    <i class="icon ion-ios7-people"></i>
+                    <span>{{usersAccount}}人看过</span>
                 </a>
                 <a class="tab-item" ng-click="openDialog()">
                     <i class="icon ion-chatbox"></i>
                     评论
                 </a>
-                <a class="tab-item" href="#">
+                <a class="tab-item">
                     <i class="icon ion-share"></i>
                     分享
                 </a>
             </div>
             <!-- comments -->
             <div class="item item-divider"> 评论：</div>
-            <a class="item item-avatar" ng-repeat="comment in comments | orderBy: 'id' :false">
-                <img src="img/default.jpg">
+            <a class="item item-avatar comment-item" ng-repeat="comment in comments | orderBy: 'id' :false">
+                <img data-ng-src="{{comment.user.avatar}}">
 
-                <h2>Tom</h2>
+                <h2>{{comment.user.preferred_name == null ? '匿名': comment.user.preferred_name}}</h2>
 
                 <p>{{comment.body}}</p>
             </a>

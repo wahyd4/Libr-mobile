@@ -10,7 +10,9 @@ class LoginController
   login: (user)=>
     console.log user
     @AuthService.login user, (result)=>
-      localStorage.setItem 'token', result.token
+      localStorage.setItem 'token', result.user.token
+      localStorage.setItem 'avatar', result.user.avatar
+      localStorage.setItem 'username', result.user.name
       localStorage.setItem 'email', user.email
       @$state.go 'tab.home'
 

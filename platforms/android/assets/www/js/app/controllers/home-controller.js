@@ -38,8 +38,8 @@
               alert('请先添加一些你阅读的书，再来查看推荐吧');
             } else {
               _this.$scope.books = result;
-              return _this.$scope.loading.hide();
             }
+            return _this.$scope.loading.hide();
           };
         })(this));
       } else {

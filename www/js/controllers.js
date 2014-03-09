@@ -42,6 +42,7 @@
       BookService.getBook(this.$stateParams.isbn).success((function(_this) {
         return function(result) {
           _this.$scope.book = result;
+          _this.$scope.usersAccount = result.users.length;
           _this.$scope.bookName = _this.$scope.book.name;
           return _this.Comments.query({
             book_id: result.id
@@ -78,11 +79,11 @@
           content: text
         }, null, (function(_this) {
           return function(data) {
-            if (data.status !== 'success') {
+            if (data.id === null) {
               return alert('添加图书失败');
             } else {
               console.log('成功。。。。。。。');
-              _this.$scope.comments.push(data.comment);
+              _this.$scope.comments.push(data);
               return _this.closeCommentDialog();
             }
           };

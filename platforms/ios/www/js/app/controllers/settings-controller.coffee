@@ -4,18 +4,12 @@ class SettingsController
 
   @$inject: ['$scope', '$ionicModal', 'AuthService', '$state', '$cacheFactory']
   constructor: (@$scope, @$ionicModal, @AuthService, @$state, @$cacheFactory) ->
-    @$scope.login = @login
     @$scope.logout = @logout
     @$scope.feedback = @feedback
     if isUserLogedIn() then @$scope.isLogedIn = true else @$scope.isLogedIn = false
+    @$scope.avatar = localStorage.getItem 'avatar'
+    @$scope.username = localStorage.getItem 'username'
 
-
-  login: (user)=>
-    console.log user
-    @AuthService.login user, (result)=>
-      localStorage.setItem 'token', result.token
-      localStorage.setItem 'email', user.email
-      @closeModal()
 
   logout: =>
     localStorage.clear()

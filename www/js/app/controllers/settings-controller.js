@@ -17,8 +17,6 @@
       this.$state = $state;
       this.$cacheFactory = $cacheFactory;
       this.logout = __bind(this.logout, this);
-      this.login = __bind(this.login, this);
-      this.$scope.login = this.login;
       this.$scope.logout = this.logout;
       this.$scope.feedback = this.feedback;
       if (isUserLogedIn()) {
@@ -26,18 +24,9 @@
       } else {
         this.$scope.isLogedIn = false;
       }
+      this.$scope.avatar = localStorage.getItem('avatar');
+      this.$scope.username = localStorage.getItem('username');
     }
-
-    SettingsController.prototype.login = function(user) {
-      console.log(user);
-      return this.AuthService.login(user, (function(_this) {
-        return function(result) {
-          localStorage.setItem('token', result.token);
-          localStorage.setItem('email', user.email);
-          return _this.closeModal();
-        };
-      })(this));
-    };
 
     SettingsController.prototype.logout = function() {
       var httpDefaultCache;

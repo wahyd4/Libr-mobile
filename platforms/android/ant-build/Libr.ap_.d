@@ -120,6 +120,7 @@
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/fonts/ionicons.svg \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/fonts/ionicons.ttf \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/fonts/ionicons.woff \
+/Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/img/default.jpg \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/img/logo.png \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/js/angular \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/js/angular-ui \
@@ -181,6 +182,8 @@
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/js/app/services/authication-service.js \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/js/app/services/book-service.coffee \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/js/app/services/book-service.js \
+/Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/js/app/services/comments-service.coffee \
+/Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/js/app/services/comments-service.js \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/js/app/services/geolocation.coffee \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/js/app/services/geolocation.js \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/js/app/services/recommend-service.coffee \
@@ -289,4 +292,5 @@
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/templates/my-books.html \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/templates/settings.html \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/templates/tabs.html \
+/Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/templates/modal/comment.html \
 /Users/twer/gitrepo/libr-mobile/platforms/android/ant-build/AndroidManifest.xml \

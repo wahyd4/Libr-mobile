@@ -1,10 +1,14 @@
-x<ion-view title="'设置'">
+x
+<ion-view title="'设置'">
     <ion-content has-header="true" has-tabs="true" padding="true">
         <div class="list">
 
-            <a class="item item-icon-left">
-                <i class="icon ion-person-stalker"></i>
-                {{isLogedIn === true? '用户已登录': '请先登录' }}
+            <a class="item item-avatar" href="#">
+                <img data-ng-src="{{avatar}}">
+
+                <h2>{{username}}</h2>
+
+                <p>Intro....</p>
             </a>
 
             <a class="item item-icon-left" ng-click="logout()" href="#">

@@ -1,19 +1,43 @@
 <ion-view title="bookName" hide-back-button="false" left-buttons="leftButtons" right-buttons="rightButtons">
     <ion-content has-header="true" padding="true">
-
-
         <div class="list card">
-            <div class="item item-avatar">
+            <div class="item ">
                 <h2>{{book.name}}</h2>
 
-                <p>{{book.author}}</p>
+                <p><b>作者:</b>{{book.author}}</p>
 
-                <p>{{book.isbn}}</p>
+                <p><b>ISBN:</b>{{book.isbn}}</p>
+
+                <p><b>出版社:</b>{{book.publisher}}</p>
+
             </div>
             <div class="item item-image">
-                <img data-ng-src="{{book.image}}">
+                <img data-ng-src="{{book.image_large !== null && book.image_large || book.image}}">
             </div>
+            <div class="item tabs tabs-secondary tabs-icon-left">
+                <a class="tab-item">
+                    <i class="icon ion-ios7-people"></i>
+                    {{book.users.length+"人看过"}}
+                </a>
+                <a class="tab-item" ng-click="openDialog()">
+                    <i class="icon ion-chatbox"></i>
+                    评论
+                </a>
+                <a class="tab-item">
+                    <i class="icon ion-share"></i>
+                    分享
+                </a>
+            </div>
+            <!-- comments -->
+            <div class="item item-divider"> 评论：</div>
+            <a class="item item-avatar" ng-repeat="comment in comments | orderBy: 'id' :false">
+                <img data-ng-src="{{comment.user.avatar}}">
+
+                <h2>{{comment.user.preferred_name == null ? '匿名': comment.user.preferred_name}}</h2>
+
+                <p>{{comment.body}}</p>
+            </a>
+
         </div>
-        <p><a class="button button-small icon ion-arrow-left-b" href="#/tab/books"> All books</a></p>
     </ion-content>
 </ion-view>
