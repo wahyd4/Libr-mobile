@@ -165,6 +165,7 @@
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/js/angular-ui/angular-ui-router.js \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/js/angular-ui/angular-ui-router.min.js \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/js/app/controllers \
+/Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/js/app/handler \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/js/app/services \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/js/app/controllers/books-controller.coffee \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/js/app/controllers/books-controller.js \
@@ -178,6 +179,8 @@
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/js/app/controllers/main-controller.js \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/js/app/controllers/settings-controller.coffee \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/js/app/controllers/settings-controller.js \
+/Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/js/app/handler/error-handler.coffee \
+/Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/js/app/handler/error-handler.js \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/js/app/services/authication-service.coffee \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/js/app/services/authication-service.js \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/js/app/services/book-service.coffee \

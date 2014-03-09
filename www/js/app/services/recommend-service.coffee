@@ -28,6 +28,7 @@ class RecommendService
       url: "#{baseUrl}/recommend/me?user_email=#{email}&user_token=#{token}"
       method: 'GET'
       cache: false
+      timeout: 10000
     )
     .success (data, status, headers, config)->
         callback data
@@ -41,6 +42,7 @@ class RecommendService
       url: "#{baseUrl}/recommend/locations/#{locationId}?user_email=#{email}&user_token=#{token}"
       method: 'GET'
       cache: false
+      timeout: 10000
     )
     .success (data, status, headers, config)->
         console.log '数据', data

@@ -13,6 +13,21 @@ textarea.comment-container {
     color: #000000;
 }
 
-.comment-item {
+a.comment-item {
+    height: auto;
     overflow: auto !important;
+    padding-right: 10px !important;
 }
+
+a.comment-item p:last-child {
+    overflow: auto;
+    text-overflow: clip;
+    white-space: normal;
+}
+
+a.comment-item:after {
+    content: "" !important;
+    right: 0 !important;
+    width: 0 !important;
+}
+

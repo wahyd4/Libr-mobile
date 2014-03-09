@@ -4,6 +4,7 @@
 // 'libr.services' is found in services.js
 // 'libr.controllers' is found in controllers.js
 angular.module('libr', ['ionic', 'libr.services', 'libr.controllers', 'libr.services.scan',
+        'libr.handlers.errorHandler',
         'libr.services.geolocation',
         'libr.services.auth',
         'libr.services.books',

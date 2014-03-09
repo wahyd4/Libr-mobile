@@ -2,8 +2,8 @@ libr = angular.module 'libr.controllers.home', ['ionic']
 
 class HomeController
   @$inject: ['$scope', '$location', 'BookService', 'ScanService', '$ionicLoading', '$ionicActionSheet',
-             'RecommendService']
-  constructor: (@$scope, @$location, BookService, ScanService, @$ionicLoading, @$ionicActionSheet, @RecommendService)->
+             'RecommendService', 'ErrorHandler']
+  constructor: (@$scope, @$location, BookService, ScanService, @$ionicLoading, @$ionicActionSheet, @RecommendService, @ErrorHandler)->
     if isUserLogedIn()
       showLoading(@$scope, @$ionicLoading)
       @$scope.title = 'Libr - 你可能喜欢的书'
@@ -21,6 +21,9 @@ class HomeController
         else
           @$scope.books = result
         @$scope.loading.hide()
+      , (error)=>
+        @ErrorHandler.loadingHandler @$scope, null
+
     else
       @$location.path '/tab/settings'
       return
@@ -54,11 +57,14 @@ class HomeController
         true
     }
   changeRecommend: (index)=>
+    msg = '喔，看来附近还没有好书推荐，快去推荐你的朋友也来使用吧！'
     @RecommendService.changeRecommendAction index, (result)=>
       if result.length is 0
-        alert '喔，看来附近还没有好书推荐，快去推荐你的朋友也来使用吧！'
+        navigator.notification.alert(msg, null, 'libr', '确定')
       else
         @$scope.books = result
         listArray = JSON.parse(localStorage.getItem 'recommend_action_sheet_full_arr')
         @$scope.title = 'Libr-' + listArray[index].text
+    , (error)=>
+      @ErrorHandler.whenError null
 libr.controller 'HomeCtrl', HomeController

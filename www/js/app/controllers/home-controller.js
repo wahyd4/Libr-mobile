@@ -8,14 +8,15 @@
   HomeController = (function() {
     var isUserLogedIn, showLoading;
 
-    HomeController.$inject = ['$scope', '$location', 'BookService', 'ScanService', '$ionicLoading', '$ionicActionSheet', 'RecommendService'];
+    HomeController.$inject = ['$scope', '$location', 'BookService', 'ScanService', '$ionicLoading', '$ionicActionSheet', 'RecommendService', 'ErrorHandler'];
 
-    function HomeController($scope, $location, BookService, ScanService, $ionicLoading, $ionicActionSheet, RecommendService) {
+    function HomeController($scope, $location, BookService, ScanService, $ionicLoading, $ionicActionSheet, RecommendService, ErrorHandler) {
       this.$scope = $scope;
       this.$location = $location;
       this.$ionicLoading = $ionicLoading;
       this.$ionicActionSheet = $ionicActionSheet;
       this.RecommendService = RecommendService;
+      this.ErrorHandler = ErrorHandler;
       this.changeRecommend = __bind(this.changeRecommend, this);
       this.showRecommendActionSheet = __bind(this.showRecommendActionSheet, this);
       if (isUserLogedIn()) {
@@ -40,6 +41,10 @@
               _this.$scope.books = result;
             }
             return _this.$scope.loading.hide();
+          };
+        })(this), (function(_this) {
+          return function(error) {
+            return _this.ErrorHandler.loadingHandler(_this.$scope, null);
           };
         })(this));
       } else {
@@ -89,16 +94,22 @@
     };
 
     HomeController.prototype.changeRecommend = function(index) {
+      var msg;
+      msg = '喔，看来附近还没有好书推荐，快去推荐你的朋友也来使用吧！';
       return this.RecommendService.changeRecommendAction(index, (function(_this) {
         return function(result) {
           var listArray;
           if (result.length === 0) {
-            return alert('喔，看来附近还没有好书推荐，快去推荐你的朋友也来使用吧！');
+            return navigator.notification.alert(msg, null, 'libr', '确定');
           } else {
             _this.$scope.books = result;
             listArray = JSON.parse(localStorage.getItem('recommend_action_sheet_full_arr'));
             return _this.$scope.title = 'Libr-' + listArray[index].text;
           }
+        };
+      })(this), (function(_this) {
+        return function(error) {
+          return _this.ErrorHandler.whenError(null);
         };
       })(this));
     };
