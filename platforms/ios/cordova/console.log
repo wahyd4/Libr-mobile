@@ -12,3 +12,11 @@ objc[13337]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.a
 2014-02-21 17:10:26.660 Libr[13337:80b] Resetting plugins due to page load.
 2014-02-21 17:10:26.862 Libr[13337:80b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/1998E52A-F35F-449A-8B1C-351CB6F371D7/Libr.app/www/index.html#/login
 Terminating in response to SpringBoard's termination.
+objc[43905]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-03-10 23:09:50.296 Libr[43905:80b] Cannot find executable for CFBundle 0xa54e730 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-03-10 23:09:50.314 Libr[43905:80b] Cannot find executable for CFBundle 0xaa2e7b0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-03-10 23:09:50.394 Libr[43905:80b] Multi-tasking -> Device: YES, App: YES
+2014-03-10 23:09:50.416 Libr[43905:80b] Unlimited access to network resources
+2014-03-10 23:09:50.819 Libr[43905:80b] Resetting plugins due to page load.
+2014-03-10 23:09:51.242 Libr[43905:80b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/1998E52A-F35F-449A-8B1C-351CB6F371D7/Libr.app/www/index.html#/tab/home
+2014-03-10 23:10:01.231 Libr[43905:80b] THREAD WARNING: ['Notification'] took '47.409912' ms. Plugin should use a background thread.

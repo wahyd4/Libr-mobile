@@ -94,11 +94,13 @@
     };
 
     HomeController.prototype.changeRecommend = function(index) {
+      var msg;
+      msg = '喔，看来附近还没有好书推荐，快去推荐你的朋友也来使用吧！';
       return this.RecommendService.changeRecommendAction(index, (function(_this) {
         return function(result) {
           var listArray;
           if (result.length === 0) {
-            return alert('喔，看来附近还没有好书推荐，快去推荐你的朋友也来使用吧！');
+            return navigator.notification.alert(msg, null, 'libr', '确定');
           } else {
             _this.$scope.books = result;
             listArray = JSON.parse(localStorage.getItem('recommend_action_sheet_full_arr'));

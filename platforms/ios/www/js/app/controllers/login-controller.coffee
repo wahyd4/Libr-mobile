@@ -9,7 +9,9 @@ class LoginController
     @$scope.register = @register
 
   login: (user)=>
-    console.log user
+    if !user || user.email.is '' || user.password.is ''
+      alert '请输入有效的用户名和密码'
+      return
     @AuthService.login user, (result)=>
       localStorage.setItem 'token', result.user.token
       localStorage.setItem 'avatar', result.user.avatar

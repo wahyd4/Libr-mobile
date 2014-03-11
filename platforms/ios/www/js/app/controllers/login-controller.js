@@ -23,7 +23,10 @@
     }
 
     LoginController.prototype.login = function(user) {
-      console.log(user);
+      if (!user || user.email.is('' || user.password.is(''))) {
+        alert('请输入有效的用户名和密码');
+        return;
+      }
       return this.AuthService.login(user, (function(_this) {
         return function(result) {
           localStorage.setItem('token', result.user.token);
