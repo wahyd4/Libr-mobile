@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_cordovalib" default="compile.module.cordovalib">
+  <dirname property="module.cordovalib.basedir" file="${ant.file.module_cordovalib}"/>
+  
+  <property name="module.jdk.home.cordovalib" value="${jdk.home.android_api_19_platform}"/>
+  <property name="module.jdk.bin.cordovalib" value="${jdk.bin.android_api_19_platform}"/>
+  <property name="module.jdk.classpath.cordovalib" value="jdk.classpath.android_api_19_platform"/>
+  
+  <property name="compiler.args.cordovalib" value="-encoding UTF-8 -source 1.6 ${compiler.args}"/>
+  
+  <property name="cordovalib.output.dir" value="${module.cordovalib.basedir}/../out/production/CordovaLib"/>
+  <property name="cordovalib.testoutput.dir" value="${module.cordovalib.basedir}/../out/test/CordovaLib"/>
+  
+  <path id="cordovalib.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="cordovalib.module.production.classpath">
+    <path refid="${module.jdk.classpath.cordovalib}"/>
+  </path>
+  
+  <path id="cordovalib.runtime.production.module.classpath">
+    <pathelement location="${cordovalib.output.dir}"/>
+  </path>
+  
+  <path id="cordovalib.module.classpath">
+    <path refid="${module.jdk.classpath.cordovalib}"/>
+    <pathelement location="${cordovalib.output.dir}"/>
+  </path>
+  
+  <path id="cordovalib.runtime.module.classpath">
+    <pathelement location="${cordovalib.testoutput.dir}"/>
+    <pathelement location="${cordovalib.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.cordovalib">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.cordovalib">
+    <patternset refid="excluded.from.module.cordovalib"/>
+  </patternset>
+  
+  <path id="cordovalib.module.sourcepath">
+    <dirset dir="${module.cordovalib.basedir}">
+      <include name="ant-gen"/>
+      <include name="src"/>
+      <include name="gen"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.cordovalib" depends="compile.module.cordovalib.production,compile.module.cordovalib.tests" description="Compile module CordovaLib"/>
+  
+  <target name="compile.module.cordovalib.production" depends="register.custom.compilers" description="Compile module CordovaLib; production classes">
+    <mkdir dir="${cordovalib.output.dir}"/>
+    <javac2 destdir="${cordovalib.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.cordovalib}/javac">
+      <compilerarg line="${compiler.args.cordovalib}"/>
+      <bootclasspath refid="cordovalib.module.bootclasspath"/>
+      <classpath refid="cordovalib.module.production.classpath"/>
+      <src refid="cordovalib.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.cordovalib"/>
+    </javac2>
+    
+    <copy todir="${cordovalib.output.dir}">
+      <fileset dir="${module.cordovalib.basedir}/ant-gen">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.cordovalib.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.cordovalib.basedir}/gen">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.cordovalib.tests" depends="register.custom.compilers,compile.module.cordovalib.production" description="compile module CordovaLib; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.cordovalib" description="cleanup module">
+    <delete dir="${cordovalib.output.dir}"/>
+    <delete dir="${cordovalib.testoutput.dir}"/>
+  </target>
+</project>

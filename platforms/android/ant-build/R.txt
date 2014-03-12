@@ -19,6 +19,7 @@ int drawable icon 0x7f020003
 int drawable launcher_icon 0x7f020004
 int drawable share_via_barcode 0x7f020005
 int drawable shopper_icon 0x7f020006
+int drawable splash 0x7f020007
 int id back_button 0x7f090019
 int id barcode_image_view 0x7f09000c
 int id bookmark_title 0x7f090007

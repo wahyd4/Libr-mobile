@@ -43,7 +43,7 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
-    <preference name="SplashScreen" value="libr" />
+    <preference name="SplashScreen" value="default" />
     <feature name="Geolocation">
         <param name="android-package" value="org.apache.cordova.geolocation.GeoBroker" />
         <param name="ios-package" value="CDVLocation" />

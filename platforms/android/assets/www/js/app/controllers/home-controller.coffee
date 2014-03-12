@@ -6,7 +6,7 @@ class HomeController
   constructor: (@$scope, @$location, BookService, ScanService, @$ionicLoading, @$ionicActionSheet, @RecommendService, @ErrorHandler)->
     if isUserLogedIn()
       showLoading(@$scope, @$ionicLoading)
-      @$scope.title = 'Libr - 你可能喜欢的书'
+      @$scope.title = '你可能喜欢的书'
       @$scope.enableBackButton = false
       @$scope.rightButtons = [
         {
@@ -43,7 +43,7 @@ class HomeController
       false
   showRecommendActionSheet: =>
     @$ionicActionSheet.show {
-      titleText: '推荐'
+      titleText: 'Libr 为你推荐'
       buttons: @RecommendService.getActionSheetList()
       cancelText: '取消'
       cancel: ()->
@@ -62,7 +62,7 @@ class HomeController
       else
         @$scope.books = result
         listArray = JSON.parse(localStorage.getItem 'recommend_action_sheet_full_arr')
-        @$scope.title = 'Libr-' + listArray[index].text
+        @$scope.title = listArray[index].text
     , (error)=>
       @ErrorHandler.whenError null
 libr.controller 'HomeCtrl', HomeController

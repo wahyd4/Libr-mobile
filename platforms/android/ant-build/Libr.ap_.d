@@ -3,6 +3,7 @@
 /Users/twer/gitrepo/libr-mobile/platforms/android/res/drawable/launcher_icon.png \
 /Users/twer/gitrepo/libr-mobile/platforms/android/res/drawable/share_via_barcode.png \
 /Users/twer/gitrepo/libr-mobile/platforms/android/res/drawable/shopper_icon.png \
+/Users/twer/gitrepo/libr-mobile/platforms/android/res/drawable/splash.png \
 /Users/twer/gitrepo/libr-mobile/platforms/android/res/drawable-hdpi/ic_action_next_item.png \
 /Users/twer/gitrepo/libr-mobile/platforms/android/res/drawable-hdpi/ic_action_previous_item.png \
 /Users/twer/gitrepo/libr-mobile/platforms/android/res/drawable-hdpi/ic_action_remove.png \
@@ -79,6 +80,7 @@
 /Users/twer/gitrepo/libr-mobile/platforms/android/ant-build/res/drawable/launcher_icon.png \
 /Users/twer/gitrepo/libr-mobile/platforms/android/ant-build/res/drawable/share_via_barcode.png \
 /Users/twer/gitrepo/libr-mobile/platforms/android/ant-build/res/drawable/shopper_icon.png \
+/Users/twer/gitrepo/libr-mobile/platforms/android/ant-build/res/drawable/splash.png \
 /Users/twer/gitrepo/libr-mobile/platforms/android/ant-build/res/drawable-hdpi/ic_action_next_item.png \
 /Users/twer/gitrepo/libr-mobile/platforms/android/ant-build/res/drawable-hdpi/ic_action_previous_item.png \
 /Users/twer/gitrepo/libr-mobile/platforms/android/ant-build/res/drawable-hdpi/ic_action_remove.png \
@@ -198,6 +200,7 @@
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/js/ionic/ionic-angular.min.js \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/js/ionic/ionic.bundle.js \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/js/ionic/ionic.bundle.min.js \
+/Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/js/ionic/ionic.bundle.min.nightly.js \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/js/ionic/ionic.js \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/js/ionic/ionic.min.js \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/plugins/com.phonegap.plugins.barcodescanner \
@@ -232,6 +235,10 @@
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/res/icons/android/drawable-mdpi \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/res/icons/android/drawable-xhdpi \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/res/icons/android/drawable-xxhdpi \
+/Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/res/icons/android/icon-36-ldpi.png \
+/Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/res/icons/android/icon-48-mdpi.png \
+/Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/res/icons/android/icon-72-hdpi.png \
+/Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/res/icons/android/icon-96-xhdpi.png \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/res/icons/android/playstore-icon.png \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/res/icons/android/drawable-hdpi/ic_launcher.png \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/res/icons/android/drawable-ldpi/ic_launcher.png \
@@ -279,7 +286,9 @@
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/res/icons/ios/Media.xcassets/LaunchImage.launchimage/Default-Portrait~ipad.png \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/res/icons/ios/Media.xcassets/LaunchImage.launchimage/Default@2x~iphone.png \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/res/icons/ios/Media.xcassets/LaunchImage.launchimage/Default~iphone.png \
+/Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/res/screens/android \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/res/screens/ios \
+/Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/res/screens/android/default-splash.png \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/res/screens/ios/Default-568h@2x.png \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/res/screens/ios/Default-Landscape.png \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/res/screens/ios/Default-Landscape@2x.png \

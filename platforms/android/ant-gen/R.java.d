@@ -3,6 +3,7 @@
 /Users/twer/gitrepo/libr-mobile/platforms/android/res/drawable/launcher_icon.png \
 /Users/twer/gitrepo/libr-mobile/platforms/android/res/drawable/share_via_barcode.png \
 /Users/twer/gitrepo/libr-mobile/platforms/android/res/drawable/shopper_icon.png \
+/Users/twer/gitrepo/libr-mobile/platforms/android/res/drawable/splash.png \
 /Users/twer/gitrepo/libr-mobile/platforms/android/res/drawable-hdpi/ic_action_next_item.png \
 /Users/twer/gitrepo/libr-mobile/platforms/android/res/drawable-hdpi/ic_action_previous_item.png \
 /Users/twer/gitrepo/libr-mobile/platforms/android/res/drawable-hdpi/ic_action_remove.png \
@@ -79,6 +80,7 @@
 /Users/twer/gitrepo/libr-mobile/platforms/android/ant-build/res/drawable/launcher_icon.png \
 /Users/twer/gitrepo/libr-mobile/platforms/android/ant-build/res/drawable/share_via_barcode.png \
 /Users/twer/gitrepo/libr-mobile/platforms/android/ant-build/res/drawable/shopper_icon.png \
+/Users/twer/gitrepo/libr-mobile/platforms/android/ant-build/res/drawable/splash.png \
 /Users/twer/gitrepo/libr-mobile/platforms/android/ant-build/res/drawable-hdpi/ic_action_next_item.png \
 /Users/twer/gitrepo/libr-mobile/platforms/android/ant-build/res/drawable-hdpi/ic_action_previous_item.png \
 /Users/twer/gitrepo/libr-mobile/platforms/android/ant-build/res/drawable-hdpi/ic_action_remove.png \
