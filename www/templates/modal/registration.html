@@ -1,4 +1,8 @@
-<ion-view title="'请登录'" hide-back-button="false" left-buttons="leftButtons" right-buttons="rightButtons">
+<div class="modal">
+    <header class="bar bar-header bar-positive">
+        <button class="button button-icon ion-arrow-left-c" ng-click="closeDialog()"></button>
+        <h1 class="title">注册</h1>
+    </header>
     <ion-content has-header="true">
         <div class="padding">
             <div class="list">
@@ -11,11 +15,9 @@
                         <span class="input-label">密码</span>
                         <input type="password" placeholder="请输入密码" ng-model="user.password">
                     </label>
-
-                    <button class="button button-full button-positive" ng-click="login(user)">登录</button>
-                    <button class="button button-full button-royal" ng-click="registerForm()">注册</button>
+                    <button class="button button-full button-positive" ng-click="registerUser(user)">注册</button>
                 </form>
             </div>
         </div>
     </ion-content>
-</ion-view>
+</div>

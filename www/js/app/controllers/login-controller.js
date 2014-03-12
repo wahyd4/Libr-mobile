@@ -8,22 +8,36 @@
   LoginController = (function() {
     var isUserLogedIn;
 
-    LoginController.$inject = ['$scope', 'AuthService', '$state'];
+    LoginController.$inject = ['$scope', 'AuthService', '$state', '$ionicModal'];
 
-    function LoginController($scope, AuthService, $state) {
+    function LoginController($scope, AuthService, $state, $ionicModal) {
       this.$scope = $scope;
       this.AuthService = AuthService;
       this.$state = $state;
+      this.$ionicModal = $ionicModal;
+      this.closeDialog = __bind(this.closeDialog, this);
+      this.registerUser = __bind(this.registerUser, this);
+      this.registerForm = __bind(this.registerForm, this);
       this.login = __bind(this.login, this);
       if (isUserLogedIn()) {
         this.$state.go('tab.home');
       }
       this.$scope.login = this.login;
-      this.$scope.register = this.register;
+      this.$scope.registerForm = this.registerForm;
+      this.$scope.registerUser = this.registerUser;
+      this.$scope.closeDialog = this.closeDialog;
+      this.$ionicModal.fromTemplateUrl('templates/modal/registration.html', (function(_this) {
+        return function(modal) {
+          return _this.$scope.modal = modal;
+        };
+      })(this), {
+        scope: this.$scope,
+        animation: 'slide-in-up'
+      });
     }
 
     LoginController.prototype.login = function(user) {
-      if (!user || user.email.is('' || user.password.is(''))) {
+      if (!user || user.email === '' || user.password === '' || user.email === void 0 || user.password === void 0) {
         alert('请输入有效的用户名和密码');
         return;
       }
@@ -46,8 +60,34 @@
       }
     };
 
-    LoginController.prototype.register = function() {
-      return window.open('http://libr.herokuapp.com/users/sign_up', '_blank', 'location=no');
+    LoginController.prototype.registerForm = function() {
+      return this.$scope.modal.show();
+    };
+
+    LoginController.prototype.registerUser = function(user) {
+      if (!user || user.email === '' || user.password === '' || user.email === void 0 || user.password === void 0) {
+        alert('请输入有效的用户名和密码');
+      } else {
+        return this.AuthService.register(user, (function(_this) {
+          return function(result, status) {
+            if (status === 201) {
+              alert('注册成功，请返回登录');
+              return _this.$scope.modal.hide();
+            } else {
+              return alert('注册失败,是确认输入正确，并重试');
+            }
+          };
+        })(this), (function(_this) {
+          return function(error) {
+            alert('注册失败,是确认输入正确，并重试');
+            return console.log("registerError", error);
+          };
+        })(this));
+      }
+    };
+
+    LoginController.prototype.closeDialog = function() {
+      return this.$scope.modal.hide();
     };
 
     return LoginController;

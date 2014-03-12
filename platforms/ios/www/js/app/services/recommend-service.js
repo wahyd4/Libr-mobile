@@ -50,7 +50,6 @@
       return this.$http({
         url: "" + baseUrl + "/recommend/me?user_email=" + email + "&user_token=" + token,
         method: 'GET',
-        cache: false,
         timeout: 10000
       }).success(function(data, status, headers, config) {
         return callback(data);
@@ -66,7 +65,6 @@
       return this.$http({
         url: "" + baseUrl + "/recommend/locations/" + locationId + "?user_email=" + email + "&user_token=" + token,
         method: 'GET',
-        cache: false,
         timeout: 10000
       }).success(function(data, status, headers, config) {
         console.log('数据', data);

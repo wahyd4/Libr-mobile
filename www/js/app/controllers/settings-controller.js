@@ -19,6 +19,7 @@
       this.logout = __bind(this.logout, this);
       this.$scope.logout = this.logout;
       this.$scope.feedback = this.feedback;
+      this.$scope.showMe = this.showMe;
       if (isUserLogedIn()) {
         this.$scope.isLogedIn = true;
       } else {
@@ -39,6 +40,10 @@
 
     SettingsController.prototype.feedback = function() {
       return window.open('https://jinshuju.net/f/F96z3s', '_blank', 'location=no');
+    };
+
+    SettingsController.prototype.showMe = function() {
+      return window.open('http://libr.herokuapp.com', '_blank', 'location=no');
     };
 
     isUserLogedIn = function() {

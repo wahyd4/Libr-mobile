@@ -6,6 +6,7 @@ class SettingsController
   constructor: (@$scope, @$ionicModal, @AuthService, @$state, @$cacheFactory) ->
     @$scope.logout = @logout
     @$scope.feedback = @feedback
+    @$scope.showMe = @showMe
     if isUserLogedIn() then @$scope.isLogedIn = true else @$scope.isLogedIn = false
     @$scope.avatar = localStorage.getItem 'avatar'
     @$scope.username = localStorage.getItem 'username'
@@ -20,6 +21,9 @@ class SettingsController
 
   feedback: ->
     window.open('https://jinshuju.net/f/F96z3s', '_blank', 'location=no')
+
+  showMe: ->
+    window.open('http://libr.herokuapp.com', '_blank', 'location=no')
 
   isUserLogedIn = ()->
     if localStorage.getItem('token') isnt null and localStorage.getItem('email') isnt null

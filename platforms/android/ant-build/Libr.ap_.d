@@ -296,4 +296,5 @@
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/templates/settings.html \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/templates/tabs.html \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/templates/modal/comment.html \
+/Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/templates/modal/registration.html \
 /Users/twer/gitrepo/libr-mobile/platforms/android/ant-build/AndroidManifest.xml \

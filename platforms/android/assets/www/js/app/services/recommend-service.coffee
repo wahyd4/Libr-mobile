@@ -27,7 +27,6 @@ class RecommendService
     @$http(
       url: "#{baseUrl}/recommend/me?user_email=#{email}&user_token=#{token}"
       method: 'GET'
-      cache: false
       timeout: 10000
     )
     .success (data, status, headers, config)->
@@ -41,7 +40,6 @@ class RecommendService
     @$http(
       url: "#{baseUrl}/recommend/locations/#{locationId}?user_email=#{email}&user_token=#{token}"
       method: 'GET'
-      cache: false
       timeout: 10000
     )
     .success (data, status, headers, config)->
