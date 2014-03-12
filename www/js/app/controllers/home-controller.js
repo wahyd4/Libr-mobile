@@ -21,7 +21,7 @@
       this.showRecommendActionSheet = __bind(this.showRecommendActionSheet, this);
       if (isUserLogedIn()) {
         showLoading(this.$scope, this.$ionicLoading);
-        this.$scope.title = 'Libr - 你可能喜欢的书';
+        this.$scope.title = '你可能喜欢的书';
         this.$scope.enableBackButton = false;
         this.$scope.rightButtons = [
           {
@@ -73,7 +73,7 @@
 
     HomeController.prototype.showRecommendActionSheet = function() {
       return this.$ionicActionSheet.show({
-        titleText: '推荐',
+        titleText: 'Libr 为你推荐',
         buttons: this.RecommendService.getActionSheetList(),
         cancelText: '取消',
         cancel: function() {
@@ -100,7 +100,7 @@
           } else {
             _this.$scope.books = result;
             listArray = JSON.parse(localStorage.getItem('recommend_action_sheet_full_arr'));
-            return _this.$scope.title = 'Libr-' + listArray[index].text;
+            return _this.$scope.title = listArray[index].text;
           }
         };
       })(this), (function(_this) {
