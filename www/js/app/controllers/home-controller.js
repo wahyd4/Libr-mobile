@@ -75,7 +75,6 @@
       return this.$ionicActionSheet.show({
         titleText: '推荐',
         buttons: this.RecommendService.getActionSheetList(),
-        destructiveText: '删除',
         cancelText: '取消',
         cancel: function() {
           return console.log('CANCELLED');
@@ -86,10 +85,7 @@
             _this.changeRecommend(index);
             return true;
           };
-        })(this),
-        destructiveButtonClicked: function() {
-          return true;
-        }
+        })(this)
       });
     };
 

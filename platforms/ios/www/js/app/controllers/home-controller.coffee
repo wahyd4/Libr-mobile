@@ -45,7 +45,6 @@ class HomeController
     @$ionicActionSheet.show {
       titleText: '推荐'
       buttons: @RecommendService.getActionSheetList()
-      destructiveText: '删除'
       cancelText: '取消'
       cancel: ()->
         console.log('CANCELLED')
@@ -53,8 +52,7 @@ class HomeController
         console.log "#{index} has been taped"
         @changeRecommend index
         true
-      destructiveButtonClicked: ()->
-        true
+
     }
   changeRecommend: (index)=>
     msg = '喔，看来附近还没有好书推荐，快去推荐你的朋友也来使用吧！'
