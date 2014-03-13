@@ -27,7 +27,7 @@ class RecommendService
     @$http(
       url: "#{baseUrl}/recommend/me?user_email=#{email}&user_token=#{token}"
       method: 'GET'
-      timeout: 10000
+      timeout: 13000
     )
     .success (data, status, headers, config)->
         callback data
@@ -40,7 +40,7 @@ class RecommendService
     @$http(
       url: "#{baseUrl}/recommend/locations/#{locationId}?user_email=#{email}&user_token=#{token}"
       method: 'GET'
-      timeout: 10000
+      timeout: 13000
     )
     .success (data, status, headers, config)->
         console.log '数据', data
