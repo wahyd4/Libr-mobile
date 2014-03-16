@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html ng-app="libr">
 <head>
     <meta charset="utf-8">
@@ -7,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="css/ionic.min.css"/>
     <title>Libr</title>
     <script src="cordova.js"></script>
-    <script type="text/javascript" src="js/ionic/ionic.bundle.min.js"></script>
+    <script type="text/javascript" src="js/ionic.bundle.min.js"></script>
     <!--<script src="http://code.ionicframework.com/nightly/js/ionic.bundle.min.js"></script>-->
     <script>
         document.addEventListener('deviceready', function () {
@@ -15,7 +14,7 @@
         });
     </script>
 </head>
-<body animation="slide-left-right-ios7" ng-controller="MainCtrl">
+<body ng-controller="MainCtrl">
 
 
 <ion-nav-bar class="nav-title-slide-ios7" type="bar-positive"
@@ -24,7 +23,7 @@
 
 <ion-nav-view animation="slide-left-right"></ion-nav-view>
 
-<script src="js/angular/angular-resource.js"></script>
+<script src="js/angular/angular-resource.min.js"></script>
 <script type="text/javascript" src="js/libr.js"></script>
 <script src="js/app.js"></script>
 <script src="js/app/handler/error-handler.js"></script>
