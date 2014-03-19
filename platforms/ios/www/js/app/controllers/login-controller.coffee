@@ -9,13 +9,13 @@ class LoginController
     @$scope.registerForm = @registerForm
     @$scope.registerUser = @registerUser
     @$scope.closeDialog = @closeDialog
+
     @$ionicModal.fromTemplateUrl 'templates/modal/registration.html', (modal)=>
       @$scope.modal = modal
     , {
         scope: @$scope,
         animation: 'slide-in-up'
       }
-
 
   login: (user)=>
     if !user || user.email == '' || user.password == '' || user.email == undefined || user.password == undefined

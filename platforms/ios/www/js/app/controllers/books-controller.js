@@ -3,20 +3,39 @@
   var BooksController, libr,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
-  libr = angular.module('libr.controllers.books', []);
+  libr = angular.module('libr.controllers.books', ['ionic']);
 
   BooksController = (function() {
-    BooksController.$inject = ['$scope', 'Books', 'ScanService', '$timeout'];
+    BooksController.$inject = ['$scope', 'Books', 'ScanService', '$ionicModal'];
 
-    function BooksController($scope, Books, ScanService) {
+    function BooksController($scope, Books, ScanService, $ionicModal) {
       var currentPage;
       this.$scope = $scope;
       this.Books = Books;
+      this.$ionicModal = $ionicModal;
       this.loadMore = __bind(this.loadMore, this);
       this.refresh = __bind(this.refresh, this);
       currentPage = localStorage.setItem('user_books_current_page', 0);
       this.$scope.books = [];
       this.$scope.moreItemsAvailable = true;
+      this.$ionicModal.fromTemplateUrl('templates/modal/import_books.html', (function(_this) {
+        return function(modal) {
+          return _this.$scope.modal = modal;
+        };
+      })(this), {
+        scope: this.$scope,
+        animation: 'slide-in-up'
+      });
+      this.$scope.leftButtons = [
+        {
+          type: 'button icon ion-ios7-upload',
+          tap: (function(_this) {
+            return function(e) {
+              return _this.$scope.modal.show();
+            };
+          })(this)
+        }
+      ];
       this.$scope.rightButtons = [
         {
           type: 'button  icon ion-camera',

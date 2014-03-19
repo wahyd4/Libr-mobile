@@ -1,12 +1,27 @@
-libr = angular.module 'libr.controllers.books', []
+libr = angular.module 'libr.controllers.books', ['ionic']
 
 class BooksController
 
-  @$inject: ['$scope', 'Books', 'ScanService', '$timeout']
-  constructor: (@$scope, @Books, ScanService)->
+  @$inject: ['$scope', 'Books', 'ScanService', '$ionicModal']
+  constructor: (@$scope, @Books, ScanService, @$ionicModal) ->
     currentPage = localStorage.setItem 'user_books_current_page', 0
     @$scope.books = []
     @$scope.moreItemsAvailable = true
+
+    @$ionicModal.fromTemplateUrl 'templates/modal/import_books.html', (modal)=>
+      @$scope.modal = modal
+    , {
+        scope: @$scope,
+        animation: 'slide-in-up'
+      }
+
+    @$scope.leftButtons = [
+      {
+        type: 'button icon ion-ios7-upload'
+        tap: (e)=>
+          @$scope.modal.show()
+      }
+    ]
     @$scope.rightButtons = [
       {
         type: 'button  icon ion-camera'

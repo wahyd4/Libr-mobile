@@ -1,0 +1,16 @@
+<div class="modal">
+    <header class="bar bar-header bar-positive">
+        <button class="button button-icon ion-arrow-left-c" ng-click="closeDialog()"></button>
+        <h1 class="title"><img src="img/douban_24.png">从豆瓣读书导入书籍</h1>
+    </header>
+    <ion-content has-header="true" padding="true">
+        <label class="item item-input">
+            <span class="input-label">豆瓣用户名</span>
+            <input type="text" placeholder="请输入豆瓣用户名" ng-model="user.email">
+        </label>
+        <button class="button button-full button-energized" ng-click="doComment()">
+            提交
+        </button>
+        <p>注意：绑定后不能更改用户名，请填入正确的用户名</p>
+    </ion-content>
+</div>
