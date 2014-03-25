@@ -2,8 +2,8 @@ libr = angular.module 'libr.controllers.books', ['ionic']
 
 class BooksController
 
-  @$inject: ['$scope', 'Books', 'ScanService', '$ionicModal']
-  constructor: (@$scope, @Books, ScanService, @$ionicModal) ->
+  @$inject: ['$scope', 'Books', 'ScanService', '$ionicModal', 'DoubanService']
+  constructor: (@$scope, @Books, ScanService, @$ionicModal, @DoubanService) ->
     currentPage = localStorage.setItem 'user_books_current_page', 0
     @$scope.books = []
     @$scope.moreItemsAvailable = true
@@ -34,6 +34,8 @@ class BooksController
     ]
     @$scope.onRefresh = @refresh
     @$scope.loadMore = @loadMore
+    @$scope.closeDialog = @closeDialog
+    @$scope.searchDoubanUser = @searchDoubanUser
 
   refresh: ()=>
     afterBookId = localStorage.getItem 'user_max_book_id'
@@ -65,6 +67,20 @@ class BooksController
     else
       @$scope.$broadcast('scroll.infiniteScrollComplete')
       @$scope.moreItemsAvailable = false
+
+  closeDialog: =>
+    @$scope.modal.hide()
+
+  searchDoubanUser: (user)=>
+    if user is undefined or user.trim() is ''
+      alert '请输入有效昵称'
+    else
+      @DoubanService.userInfo user,
+      (data)=>
+        @$scope.resultEnabled = true
+        @$scope.doubanUser = data
+      , (error)=>
+        console.log error
 
 
 libr.controller 'BooksController', BooksController

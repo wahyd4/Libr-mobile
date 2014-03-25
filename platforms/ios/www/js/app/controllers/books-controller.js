@@ -6,13 +6,16 @@
   libr = angular.module('libr.controllers.books', ['ionic']);
 
   BooksController = (function() {
-    BooksController.$inject = ['$scope', 'Books', 'ScanService', '$ionicModal'];
+    BooksController.$inject = ['$scope', 'Books', 'ScanService', '$ionicModal', 'DoubanService'];
 
-    function BooksController($scope, Books, ScanService, $ionicModal) {
+    function BooksController($scope, Books, ScanService, $ionicModal, DoubanService) {
       var currentPage;
       this.$scope = $scope;
       this.Books = Books;
       this.$ionicModal = $ionicModal;
+      this.DoubanService = DoubanService;
+      this.searchDoubanUser = __bind(this.searchDoubanUser, this);
+      this.closeDialog = __bind(this.closeDialog, this);
       this.loadMore = __bind(this.loadMore, this);
       this.refresh = __bind(this.refresh, this);
       currentPage = localStorage.setItem('user_books_current_page', 0);
@@ -51,6 +54,8 @@
       ];
       this.$scope.onRefresh = this.refresh;
       this.$scope.loadMore = this.loadMore;
+      this.$scope.closeDialog = this.closeDialog;
+      this.$scope.searchDoubanUser = this.searchDoubanUser;
     }
 
     BooksController.prototype.refresh = function() {
@@ -98,6 +103,27 @@
       } else {
         this.$scope.$broadcast('scroll.infiniteScrollComplete');
         return this.$scope.moreItemsAvailable = false;
+      }
+    };
+
+    BooksController.prototype.closeDialog = function() {
+      return this.$scope.modal.hide();
+    };
+
+    BooksController.prototype.searchDoubanUser = function(user) {
+      if (user === void 0 || user.trim() === '') {
+        return alert('请输入有效昵称');
+      } else {
+        return this.DoubanService.userInfo(user, (function(_this) {
+          return function(data) {
+            _this.$scope.resultEnabled = true;
+            return _this.$scope.doubanUser = data;
+          };
+        })(this), (function(_this) {
+          return function(error) {
+            return console.log(error);
+          };
+        })(this));
       }
     };
 

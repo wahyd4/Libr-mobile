@@ -3,14 +3,32 @@
         <button class="button button-icon ion-arrow-left-c" ng-click="closeDialog()"></button>
         <h1 class="title"><img src="img/douban_24.png">从豆瓣读书导入书籍</h1>
     </header>
+
     <ion-content has-header="true" padding="true">
-        <label class="item item-input">
-            <span class="input-label">豆瓣用户名</span>
-            <input type="text" placeholder="请输入豆瓣用户名" ng-model="user.email">
-        </label>
-        <button class="button button-full button-energized" ng-click="doComment()">
-            提交
-        </button>
+        <form novalidate>
+            <label class="item item-input">
+                <span class="input-label">豆瓣用户名</span>
+                <input type="text" placeholder="请输入豆瓣用户名" ng-model="user">
+            </label>
+            <button class="button button-full button-royal" ng-click="searchDoubanUser(user)">
+                搜索用户
+            </button>
+            <button type="submit" class="button button-full button-energized" ng-click="searchDoubanUser(user)">
+                提交
+            </button>
+        </form>
         <p>注意：绑定后不能更改用户名，请填入正确的用户名</p>
+        <hr>
+        <div ng-if="resultEnabled">
+            <h3>我们找到以下用户：</h3>
+
+            <p>昵称：{{doubanUser.name}}</p>
+
+            <p>描述：{{doubanUser.desc}}</p>
+
+            <img data-ng-src="{{doubanUser.large_avatar}}">
+
+            <p><b>注意：</b>如果正确请点击提交按钮</p>
+        </div>
     </ion-content>
 </div>
