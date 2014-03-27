@@ -7,20 +7,15 @@
     <title>Libr</title>
     <script src="cordova.js"></script>
     <script type="text/javascript" src="js/ionic.bundle.min.js"></script>
-    <!--<script src="http://code.ionicframework.com/nightly/js/ionic.bundle.min.js"></script>-->
     <script>
         document.addEventListener('deviceready', function () {
             ionic.Platform.detect();
         });
     </script>
 </head>
-<body ng-controller="MainCtrl">
-
-
+<body>
 <ion-nav-bar class="bar-positive nav-title-slide-ios7"></ion-nav-bar>
-
-
-<ion-nav-view class="slide-left-right"></ion-nav-view>
+<ion-nav-view animation="slide-left-right"></ion-nav-view>
 
 <script src="js/angular/angular-resource.min.js"></script>
 <script type="text/javascript" src="js/libr.js"></script>
