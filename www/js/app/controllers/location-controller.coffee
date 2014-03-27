@@ -5,14 +5,7 @@ class LocationController
   @$inject: ['$scope', '$location', 'GeolocationService']
 
   constructor: (@$scope, @$location, @GeolocationService) ->
-    @$scope.enableBackButton = false
-    @$scope.rightButtons = [
-      {
-        type: 'button icon ion-ios7-plus'
-        tap: (e) =>
-          @addLocation()
-      }
-    ]
+    @$scope.addLocation = @addLocation
     @$scope.itemButtons = [
       {
         text: '删除',

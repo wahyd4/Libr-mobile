@@ -12,25 +12,17 @@
       this.$scope = $scope;
       this.$stateParams = $stateParams;
       this.BookService = BookService;
+      this.$window = $window;
       this.$ionicModal = $ionicModal;
       this.Comments = Comments;
+      this.back = __bind(this.back, this);
       this.doComment = __bind(this.doComment, this);
       this.closeCommentDialog = __bind(this.closeCommentDialog, this);
       this.openCommentDialog = __bind(this.openCommentDialog, this);
       this.$scope.openDialog = this.openCommentDialog;
       this.$scope.closeDialog = this.closeCommentDialog;
       this.$scope.doComment = this.doComment;
-      this.$scope.rightButtons = [];
-      this.$scope.leftButtons = [
-        {
-          type: 'button-icon icon ion-arrow-left-c',
-          tap: (function(_this) {
-            return function() {
-              return $window.history.back();
-            };
-          })(this)
-        }
-      ];
+      this.$scope.back = this.back;
       this.$ionicModal.fromTemplateUrl('templates/modal/comment.html', (function(_this) {
         return function(modal) {
           return _this.$scope.modal = modal;
@@ -89,6 +81,10 @@
           };
         })(this));
       }
+    };
+
+    BookDetailController.prototype.back = function() {
+      return this.$window.history.back();
     };
 
     return BookDetailController;

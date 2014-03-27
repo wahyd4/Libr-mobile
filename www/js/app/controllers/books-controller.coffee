@@ -3,7 +3,7 @@ libr = angular.module 'libr.controllers.books', ['ionic']
 class BooksController
 
   @$inject: ['$scope', 'Books', 'ScanService', '$ionicModal', 'DoubanService']
-  constructor: (@$scope, @Books, ScanService, @$ionicModal, @DoubanService) ->
+  constructor: (@$scope, @Books, @ScanService, @$ionicModal, @DoubanService) ->
     currentPage = localStorage.setItem 'user_books_current_page', 0
     @$scope.books = []
     @$scope.moreItemsAvailable = true
@@ -15,32 +15,16 @@ class BooksController
         animation: 'slide-in-up'
       }
 
-    @$scope.leftButtons = [
-      {
-        type: 'button icon ion-ios7-upload'
-        tap: (e)=>
-          @$scope.modal.show()
-      }
-    ]
-    @$scope.rightButtons = [
-      {
-        type: 'button  icon ion-camera'
-        tap: (e) =>
-          ScanService.scan (result)=>
-            navigator.notification.alert "添加图书《#{result.book.name}》成功", null, "Libr", "确定"
-            @$scope.books.unshift result.book
-
-      }
-    ]
     @$scope.onRefresh = @refresh
     @$scope.loadMore = @loadMore
     @$scope.closeDialog = @closeDialog
     @$scope.searchDoubanUser = @searchDoubanUser
+    @$scope.scanBooks = @scanBooks
 
   refresh: ()=>
     afterBookId = localStorage.getItem 'user_max_book_id'
     @Books.fetchNew {afterId: afterBookId}, (data)=>
-      @$scope.$broadcast('scroll.refreshComplete');
+      @$scope.$broadcast('scroll.refreshComplete')
       if data.books.length isnt 0
         localStorage.setItem 'user_max_book_id', data.books[0].id
         data.books.forEach (item, index, array)=>
@@ -82,5 +66,9 @@ class BooksController
       , (error)=>
         console.log error
 
+  scanBooks: ()=>
+    @ScanService.scan (result)=>
+      navigator.notification.alert "添加图书《#{result.book.name}》成功", null, "Libr", "确定"
+      @$scope.books.unshift result.book
 
 libr.controller 'BooksController', BooksController

@@ -13,17 +13,7 @@
       this.$location = $location;
       this.GeolocationService = GeolocationService;
       this.addLocation = __bind(this.addLocation, this);
-      this.$scope.enableBackButton = false;
-      this.$scope.rightButtons = [
-        {
-          type: 'button icon ion-ios7-plus',
-          tap: (function(_this) {
-            return function(e) {
-              return _this.addLocation();
-            };
-          })(this)
-        }
-      ];
+      this.$scope.addLocation = this.addLocation;
       this.$scope.itemButtons = [
         {
           text: '删除',

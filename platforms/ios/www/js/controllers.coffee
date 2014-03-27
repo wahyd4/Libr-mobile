@@ -3,19 +3,12 @@ libr = angular.module('libr.controllers', ['ionic'])
 class BookDetailController
   @$inject: ['$scope', '$stateParams', 'BookService', '$window', '$ionicModal', 'Comments']
 
-  constructor: (@$scope, @$stateParams, @BookService, $window, @$ionicModal, @Comments) ->
+  constructor: (@$scope, @$stateParams, @BookService, @$window, @$ionicModal, @Comments) ->
     @$scope.openDialog = @openCommentDialog
     @$scope.closeDialog = @closeCommentDialog
     @$scope.doComment = @doComment
+    @$scope.back = @back
 
-    @$scope.rightButtons = []
-    @$scope.leftButtons = [
-      {
-        type: 'button-icon icon ion-arrow-left-c'
-        tap: =>
-          $window.history.back()
-      }
-    ]
     @$ionicModal.fromTemplateUrl 'templates/modal/comment.html', (modal)=>
       @$scope.modal = modal
     , {
@@ -55,6 +48,10 @@ class BookDetailController
           console.log '成功。。。。。。。'
           @$scope.comments.push data
           @closeCommentDialog()
+
+  back: ()=>
+    @$window.history.back()
+
 
 
 libr.controller 'BookDetailController', BookDetailController

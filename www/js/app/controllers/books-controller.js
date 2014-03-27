@@ -12,8 +12,10 @@
       var currentPage;
       this.$scope = $scope;
       this.Books = Books;
+      this.ScanService = ScanService;
       this.$ionicModal = $ionicModal;
       this.DoubanService = DoubanService;
+      this.scanBooks = __bind(this.scanBooks, this);
       this.searchDoubanUser = __bind(this.searchDoubanUser, this);
       this.closeDialog = __bind(this.closeDialog, this);
       this.loadMore = __bind(this.loadMore, this);
@@ -29,33 +31,11 @@
         scope: this.$scope,
         animation: 'slide-in-up'
       });
-      this.$scope.leftButtons = [
-        {
-          type: 'button icon ion-ios7-upload',
-          tap: (function(_this) {
-            return function(e) {
-              return _this.$scope.modal.show();
-            };
-          })(this)
-        }
-      ];
-      this.$scope.rightButtons = [
-        {
-          type: 'button  icon ion-camera',
-          tap: (function(_this) {
-            return function(e) {
-              return ScanService.scan(function(result) {
-                navigator.notification.alert("添加图书《" + result.book.name + "》成功", null, "Libr", "确定");
-                return _this.$scope.books.unshift(result.book);
-              });
-            };
-          })(this)
-        }
-      ];
       this.$scope.onRefresh = this.refresh;
       this.$scope.loadMore = this.loadMore;
       this.$scope.closeDialog = this.closeDialog;
       this.$scope.searchDoubanUser = this.searchDoubanUser;
+      this.$scope.scanBooks = this.scanBooks;
     }
 
     BooksController.prototype.refresh = function() {
@@ -125,6 +105,15 @@
           };
         })(this));
       }
+    };
+
+    BooksController.prototype.scanBooks = function() {
+      return this.ScanService.scan((function(_this) {
+        return function(result) {
+          navigator.notification.alert("添加图书《" + result.book.name + "》成功", null, "Libr", "确定");
+          return _this.$scope.books.unshift(result.book);
+        };
+      })(this));
     };
 
     return BooksController;

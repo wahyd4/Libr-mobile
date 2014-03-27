@@ -4,17 +4,10 @@ class HomeController
   @$inject: ['$scope', '$location', 'BookService', 'ScanService', '$ionicLoading', '$ionicActionSheet',
              'RecommendService', 'ErrorHandler']
   constructor: (@$scope, @$location, BookService, ScanService, @$ionicLoading, @$ionicActionSheet, @RecommendService, @ErrorHandler)->
+    @$scope.showRecommendActionSheet = @showRecommendActionSheet
     if isUserLogedIn()
       showLoading(@$scope, @$ionicLoading)
       @$scope.title = '你可能喜欢的书'
-      @$scope.enableBackButton = false
-      @$scope.rightButtons = [
-        {
-          type: 'button  icon ion-shuffle'
-          tap: (e) =>
-            @showRecommendActionSheet()
-        }
-      ]
       @RecommendService.popularBooksForMe (result)=>
         if result.length is 0
           alert '请先添加一些你阅读的书，再来查看推荐吧'
