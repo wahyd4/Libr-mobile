@@ -8,12 +8,12 @@
         <form novalidate>
             <label class="item item-input">
                 <span class="input-label">豆瓣用户名</span>
-                <input type="text" placeholder="请输入豆瓣用户名" ng-model="user">
+                <input type="text" placeholder="请输入豆瓣用户名" ng-model="user" id="douban-username" ng-disabled="doubanInputDisabled"/>
             </label>
             <button class="button button-full button-royal" ng-click="searchDoubanUser(user)">
                 搜索用户
             </button>
-            <button type="submit" class="button button-full button-energized" ng-click="searchDoubanUser(user)">
+            <button ng-if="submitAllowed" type="submit" class="button button-full button-energized" ng-click="submitDoubanUser()" >
                 提交
             </button>
         </form>

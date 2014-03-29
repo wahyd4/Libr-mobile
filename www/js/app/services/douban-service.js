@@ -27,6 +27,21 @@
       });
     };
 
+    DoubanService.prototype.submitUser = function(user, callback, error) {
+      var email, token;
+      email = localStorage.getItem('email');
+      token = localStorage.getItem('token');
+      return this.$http({
+        url: "http://libr.herokuapp.com/api/v1/link/douban/" + user + "?user_email=" + email + "&user_token=" + token,
+        method: 'POST',
+        timeout: 10000
+      }).success(function(data, status, headers, config) {
+        return callback(data);
+      }).error(function(data) {
+        return error(data);
+      });
+    };
+
     return DoubanService;
 
   })();

@@ -21,5 +21,19 @@ class DoubanService
     .error (data)->
       error data
 
+  submitUser: (user, callback, error)->
+    email = localStorage.getItem 'email'
+    token = localStorage.getItem 'token'
+    @$http({
+      url: "http://libr.herokuapp.com/api/v1/link/douban/#{user}?user_email=#{email}&user_token=#{token}"
+      method: 'POST'
+      timeout: 10000
+    })
+    .success (data, status, headers, config)->
+      callback data
+    .error (data)->
+      error data
+
+
 libr.service 'DoubanService', DoubanService
 

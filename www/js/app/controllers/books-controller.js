@@ -15,6 +15,7 @@
       this.ScanService = ScanService;
       this.$ionicModal = $ionicModal;
       this.DoubanService = DoubanService;
+      this.submitDoubanUser = __bind(this.submitDoubanUser, this);
       this.scanBooks = __bind(this.scanBooks, this);
       this.searchDoubanUser = __bind(this.searchDoubanUser, this);
       this.closeDialog = __bind(this.closeDialog, this);
@@ -23,6 +24,7 @@
       currentPage = localStorage.setItem('user_books_current_page', 0);
       this.$scope.books = [];
       this.$scope.moreItemsAvailable = true;
+      this.$scope.submitAllowed = true;
       this.$ionicModal.fromTemplateUrl('templates/modal/import_books.html', (function(_this) {
         return function(modal) {
           return _this.$scope.modal = modal;
@@ -36,6 +38,8 @@
       this.$scope.closeDialog = this.closeDialog;
       this.$scope.searchDoubanUser = this.searchDoubanUser;
       this.$scope.scanBooks = this.scanBooks;
+      this.$scope.submitDoubanUser = this.submitDoubanUser;
+      this.$scope.doubanInputDisabled = false;
     }
 
     BooksController.prototype.refresh = function() {
@@ -97,11 +101,14 @@
         return this.DoubanService.userInfo(user, (function(_this) {
           return function(data) {
             _this.$scope.resultEnabled = true;
+            _this.$scope.submitAllowed = true;
             return _this.$scope.doubanUser = data;
           };
         })(this), (function(_this) {
           return function(error) {
-            return console.log(error);
+            console.log(error);
+            _this.$scope.resultEnabled = false;
+            return _this.$scope.submitAllowed = false;
           };
         })(this));
       }
@@ -112,6 +119,20 @@
         return function(result) {
           navigator.notification.alert("添加图书《" + result.book.name + "》成功", null, "Libr", "确定");
           return _this.$scope.books.unshift(result.book);
+        };
+      })(this));
+    };
+
+    BooksController.prototype.submitDoubanUser = function() {
+      var username;
+      username = angular.element(document.getElementById('douban-username'));
+      username = username.val();
+      return this.DoubanService.submitUser(username, (function(_this) {
+        return function(data) {
+          _this.$scope.doubanInputDisabled = true;
+          return alert('成功绑定豆瓣用户', function(data) {
+            return alert('绑定豆瓣用户失败，请稍后再试');
+          });
         };
       })(this));
     };

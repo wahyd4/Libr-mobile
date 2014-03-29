@@ -7,6 +7,7 @@ class BooksController
     currentPage = localStorage.setItem 'user_books_current_page', 0
     @$scope.books = []
     @$scope.moreItemsAvailable = true
+    @$scope.submitAllowed = true
 
     @$ionicModal.fromTemplateUrl 'templates/modal/import_books.html', (modal)=>
       @$scope.modal = modal
@@ -20,6 +21,9 @@ class BooksController
     @$scope.closeDialog = @closeDialog
     @$scope.searchDoubanUser = @searchDoubanUser
     @$scope.scanBooks = @scanBooks
+    @$scope.submitDoubanUser = @submitDoubanUser
+
+    @$scope.doubanInputDisabled = false
 
   refresh: ()=>
     afterBookId = localStorage.getItem 'user_max_book_id'
@@ -62,13 +66,27 @@ class BooksController
       @DoubanService.userInfo user,
       (data)=>
         @$scope.resultEnabled = true
+        @$scope.submitAllowed = true
         @$scope.doubanUser = data
       , (error)=>
         console.log error
+        @$scope.resultEnabled = false
+        @$scope.submitAllowed = false
+
 
   scanBooks: ()=>
     @ScanService.scan (result)=>
       navigator.notification.alert "添加图书《#{result.book.name}》成功", null, "Libr", "确定"
       @$scope.books.unshift result.book
+
+  submitDoubanUser: =>
+    username = angular.element document.getElementById('douban-username')
+    username = username.val()
+    @DoubanService.submitUser username, (data) =>
+      @$scope.doubanInputDisabled = true
+      alert '成功绑定豆瓣用户'
+
+      , (data)->
+        alert '绑定豆瓣用户失败，请稍后再试'
 
 libr.controller 'BooksController', BooksController
