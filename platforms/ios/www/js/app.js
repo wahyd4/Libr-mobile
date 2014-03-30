@@ -4,20 +4,21 @@
 // 'libr.services' is found in services.js
 // 'libr.controllers' is found in controllers.js
 angular.module('libr', ['ionic', 'libr.services', 'libr.controllers', 'libr.services.scan',
-        'libr.handlers.errorHandler',
-        'libr.services.douban',
-        'libr.services.geolocation',
-        'libr.services.auth',
-        'libr.services.books',
-        'libr.services.comment',
-        'libr.controllers.login',
-        'libr.services.recommend',
-        'libr.controllers.home',
-        'libr.controllers.main',
-        'libr.controllers.settings',
-        'libr.controllers.books',
-        'libr.controllers.location'
-    ])
+    'libr.handlers.errorHandler',
+    'libr.services.douban',
+    'libr.services.geolocation',
+    'libr.services.auth',
+    'libr.services.books',
+    'libr.services.comment',
+    'libr.services.recommend',
+    'libr.services.utils',
+    'libr.controllers.login',
+    'libr.controllers.home',
+    'libr.controllers.main',
+    'libr.controllers.settings',
+    'libr.controllers.books',
+    'libr.controllers.location'
+])
 
     .config(function ($stateProvider, $urlRouterProvider) {
 

@@ -1,5 +1,5 @@
 header button.button-icon:before {
-    font-size: 32px !important;
+    /*font-size: 32px !important;*/
 }
 
 textarea.comment-container {
@@ -30,4 +30,46 @@ a.comment-item:after {
     right: 0 !important;
     width: 0 !important;
 }
+
+ /*custom loading*/
+.bar.bar-loading {
+    display: block;
+    height: 24px;
+
+    /* starts right below a normal header */
+    top: 60px;
+
+    /* make the text centered vertically and horizontally */
+    text-align: center;
+    padding: 0;
+    line-height: 24px;
+
+
+    /* transition 'sliding down' (check below)*/
+    -webkit-transition: 200ms all;
+}
+
+/*
+ * make the content's top changes animate.
+ * might not always look good, but looks
+ * good when our loader is added & removed
+ */
+.has-header {
+    -webkit-transition: 200ms top;
+}
+
+
+/* make loading bar slide up/down */
+.bar-loading.ng-enter,
+.bar-loading.ng-leave.ng-leave-active {
+    height: 0;
+    border-width: 0px;
+}
+
+.bar-loading.ng-enter.ng-enter-active,
+.bar-loading.ng-leave {
+    height: 24px;
+    border-width: 1px;
+}
+
 

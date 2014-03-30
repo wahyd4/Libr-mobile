@@ -29,6 +29,7 @@
     <content src="index.html" />
     <access origin="*" />
     <preference name="SplashScreen" value="splash" />
+    <preference name="DisallowOverscroll" value="true" />
     <feature name="Geolocation">
         <param name="android-package" value="org.apache.cordova.geolocation.GeoBroker" />
         <param name="ios-package" value="CDVLocation" />

@@ -5,23 +5,22 @@ class ScanService
   @$inject: ['Books']
   constructor: (@Books)->
 
-  scan: (callback)->
+  scan: (callback,errorCallback)->
     setTimeout () =>
       cordova.plugins.barcodeScanner.scan (result)=>
         if result.cancelled is 1 then return
         if result.format isnt 'EAN_13'
-          alert '条形码类型不匹配，请确认所扫为书籍，并尝试更换角度'
+          errorCallback '条形码类型不匹配，请确认所扫为书籍，并尝试更换角度'
           return
         @Books.save {isbn: result.text}, null, (data)->
           if data.status is 'error'
-            alert data.message
+            errorCallback data.message
           else
             callback(data)
         , (error)->
-          console.log error
-          alert '添加图书失败' + error.toString()
+          errorCallback '添加图书失败' + error.toString()
       , (error)->
-        alert "Scanning failed:#{error} "
+        errorCallback "Scanning failed:#{error} "
     , 600
     navigator.notification.vibrate 50
 

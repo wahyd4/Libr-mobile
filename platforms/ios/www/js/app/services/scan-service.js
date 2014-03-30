@@ -11,7 +11,7 @@
       this.Books = Books;
     }
 
-    ScanService.prototype.scan = function(callback) {
+    ScanService.prototype.scan = function(callback, errorCallback) {
       setTimeout((function(_this) {
         return function() {
           return cordova.plugins.barcodeScanner.scan(function(result) {
@@ -19,23 +19,22 @@
               return;
             }
             if (result.format !== 'EAN_13') {
-              alert('条形码类型不匹配，请确认所扫为书籍，并尝试更换角度');
+              errorCallback('条形码类型不匹配，请确认所扫为书籍，并尝试更换角度');
               return;
             }
             return _this.Books.save({
               isbn: result.text
             }, null, function(data) {
               if (data.status === 'error') {
-                return alert(data.message);
+                return errorCallback(data.message);
               } else {
                 return callback(data);
               }
             }, function(error) {
-              console.log(error);
-              return alert('添加图书失败' + error.toString());
+              return errorCallback('添加图书失败' + error.toString());
             });
           }, function(error) {
-            return alert("Scanning failed:" + error + " ");
+            return errorCallback("Scanning failed:" + error + " ");
           });
         };
       })(this), 600);

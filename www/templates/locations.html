@@ -3,6 +3,9 @@
         <button class="button icon ion-ios7-plus" ng-click="addLocation()">
         </button>
     </ion-nav-buttons>
+    <div class="bar bar-loading bar-assertive" ng-if="data.isLoading">
+        {{data.text}}
+    </div>
     <ion-content class="has-header">
         <div class="item item-divider">
             当前位置

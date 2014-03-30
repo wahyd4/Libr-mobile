@@ -3,35 +3,47 @@
   var BooksController, libr,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
-  libr = angular.module('libr.controllers.books', []);
+  libr = angular.module('libr.controllers.books', ['ionic']);
 
   BooksController = (function() {
-    BooksController.$inject = ['$scope', 'Books', 'ScanService', '$timeout'];
+    BooksController.$inject = ['$scope', 'Books', 'ScanService', '$ionicModal', 'DoubanService'];
 
-    function BooksController($scope, Books, ScanService) {
+    function BooksController($scope, Books, ScanService, $ionicModal, DoubanService) {
       var currentPage;
       this.$scope = $scope;
       this.Books = Books;
+      this.ScanService = ScanService;
+      this.$ionicModal = $ionicModal;
+      this.DoubanService = DoubanService;
+      this.submitDoubanUser = __bind(this.submitDoubanUser, this);
+      this.scanBooks = __bind(this.scanBooks, this);
+      this.searchDoubanUser = __bind(this.searchDoubanUser, this);
+      this.closeDialog = __bind(this.closeDialog, this);
       this.loadMore = __bind(this.loadMore, this);
       this.refresh = __bind(this.refresh, this);
       currentPage = localStorage.setItem('user_books_current_page', 0);
       this.$scope.books = [];
       this.$scope.moreItemsAvailable = true;
-      this.$scope.rightButtons = [
-        {
-          type: 'button  icon ion-camera',
-          tap: (function(_this) {
-            return function(e) {
-              return ScanService.scan(function(result) {
-                navigator.notification.alert("添加图书《" + result.book.name + "》成功", null, "Libr", "确定");
-                return _this.$scope.books.unshift(result.book);
-              });
-            };
-          })(this)
-        }
-      ];
+      this.$scope.submitAllowed = true;
+      this.$ionicModal.fromTemplateUrl('templates/modal/import_books.html', (function(_this) {
+        return function(modal) {
+          return _this.$scope.modal = modal;
+        };
+      })(this), {
+        scope: this.$scope,
+        animation: 'slide-in-up'
+      });
+      this.$scope.data = {
+        isLoading: true,
+        text: '失败了。。'
+      };
       this.$scope.onRefresh = this.refresh;
       this.$scope.loadMore = this.loadMore;
+      this.$scope.closeDialog = this.closeDialog;
+      this.$scope.searchDoubanUser = this.searchDoubanUser;
+      this.$scope.scanBooks = this.scanBooks;
+      this.$scope.submitDoubanUser = this.submitDoubanUser;
+      this.$scope.doubanInputDisabled = false;
     }
 
     BooksController.prototype.refresh = function() {
@@ -80,6 +92,60 @@
         this.$scope.$broadcast('scroll.infiniteScrollComplete');
         return this.$scope.moreItemsAvailable = false;
       }
+    };
+
+    BooksController.prototype.closeDialog = function() {
+      return this.$scope.modal.hide();
+    };
+
+    BooksController.prototype.searchDoubanUser = function(user) {
+      if (user === void 0 || user.trim() === '') {
+        return alert('请输入有效昵称');
+      } else {
+        return this.DoubanService.userInfo(user, (function(_this) {
+          return function(data) {
+            _this.$scope.resultEnabled = true;
+            _this.$scope.submitAllowed = true;
+            return _this.$scope.doubanUser = data;
+          };
+        })(this), (function(_this) {
+          return function(error) {
+            console.log(error);
+            _this.$scope.resultEnabled = false;
+            return _this.$scope.submitAllowed = false;
+          };
+        })(this));
+      }
+    };
+
+    BooksController.prototype.scanBooks = function() {
+      return this.ScanService.scan((function(_this) {
+        return function(result) {
+          navigator.notification.alert("添加图书《" + result.book.name + "》成功", null, "Libr", "确定");
+          return _this.$scope.books.unshift(result.book);
+        };
+      })(this), (function(_this) {
+        return function(error) {
+          return _this.$scope.data = {
+            isLoading: true,
+            text: '你妹啊。。。'
+          };
+        };
+      })(this));
+    };
+
+    BooksController.prototype.submitDoubanUser = function() {
+      var username;
+      username = angular.element(document.getElementById('douban-username'));
+      username = username.val();
+      return this.DoubanService.submitUser(username, (function(_this) {
+        return function(data) {
+          _this.$scope.doubanInputDisabled = true;
+          return alert('成功绑定豆瓣用户', function(data) {
+            return alert('绑定豆瓣用户失败，请稍后再试');
+          });
+        };
+      })(this));
     };
 
     return BooksController;

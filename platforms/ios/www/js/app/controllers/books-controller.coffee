@@ -2,8 +2,8 @@ libr = angular.module 'libr.controllers.books', ['ionic']
 
 class BooksController
 
-  @$inject: ['$scope', 'Books', 'ScanService', '$ionicModal', 'DoubanService']
-  constructor: (@$scope, @Books, @ScanService, @$ionicModal, @DoubanService) ->
+  @$inject: ['$scope', 'Books', 'ScanService', '$ionicModal', 'DoubanService', 'IonicUtils']
+  constructor: (@$scope, @Books, @ScanService, @$ionicModal, @DoubanService, @IonicUtils) ->
     currentPage = localStorage.setItem 'user_books_current_page', 0
     @$scope.books = []
     @$scope.moreItemsAvailable = true
@@ -15,6 +15,12 @@ class BooksController
         scope: @$scope,
         animation: 'slide-in-up'
       }
+    @$scope.data = {
+      isLoading: false
+      text: null
+    }
+
+    @IonicUtils.initCustomLoading(@$scope)
 
     @$scope.onRefresh = @refresh
     @$scope.loadMore = @loadMore
@@ -78,6 +84,8 @@ class BooksController
     @ScanService.scan (result)=>
       navigator.notification.alert "添加图书《#{result.book.name}》成功", null, "Libr", "确定"
       @$scope.books.unshift result.book
+    , (error)=>
+      @IonicUtils.showLoading(@$scope, error)
 
   submitDoubanUser: =>
     username = angular.element document.getElementById('douban-username')

@@ -5,6 +5,7 @@
 // 'libr.controllers' is found in controllers.js
 angular.module('libr', ['ionic', 'libr.services', 'libr.controllers', 'libr.services.scan',
         'libr.handlers.errorHandler',
+        'libr.services.douban',
         'libr.services.geolocation',
         'libr.services.auth',
         'libr.services.books',

@@ -1,6 +1,20 @@
-<ion-view title="'我的书籍'" hide-back-button="false" left-buttons="leftButtons" right-buttons="rightButtons">
-    <ion-content has-header="true" has-tabs="true" padding="true" on-refresh="onRefresh()" on-infinite-scroll="loadMore()">
-        <ion-refresher></ion-refresher>
+<ion-view title="我的书籍" hide-back-button="false" left-buttons="leftButtons" right-buttons="rightButtons">
+    <ion-nav-buttons side="right">
+        <button class="button  icon ion-camera" ng-click="scanBooks()">
+        </button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="left">
+        <button class="button icon ion-ios7-upload" ng-click="modal.show()">
+        </button>
+    </ion-nav-buttons>
+    <div class="bar bar-loading bar-assertive" ng-if="data.isLoading">
+        你没啊。。。。
+    </div>
+    <ion-content has-header="true" has-tabs="true" padding="true">
+        <ion-infinite-scroll on-infinite="loadMore()" distance="1%">
+        </ion-infinite-scroll>
+        <ion-refresher on-refresh="onRefresh()">
+        </ion-refresher>
         <div class="list">
             <a ng-repeat="book in books | orderBy: 'sort_id' :true" class="item item-thumbnail-left"
                href="#/book/{{book.isbn}}">
@@ -11,6 +25,6 @@
                 <p>{{book.author}}</p>
             </a>
         </div>
-        <ion-infinite-scroll ng-if="moreItemsAvailable" ></ion-infinite-scroll>
+        <ion-infinite-scroll ng-if="moreItemsAvailable"></ion-infinite-scroll>
     </ion-content>
 </ion-view>

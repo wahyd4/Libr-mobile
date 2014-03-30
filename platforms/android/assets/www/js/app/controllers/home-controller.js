@@ -19,20 +19,10 @@
       this.ErrorHandler = ErrorHandler;
       this.changeRecommend = __bind(this.changeRecommend, this);
       this.showRecommendActionSheet = __bind(this.showRecommendActionSheet, this);
+      this.$scope.showRecommendActionSheet = this.showRecommendActionSheet;
       if (isUserLogedIn()) {
         showLoading(this.$scope, this.$ionicLoading);
         this.$scope.title = '你可能喜欢的书';
-        this.$scope.enableBackButton = false;
-        this.$scope.rightButtons = [
-          {
-            type: 'button  icon ion-shuffle',
-            tap: (function(_this) {
-              return function(e) {
-                return _this.showRecommendActionSheet();
-              };
-            })(this)
-          }
-        ];
         this.RecommendService.popularBooksForMe((function(_this) {
           return function(result) {
             if (result.length === 0) {

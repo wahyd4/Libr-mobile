@@ -2,9 +2,9 @@ libr = angular.module 'libr.controllers.location', ['ionic']
 
 class LocationController
 
-  @$inject: ['$scope', '$location', 'GeolocationService']
+  @$inject: ['$scope', '$location', 'GeolocationService', 'IonicUtils']
 
-  constructor: (@$scope, @$location, @GeolocationService) ->
+  constructor: (@$scope, @$location, @GeolocationService, @IonicUtils) ->
     @$scope.addLocation = @addLocation
     @$scope.itemButtons = [
       {
@@ -23,11 +23,13 @@ class LocationController
       localStorage.setItem 'cur_lng', position.result.location.lng
       @$scope.address = position.result.formatted_address
 
+    @IonicUtils.initCustomLoading(@$scope)
+
   addLocation: () =>
     if @$scope.locations.length >= 3
-      alert '只能创建3个常用的地址哦，你可以尝试删除部分，再添加'
+      @IonicUtils.showLoading(@$scope, '只能创建3个常用的地址哦，你可以尝试删除部分，再添加')
     else if localStorage.getItem('cur_address_detail') is null
-      alert '定位成功后方可添加常用地址'
+      @IonicUtils.showLoading(@$scope, '定位成功后方可添加常用地址')
     else
       @GeolocationService.createLocation (result)=>
         @$scope.locations.push result
