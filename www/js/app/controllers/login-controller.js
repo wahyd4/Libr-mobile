@@ -8,13 +8,14 @@
   LoginController = (function() {
     var isUserLogedIn;
 
-    LoginController.$inject = ['$scope', 'AuthService', '$state', '$ionicModal'];
+    LoginController.$inject = ['$scope', 'AuthService', '$state', '$ionicModal', 'IonicUtils'];
 
-    function LoginController($scope, AuthService, $state, $ionicModal) {
+    function LoginController($scope, AuthService, $state, $ionicModal, IonicUtils) {
       this.$scope = $scope;
       this.AuthService = AuthService;
       this.$state = $state;
       this.$ionicModal = $ionicModal;
+      this.IonicUtils = IonicUtils;
       this.closeDialog = __bind(this.closeDialog, this);
       this.registerUser = __bind(this.registerUser, this);
       this.registerForm = __bind(this.registerForm, this);
@@ -34,11 +35,12 @@
         scope: this.$scope,
         animation: 'slide-in-up'
       });
+      this.IonicUtils.initCustomLoading(this.$scope);
     }
 
     LoginController.prototype.login = function(user) {
       if (!user || user.email === '' || user.password === '' || user.email === void 0 || user.password === void 0) {
-        alert('请输入有效的用户名和密码');
+        this.IonicUtils.showLoading(this.$scope, '请输入有效的用户名和密码');
         return;
       }
       return this.AuthService.login(user, (function(_this) {
@@ -48,6 +50,10 @@
           localStorage.setItem('username', result.user.name);
           localStorage.setItem('email', user.email);
           return _this.$state.go('tab.home');
+        };
+      })(this), (function(_this) {
+        return function(data) {
+          return _this.IonicUtils.showLoading(_this.$scope, data);
         };
       })(this));
     };
@@ -66,7 +72,7 @@
 
     LoginController.prototype.registerUser = function(user) {
       if (!user || user.email === '' || user.password === '' || user.email === void 0 || user.password === void 0) {
-        alert('请输入有效的用户名和密码');
+        this.IonicUtils.showLoading(this.$scope, '请输入有效的用户名和密码');
       } else {
         return this.AuthService.register(user, (function(_this) {
           return function(result, status) {
@@ -74,12 +80,12 @@
               alert('注册成功，请返回登录');
               return _this.$scope.modal.hide();
             } else {
-              return alert('注册失败,是确认输入正确，并重试');
+              return _this.IonicUtils.showLoading(_this.$scope, '注册失败,请确认是否输入正确，并重试');
             }
           };
         })(this), (function(_this) {
           return function(error) {
-            alert('注册失败,是确认输入正确，并重试');
+            _this.IonicUtils.showLoading(_this.$scope, '注册失败,请确认是否输入正确，并重试');
             return console.log("registerError", error);
           };
         })(this));

@@ -6,12 +6,13 @@
   libr = angular.module('libr.controllers.location', ['ionic']);
 
   LocationController = (function() {
-    LocationController.$inject = ['$scope', '$location', 'GeolocationService'];
+    LocationController.$inject = ['$scope', '$location', 'GeolocationService', 'IonicUtils'];
 
-    function LocationController($scope, $location, GeolocationService) {
+    function LocationController($scope, $location, GeolocationService, IonicUtils) {
       this.$scope = $scope;
       this.$location = $location;
       this.GeolocationService = GeolocationService;
+      this.IonicUtils = IonicUtils;
       this.addLocation = __bind(this.addLocation, this);
       this.$scope.addLocation = this.addLocation;
       this.$scope.itemButtons = [
@@ -40,13 +41,14 @@
           return _this.$scope.address = position.result.formatted_address;
         };
       })(this));
+      this.IonicUtils.initCustomLoading(this.$scope);
     }
 
     LocationController.prototype.addLocation = function() {
       if (this.$scope.locations.length >= 3) {
-        return alert('只能创建3个常用的地址哦，你可以尝试删除部分，再添加');
+        return this.IonicUtils.showLoading(this.$scope, '只能创建3个常用的地址哦，你可以尝试删除部分，再添加');
       } else if (localStorage.getItem('cur_address_detail') === null) {
-        return alert('定位成功后方可添加常用地址');
+        return this.IonicUtils.showLoading(this.$scope, '定位成功后方可添加常用地址');
       } else {
         return this.GeolocationService.createLocation((function(_this) {
           return function(result) {

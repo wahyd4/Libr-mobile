@@ -1,5 +1,7 @@
 /.idea/**
 /.cordova/**
+/node_modules/**
+/www/dist/**
 
 /platforms/android/bin/**
 /platforms/android/out/**

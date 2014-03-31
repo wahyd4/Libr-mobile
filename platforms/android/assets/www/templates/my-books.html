@@ -8,8 +8,9 @@
         </button>
     </ion-nav-buttons>
     <div class="bar bar-loading bar-assertive" ng-if="data.isLoading">
-        你没啊。。。。
+        {{data.text}}
     </div>
+
     <ion-content has-header="true" has-tabs="true" padding="true">
         <ion-infinite-scroll on-infinite="loadMore()" distance="1%">
         </ion-infinite-scroll>

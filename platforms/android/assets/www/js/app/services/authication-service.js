@@ -15,7 +15,7 @@
       console.log('init auth service');
     }
 
-    AuthicationService.prototype.login = function(user, callback) {
+    AuthicationService.prototype.login = function(user, callback, errorCallback) {
       var baseUrl;
       baseUrl = 'http://libr.herokuapp.com/api/v1/sessions';
       return this.$http({
@@ -29,8 +29,10 @@
         if (result.success) {
           return callback(result);
         } else {
-          return alert('登录失败,请输入正确的用户名和密码');
+          return errorCallback('登录失败,请输入正确的用户名和密码');
         }
+      }).error(function(data) {
+        return errorCallback('登录失败,请输入正确的用户名和密码');
       });
     };
 

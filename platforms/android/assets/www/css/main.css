@@ -1,5 +1,5 @@
 header button.button-icon:before {
-    font-size: 32px !important;
+    /*font-size: 32px !important;*/
 }
 
 textarea.comment-container {
@@ -37,12 +37,13 @@ a.comment-item:after {
     height: 24px;
 
     /* starts right below a normal header */
-    top: 44px;
+    top: 60px;
 
     /* make the text centered vertically and horizontally */
     text-align: center;
     padding: 0;
     line-height: 24px;
+
 
     /* transition 'sliding down' (check below)*/
     -webkit-transition: 200ms all;
@@ -57,10 +58,6 @@ a.comment-item:after {
     -webkit-transition: 200ms top;
 }
 
-.has-header.has-loading {
-    /* 44px (header) + 24px */
-    top: 68px;
-}
 
 /* make loading bar slide up/down */
 .bar-loading.ng-enter,

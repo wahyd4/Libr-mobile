@@ -41,18 +41,6 @@
       return navigator.notification.vibrate(50);
     };
 
-    ScanService.prototype.save = function() {
-      return this.Books.save({
-        isbn: '9787550221116'
-      }, null, function(result) {
-        if (result.status === 'error') {
-          return alert('不能找到该书');
-        } else {
-          return alert('添加图书成功');
-        }
-      });
-    };
-
     return ScanService;
 
   })();

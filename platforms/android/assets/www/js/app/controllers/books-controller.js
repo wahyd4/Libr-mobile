@@ -6,15 +6,16 @@
   libr = angular.module('libr.controllers.books', ['ionic']);
 
   BooksController = (function() {
-    BooksController.$inject = ['$scope', 'Books', 'ScanService', '$ionicModal', 'DoubanService'];
+    BooksController.$inject = ['$scope', 'Books', 'ScanService', '$ionicModal', 'DoubanService', 'IonicUtils'];
 
-    function BooksController($scope, Books, ScanService, $ionicModal, DoubanService) {
+    function BooksController($scope, Books, ScanService, $ionicModal, DoubanService, IonicUtils) {
       var currentPage;
       this.$scope = $scope;
       this.Books = Books;
       this.ScanService = ScanService;
       this.$ionicModal = $ionicModal;
       this.DoubanService = DoubanService;
+      this.IonicUtils = IonicUtils;
       this.submitDoubanUser = __bind(this.submitDoubanUser, this);
       this.scanBooks = __bind(this.scanBooks, this);
       this.searchDoubanUser = __bind(this.searchDoubanUser, this);
@@ -34,9 +35,10 @@
         animation: 'slide-in-up'
       });
       this.$scope.data = {
-        isLoading: true,
-        text: '失败了。。'
+        isLoading: false,
+        text: null
       };
+      this.IonicUtils.initCustomLoading(this.$scope);
       this.$scope.onRefresh = this.refresh;
       this.$scope.loadMore = this.loadMore;
       this.$scope.closeDialog = this.closeDialog;
@@ -126,10 +128,7 @@
         };
       })(this), (function(_this) {
         return function(error) {
-          return _this.$scope.data = {
-            isLoading: true,
-            text: '你妹啊。。。'
-          };
+          return _this.IonicUtils.showLoading(_this.$scope, error);
         };
       })(this));
     };

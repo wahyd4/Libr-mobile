@@ -24,12 +24,5 @@ class ScanService
     , 600
     navigator.notification.vibrate 50
 
-  save: ->
-    @Books.save {isbn: '9787550221116'}, null, (result)->
-      if result.status is 'error'
-        alert '不能找到该书'
-      else
-        alert '添加图书成功'
-
 
 libr.service 'ScanService', ScanService
