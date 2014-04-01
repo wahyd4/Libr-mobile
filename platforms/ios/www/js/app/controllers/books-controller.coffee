@@ -67,7 +67,7 @@ class BooksController
 
   searchDoubanUser: (user)=>
     if user is undefined or user.trim() is ''
-      alert '请输入有效昵称'
+      @IonicUtils.showLoading(@$scope,'请输入有效昵称')
     else
       @DoubanService.userInfo user,
       (data)=>
@@ -94,7 +94,7 @@ class BooksController
       @$scope.doubanInputDisabled = true
       alert '成功绑定豆瓣用户'
 
-      , (data)->
-        alert '绑定豆瓣用户失败，请稍后再试'
+      , (data)=>
+        @IonicUtils.showLoading(@$scope,'绑定豆瓣用户失败，请稍后再试')
 
 libr.controller 'BooksController', BooksController
