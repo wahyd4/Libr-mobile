@@ -2,9 +2,9 @@ libr = angular.module 'libr.services.comment', ['ngResource']
 
 class CommentService
 
-  @$inject: ['$http', '$resource']
-  constructor: (@$resource)->
-    baseUrl = 'http://libr.herokuapp.com/api/v1/books/:book_id/comments/:comment_id'
+  @$inject: ['$http', '$resource','Constant']
+  constructor: (@$resource,@Constant)->
+    baseUrl = @Constant.baseUrl+ '/books/:book_id/comments/:comment_id'
     return @$resource(baseUrl, {
         user_email: localStorage.getItem 'email'
         user_token: localStorage.getItem 'token'
@@ -22,6 +22,4 @@ class CommentService
             comment_id: '@commentId'
       })
 
-libr.factory 'Comments', ['$resource', CommentService]
-
-
+libr.factory 'Comments', ['$resource','Constant', CommentService]

@@ -1,10 +1,11 @@
 libr = angular.module 'libr.services.books', ['ngResource']
 
 class Books
-  @$inject: ['$http', '$resource']
-  constructor: (@$resource)->
-    baseUrl = 'http://libr.herokuapp.com/api/v1/books/:book_id'
-    return @$resource(baseUrl, {
+
+  @$inject: ['$http', '$resource','Constant']
+  constructor: (@$resource,@Constant)->
+    url = @Constant.baseUrl + '/books/:book_id'
+    return @$resource(url, {
         user_email: localStorage.getItem 'email'
         user_token: localStorage.getItem 'token'
       },
@@ -17,7 +18,7 @@ class Books
           method: 'GET'
           isArray: false
           cache: false
-          url: 'http://libr.herokuapp.com/api/v1/books/newbooks/:afterId'
+          url: @Constant.baseUrl + '/books/newbooks/:afterId'
       })
 
-libr.factory 'Books', ['$resource', Books]
+libr.factory 'Books', ['$resource','Constant', Books]

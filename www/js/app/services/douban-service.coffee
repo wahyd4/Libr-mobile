@@ -3,8 +3,8 @@ libr = angular.module 'libr.services.douban', []
 
 class DoubanService
 
-  @$inject: ['$http']
-  constructor: (@$http)->
+  @$inject: ['$http','Constant']
+  constructor: (@$http,@Constant)->
 
 
   userInfo: (user, callback, error)->
@@ -21,11 +21,11 @@ class DoubanService
     .error (data)->
       error data
 
-  submitUser: (user, callback, error)->
+  submitUser: (user, callback, error)=>
     email = localStorage.getItem 'email'
     token = localStorage.getItem 'token'
     @$http({
-      url: "http://libr.herokuapp.com/api/v1/link/douban/#{user}?user_email=#{email}&user_token=#{token}"
+      url: "#{@Constant.baseUrl}/link/douban/#{user}?user_email=#{email}&user_token=#{token}"
       method: 'POST'
       timeout: 10000
     })
@@ -36,4 +36,3 @@ class DoubanService
 
 
 libr.service 'DoubanService', DoubanService
-

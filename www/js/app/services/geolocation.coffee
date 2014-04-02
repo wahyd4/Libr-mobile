@@ -3,8 +3,8 @@ libr = angular.module 'libr.services.geolocation', []
 class GeolocationService
 
 
-  @$inject: ['$http']
-  constructor: (@$http)->
+  @$inject: ['$http','Constant']
+  constructor: (@$http,@Constant)->
 
   onSuccess = (position)->
     alert 'lat' + position.coords.latitude
@@ -25,8 +25,8 @@ class GeolocationService
   getCurrentLocation: (callback, error)->
     navigator.geolocation.getCurrentPosition(callback, error);
 
-  getDetailAddress: (callback, error) ->
-    baseUrl = 'http://libr.herokuapp.com/api/v1/locations/detail'
+  getDetailAddress: (callback, error) =>
+    baseUrl = @Constant.baseUrl + '/locations/detail'
     this.getCurrentLocation (position)=>
       @$http(
         url: "#{baseUrl}?lat=#{position.coords.latitude}&lng=#{position.coords.longitude}"
@@ -38,7 +38,7 @@ class GeolocationService
       throw Error error
 
   getLocations: (callback, error) ->
-    baseUrl = 'http://libr.herokuapp.com/api/v1/locations'
+    baseUrl = @Constant.baseUrl + '/locations'
     email = localStorage.getItem 'email'
     token = localStorage.getItem 'token'
     @$http(
@@ -52,7 +52,7 @@ class GeolocationService
         throw Error error
 
   createLocation: (callback)->
-    baseUrl = 'http://libr.herokuapp.com/api/v1/locations'
+    baseUrl = @Constant.baseUrl + '/locations'
     location = getLocation()
     email = localStorage.getItem 'email'
     token = localStorage.getItem 'token'
@@ -66,7 +66,7 @@ class GeolocationService
       callback data
 
   deleteLocation: (item, callback)->
-    baseUrl = 'http://libr.herokuapp.com/api/v1/locations'
+    baseUrl = @Constant.baseUrl + '/locations'
     email = localStorage.getItem 'email'
     token = localStorage.getItem 'token'
     @$http({

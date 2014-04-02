@@ -3,7 +3,11 @@
 // the 2nd parameter is an array of 'requires'
 // 'libr.services' is found in services.js
 // 'libr.controllers' is found in controllers.js
-angular.module('libr', ['ionic', 'libr.services', 'libr.controllers', 'libr.services.scan',
+angular.module('libr', [
+    'ionic',
+    'libr.constant',
+    'libr.controllers',
+    'libr.services.scan',
     'libr.handlers.errorHandler',
     'libr.services.douban',
     'libr.services.geolocation',
@@ -91,4 +95,3 @@ angular.module('libr', ['ionic', 'libr.services', 'libr.controllers', 'libr.serv
 
 
     });
-
