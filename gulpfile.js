@@ -5,6 +5,7 @@ var concat = require('gulp-concat');
 var minifyCSS = require('gulp-minify-css');
 var uglify = require('gulp-uglify');
 var exec = require('gulp-exec');
+var bower = require('gulp-bower');
 
 var paths = {
     scripts: [
@@ -17,7 +18,7 @@ var paths = {
     fonts: ['www/fonts/*.*'],
     dev: ['env/dev/**.coffee'],
     local: ['env/local/**.coffee'],
-    prod: ['env/local/**.coffee']
+    prod: ['env/prod/**.coffee']
 
 };
 
@@ -69,6 +70,11 @@ gulp.task('server', function () {
         .pipe(exec('http-server ./www/ -p 4000'), options);
 });
 
+gulp.task('bower', function() {
+    bower('./bower_components')
+        .pipe(gulp.dest('www/assets'))
+});
+
 gulp.task('coffee', function () {
     var coffeeStream = coffee({bare: true});
 
@@ -78,12 +84,11 @@ gulp.task('coffee', function () {
 
     gulp.src(paths.scripts.concat(paths.dev))
         .pipe(coffee())
-        .pipe(gulp.dest('www/dist/js-app/'))
-
+        .pipe(gulp.dest('www/dist/js-app/'));
 });
 
-gulp.task('default', ['scripts', 'css', 'watch', 'fonts', 'server']);
+gulp.task('default', ['bower','scripts', 'css', 'watch', 'fonts', 'server']);
 
-gulp.task('dist', ['uglify-scripts', 'css', 'fonts']);
+gulp.task('dist', ['bower','uglify-scripts', 'css', 'fonts']);
 
 gulp.task('debug', ['scripts', 'css', 'fonts', 'watch']);

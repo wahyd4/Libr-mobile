@@ -1,12 +1,12 @@
 libr = angular.module 'libr.services.auth', []
 
 class AuthicationService
-  @$inject: ['$http']
-  constructor: (@$http)->
+  @$inject: ['$http','Constant']
+  constructor: (@$http,@Constant)->
     console.log 'init auth service'
 
   login: (user, callback, errorCallback)=>
-    baseUrl = 'http://libr.herokuapp.com/api/v1/sessions'
+    baseUrl = @Constant.baseUrl + '/sessions'
     @$http({
       method: 'POST',
       url: baseUrl,
@@ -23,7 +23,7 @@ class AuthicationService
       errorCallback '登录失败,请输入正确的用户名和密码'
 
   register: (user, callback, onError)=>
-    url = 'http://libr.herokuapp.com/api/v1/registrations'
+    url = @Constant.baseUrl + '/registrations'
     @$http({
       method: 'POST',
       url: url,

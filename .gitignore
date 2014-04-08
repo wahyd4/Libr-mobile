@@ -1,9 +1,17 @@
 /.idea/**
 /.cordova/**
 /node_modules/**
+/bower_components/**
+/out/**
+
+/www/assets/**
 /www/dist/**
 
 /platforms/android/bin/**
 /platforms/android/out/**
 
+
 **/.idea/*
+
+/platforms/*/assets/www/dist/js-app/
+/platforms/*/www/assets/

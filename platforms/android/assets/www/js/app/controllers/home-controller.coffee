@@ -1,9 +1,9 @@
 libr = angular.module 'libr.controllers.home', ['ionic']
 
 class HomeController
-  @$inject: ['$scope', '$location', 'BookService', 'ScanService', '$ionicLoading', '$ionicActionSheet',
+  @$inject: ['$scope', '$location', 'ScanService', '$ionicLoading', '$ionicActionSheet',
              'RecommendService', 'ErrorHandler']
-  constructor: (@$scope, @$location, BookService, ScanService, @$ionicLoading, @$ionicActionSheet, @RecommendService, @ErrorHandler)->
+  constructor: (@$scope, @$location, ScanService, @$ionicLoading, @$ionicActionSheet, @RecommendService, @ErrorHandler)->
     @$scope.showRecommendActionSheet = @showRecommendActionSheet
     if isUserLogedIn()
       showLoading(@$scope, @$ionicLoading)

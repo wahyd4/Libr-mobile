@@ -1,11 +1,9 @@
 libr = angular.module 'libr.services.recommend', []
 
 class RecommendService
-  baseUrl = 'http://libr.herokuapp.com/api/v1'
 
-
-  @$injector: ['GeolocationService', '$http']
-  constructor: (@GeolocationService, @$http)->
+  @$injector: ['GeolocationService', '$http','Constant']
+  constructor: (@GeolocationService, @$http, @Constant)->
 
   getActionSheetList: ()->
     actionList = []
@@ -25,7 +23,7 @@ class RecommendService
     email = localStorage.getItem 'email'
     token = localStorage.getItem 'token'
     @$http(
-      url: "#{baseUrl}/recommend/me?user_email=#{email}&user_token=#{token}"
+      url: @Constant.baseUrl + "/recommend/me?user_email=#{email}&user_token=#{token}"
       method: 'GET'
       timeout: 13000
     )
@@ -38,7 +36,7 @@ class RecommendService
     email = localStorage.getItem 'email'
     token = localStorage.getItem 'token'
     @$http(
-      url: "#{baseUrl}/recommend/locations/#{locationId}?user_email=#{email}&user_token=#{token}"
+      url: @Constant.baseUrl + "/recommend/locations/#{locationId}?user_email=#{email}&user_token=#{token}"
       method: 'GET'
       timeout: 13000
     )
