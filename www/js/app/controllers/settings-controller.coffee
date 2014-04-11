@@ -5,12 +5,6 @@ class SettingsController
   @$inject: ['$scope', '$ionicModal', 'AuthService', '$state', '$cacheFactory']
   constructor: (@$scope, @$ionicModal, @AuthService, @$state, @$cacheFactory) ->
     @$scope.logout = @logout
-    @$scope.feedback = @feedback
-    @$scope.showMe = @showMe
-    if isUserLogedIn() then @$scope.isLogedIn = true else @$scope.isLogedIn = false
-    @$scope.avatar = localStorage.getItem 'avatar'
-    @$scope.username = localStorage.getItem 'username'
-
 
   logout: =>
     localStorage.clear()
@@ -19,17 +13,10 @@ class SettingsController
     httpDefaultCache.removeAll()
     @$state.go 'login'
 
-  feedback: ->
-    window.open('https://jinshuju.net/f/F96z3s', '_blank', 'location=no')
-
-  showMe: ->
-    window.open('http://libr.herokuapp.com', '_blank', 'location=no')
-
   isUserLogedIn = ()->
     if localStorage.getItem('token') isnt null and localStorage.getItem('email') isnt null
       true
     else
       false
-
 
 libr.controller 'SettingsController', SettingsController

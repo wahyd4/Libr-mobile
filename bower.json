@@ -1,0 +1,25 @@
+{
+    "name": "libr-mobile",
+    "version": "0.0.1",
+    "authors": [
+        "junv <wahyd4@gmail.com>"
+    ],
+    "license": "none",
+    "private": true,
+    "dependencies": {
+        "ionic": "~1.0.0",
+        "angular-resource": "~1.2.17"
+    },
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "app/components",
+        "test",
+        "tests"
+    ],
+    "resolutions": {
+        "angular": "1.2.16"
+    }
+
+}

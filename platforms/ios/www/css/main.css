@@ -37,7 +37,7 @@ a.comment-item:after {
     height: 24px;
 
     /* starts right below a normal header */
-    top: 60px;
+    top: px;
 
     /* make the text centered vertically and horizontally */
     text-align: center;

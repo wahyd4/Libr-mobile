@@ -93,7 +93,6 @@ class BooksController
     @DoubanService.submitUser username, (data) =>
       @$scope.doubanInputDisabled = true
       alert '成功绑定豆瓣用户'
-
       , (data)=>
         @IonicUtils.showLoading(@$scope,'绑定豆瓣用户失败，请稍后再试')
 
