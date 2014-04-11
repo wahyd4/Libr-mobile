@@ -28,6 +28,7 @@ class LoginController
       localStorage.setItem 'avatar', result.user.avatar
       localStorage.setItem 'username', result.user.name
       localStorage.setItem 'email', user.email
+      localStorage.setItem 'user', JSON.stringify result.user
       @$state.go 'tab.home'
     , (data)=>
       @IonicUtils.showLoading(@$scope, data)

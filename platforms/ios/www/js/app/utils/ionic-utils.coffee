@@ -11,7 +11,7 @@ class IonicUtils
       text: null
     }
 
-  showLoading: (scope, text, timing = 300000)->
+  showLoading: (scope, text, timing = 3000)->
     scope.data = {
       isLoading: true
       text: text

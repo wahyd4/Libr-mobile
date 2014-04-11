@@ -7,7 +7,7 @@ class BooksController
     currentPage = localStorage.setItem 'user_books_current_page', 0
     @$scope.books = []
     @$scope.moreItemsAvailable = true
-    @$scope.submitAllowed = true
+    @$scope.submitAllowed = false
 
     @$ionicModal.fromTemplateUrl 'templates/modal/import_books.html', (modal)=>
       @$scope.modal = modal

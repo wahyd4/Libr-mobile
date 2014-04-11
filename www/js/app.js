@@ -9,6 +9,7 @@ angular.module('libr', [
     'libr.controllers',
     'libr.services.scan',
     'libr.handlers.errorHandler',
+    'libr.services.localstorage',
     'libr.services.douban',
     'libr.services.geolocation',
     'libr.services.auth',
