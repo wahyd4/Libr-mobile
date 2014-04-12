@@ -3,8 +3,8 @@ libr = angular.module 'libr.services.douban', []
 
 class DoubanService
 
-  @$inject: ['$http','Constant']
-  constructor: (@$http,@Constant)->
+  @$inject: ['$http','Constant','LocalStorageUtils']
+  constructor: (@$http,@Constant,@LocalStorageUtils)->
 
 
   userInfo: (user, callback, error)->
@@ -24,8 +24,9 @@ class DoubanService
   submitUser: (user, callback, error)=>
     email = localStorage.getItem 'email'
     token = localStorage.getItem 'token'
+    userId = @LocalStorageUtils.getUserId()
     @$http({
-      url: "#{@Constant.baseUrl}/link/douban/#{user}?user_email=#{email}&user_token=#{token}"
+      url: "#{@Constant.baseUrl}/users/#{userId}/link/douban/#{user}?user_email=#{email}&user_token=#{token}"
       method: 'POST'
       timeout: 10000
     })

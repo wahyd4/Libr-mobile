@@ -3,8 +3,8 @@ libr = angular.module 'libr.services.douban', []
 
 class DoubanService
 
-  @$inject: ['$http','Constant','LocalStorageUtils']
-  constructor: (@$http,@Constant,@LocalStorageUtils)->
+  @$inject: ['$http', 'Constant', 'LocalStorageUtils']
+  constructor: (@$http, @Constant, @LocalStorageUtils)->
 
 
   userInfo: (user, callback, error)->
@@ -12,6 +12,7 @@ class DoubanService
       url: "http://api.douban.com/v2/user/#{user}"
       method: 'GET'
       timeout: 10000
+      cache: true
     )
     .success (data, status, headers, config)->
       if status is 200

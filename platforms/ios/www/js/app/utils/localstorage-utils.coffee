@@ -9,6 +9,14 @@ class LocalStorageUtils
 
   getUserId: ()=>
     user.id
+  getUserName: ()->
+    user.name
+  getUserToken: ()->
+    user.token
+  getUserAvatar: ()->
+    user.avatar
+  getUserEmail: ()->
+    user.email
 
 
 libr.service 'LocalStorageUtils', LocalStorageUtils

@@ -7,7 +7,7 @@ class BooksController
     currentPage = localStorage.setItem 'user_books_current_page', 0
     @$scope.books = []
     @$scope.moreItemsAvailable = true
-    @$scope.submitAllowed = true
+    @$scope.submitAllowed = false
 
     @$ionicModal.fromTemplateUrl 'templates/modal/import_books.html', (modal)=>
       @$scope.modal = modal
@@ -67,7 +67,7 @@ class BooksController
 
   searchDoubanUser: (user)=>
     if user is undefined or user.trim() is ''
-      @IonicUtils.showLoading(@$scope,'请输入有效昵称')
+      @IonicUtils.showLoading(@$scope, '请输入有效昵称')
     else
       @DoubanService.userInfo user,
       (data)=>
@@ -84,8 +84,9 @@ class BooksController
     @ScanService.scan (result)=>
       navigator.notification.alert "添加图书《#{result.book.name}》成功", null, "Libr", "确定"
       @$scope.books.unshift result.book
-    , (error)=>
-      @IonicUtils.showLoading(@$scope, error)
+    , (msg)=>
+      alert '扫描出错了。。。' + msg
+      @IonicUtils.showLoading(@$scope, msg)
 
   submitDoubanUser: =>
     username = angular.element document.getElementById('douban-username')
@@ -93,8 +94,7 @@ class BooksController
     @DoubanService.submitUser username, (data) =>
       @$scope.doubanInputDisabled = true
       alert '成功绑定豆瓣用户'
-
       , (data)=>
-        @IonicUtils.showLoading(@$scope,'绑定豆瓣用户失败，请稍后再试')
+        @IonicUtils.showLoading(@$scope, '绑定豆瓣用户失败，请稍后再试')
 
 libr.controller 'BooksController', BooksController

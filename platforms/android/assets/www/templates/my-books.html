@@ -12,10 +12,8 @@
     </div>
 
     <ion-content has-header="true" has-tabs="true" padding="true">
-        <ion-infinite-scroll on-infinite="loadMore()" distance="1%">
+        <ion-infinite-scroll on-infinite="loadMore()" distance="1%" ng-if="moreItemsAvailable">
         </ion-infinite-scroll>
-        <ion-refresher on-refresh="onRefresh()">
-        </ion-refresher>
         <div class="list">
             <a ng-repeat="book in books | orderBy: 'sort_id' :true" class="item item-thumbnail-left"
                href="#/book/{{book.isbn}}">
@@ -26,6 +24,5 @@
                 <p>{{book.author}}</p>
             </a>
         </div>
-        <ion-infinite-scroll ng-if="moreItemsAvailable"></ion-infinite-scroll>
     </ion-content>
 </ion-view>
