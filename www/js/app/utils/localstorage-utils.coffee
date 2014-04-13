@@ -24,6 +24,17 @@ class LocalStorageUtils
     user = @getUser()
     user isnt null && @getUserEmail() isnt null && @getUserToken() isnt null
 
+  storeDoubanUser: (name)->
+    localStorage.setItem 'doubanUser', name
+
+  getDoubanUser: ->
+    user = @getUser()
+    if user.douban_user isnt null
+      user.douban_user
+    else if localStorage.getItem('doubanUser') isnt null
+      localStorage.getItem('doubanUser')
+    else
+      null
 
 libr.service 'LocalStorageUtils', LocalStorageUtils
 

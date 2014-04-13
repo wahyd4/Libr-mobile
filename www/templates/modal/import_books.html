@@ -8,11 +8,12 @@
     </div>
     <ion-content has-header="true" padding="true">
         <form novalidate>
-            <label class="item item-input">
+            <h3 ng-if="doubanInputDisabled">已成功绑定豆瓣用户，你的豆瓣用户名为:{{doubanUsername}}</h3>
+            <label class="item item-input" ng-hide="doubanInputDisabled">
                 <span class="input-label">豆瓣用户名</span>
                 <input type="text" placeholder="请输入豆瓣用户名" ng-model="user" id="douban-username" ng-disabled="doubanInputDisabled"/>
             </label>
-            <button class="button button-full button-royal" ng-click="searchDoubanUser(user)">
+            <button ng-hide="doubanInputDisabled" class="button button-full button-royal" ng-click="searchDoubanUser(user)">
                 搜索用户
             </button>
             <button ng-if="submitAllowed" type="submit" class="button button-full button-energized" ng-click="submitDoubanUser()" >

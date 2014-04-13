@@ -2,14 +2,14 @@ libr = angular.module 'libr.controllers.settings', ['ionic']
 
 class SettingsController
 
-  @$inject: ['$scope', '$ionicModal', 'AuthService', '$state', '$cacheFactory']
-  constructor: (@$scope, @$ionicModal, @AuthService, @$state, @$cacheFactory) ->
+  @$inject: ['$scope', '$ionicModal', 'AuthService', '$state', '$cacheFactory', 'LocalStorageUtils']
+  constructor: (@$scope, @$ionicModal, @AuthService, @$state, @$cacheFactory, @LocalStorageUtils) ->
     @$scope.logout = @logout
     @$scope.feedback = @feedback
     @$scope.showMe = @showMe
-    if isUserLogedIn() then @$scope.isLogedIn = true else @$scope.isLogedIn = false
-    @$scope.avatar = localStorage.getItem 'avatar'
-    @$scope.username = localStorage.getItem 'username'
+    if isUserLogedIn(@LocalStorageUtils) then @$scope.isLogedIn = true else @$scope.isLogedIn = false
+    @$scope.avatar = @LocalStorageUtils.getUserAvatar()
+    @$scope.username = @LocalStorageUtils.getUserName()
 
 
   logout: =>
@@ -25,8 +25,8 @@ class SettingsController
   showMe: ->
     window.open('http://libr.herokuapp.com', '_blank', 'location=no')
 
-  isUserLogedIn = ()->
-    if localStorage.getItem('token') isnt null and localStorage.getItem('email') isnt null
+  isUserLogedIn = (localStorageUtils)->
+    if localStorageUtils.getUserToken() isnt null and localStorageUtils.getUserEmail() isnt null
       true
     else
       false
