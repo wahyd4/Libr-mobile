@@ -2,9 +2,9 @@ libr = angular.module 'libr.controllers.login', ['ionic']
 
 class LoginController
 
-  @$inject: ['$scope', 'AuthService', '$state', '$ionicModal', 'IonicUtils']
-  constructor: (@$scope, @AuthService, @$state, @$ionicModal, @IonicUtils)->
-    if isUserLogedIn() then @$state.go('tab.home')
+  @$inject: ['$scope', 'AuthService', '$state', '$ionicModal', 'IonicUtils', 'LocalStorageUtils']
+  constructor: (@$scope, @AuthService, @$state, @$ionicModal, @IonicUtils, @LocalStorageUtils)->
+    if @LocalStorageUtils.isUserLogedIn() then @$state.go('tab.home')
     @$scope.login = @login
     @$scope.registerForm = @registerForm
     @$scope.registerUser = @registerUser
@@ -32,12 +32,6 @@ class LoginController
       @$state.go 'tab.home'
     , (data)=>
       @IonicUtils.showLoading(@$scope, data)
-
-  isUserLogedIn = ()->
-    if localStorage.getItem('token') isnt null and localStorage.getItem('email') isnt null
-      true
-    else
-      false
 
   registerForm: =>
     @$scope.modal.show()
