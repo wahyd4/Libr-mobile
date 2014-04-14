@@ -27,7 +27,7 @@ class LocationController
 
   addLocation: () =>
     if @$scope.locations.length >= 3
-      @IonicUtils.showLoading(@$scope, '只能创建3个常用的地址哦，你可以尝试删除部分，再添加')
+      @IonicUtils.showLoading(@$scope, '只能创建3个常用的地址，请先删除部分再添加')
     else if localStorage.getItem('cur_address_detail') is null
       @IonicUtils.showLoading(@$scope, '定位成功后方可添加常用地址')
     else

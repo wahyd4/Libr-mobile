@@ -46,3 +46,7 @@
 2014-04-09 12:50:30.689 Libr[10513:70b] Received memory warning.
 2014-04-13 21:41:36.341 Libr[39819:70b] Multi-tasking -> Device: YES, App: YES
 2014-04-13 21:41:36.379 Libr[39819:70b] Unlimited access to network resources
+2014-04-14 15:43:39.673 Libr[5575:70b] Multi-tasking -> Device: YES, App: YES
+2014-04-14 15:43:39.704 Libr[5575:70b] Unlimited access to network resources
+2014-04-14 15:43:40.083 Libr[5575:70b] Resetting plugins due to page load.
+2014-04-14 15:43:40.520 Libr[5575:70b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/689C9FCB-41B1-4F23-A468-5913ACF7FA66/Libr.app/www/index.html#/login

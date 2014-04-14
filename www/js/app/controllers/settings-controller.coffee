@@ -23,7 +23,7 @@ class SettingsController
     window.open('https://jinshuju.net/f/F96z3s', '_blank', 'location=no')
 
   showMe: ->
-    window.open('http://libr.herokuapp.com', '_blank', 'location=no')
+    window.open('http://librme.com', '_blank', 'location=no')
 
   isUserLogedIn = (localStorageUtils)->
     if localStorageUtils.getUserToken() isnt null and localStorageUtils.getUserEmail() isnt null

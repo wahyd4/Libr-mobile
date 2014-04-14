@@ -2,8 +2,8 @@ libr = angular.module 'libr.controllers.books', ['ionic']
 
 class BooksController
 
-  @$inject: ['$scope', 'Books', 'ScanService', '$ionicModal', 'DoubanService', 'IonicUtils']
-  constructor: (@$scope, @Books, @ScanService, @$ionicModal, @DoubanService, @IonicUtils) ->
+  @$inject: ['$scope', 'Books', 'ScanService', '$ionicModal', 'DoubanService', 'IonicUtils', 'LocalStorageUtils']
+  constructor: (@$scope, @Books, @ScanService, @$ionicModal, @DoubanService, @IonicUtils, @LocalStorageUtils) ->
     currentPage = localStorage.setItem 'user_books_current_page', 0
     @$scope.books = []
     @$scope.moreItemsAvailable = true
@@ -29,7 +29,15 @@ class BooksController
     @$scope.scanBooks = @scanBooks
     @$scope.submitDoubanUser = @submitDoubanUser
 
-    @$scope.doubanInputDisabled = false
+    @$scope.doubanInputDisabled = @LocalStorageUtils.getDoubanUser() isnt null
+    @$scope.doubanUsername = @LocalStorageUtils.getDoubanUser()
+
+
+    #    destory $scope
+    @$scope.$on '$destroy', ()=>
+      @Books = null
+      @ScanService = null
+      console.log '销毁。。。。。', @Books
 
   refresh: ()=>
     afterBookId = localStorage.getItem 'user_max_book_id'
@@ -66,6 +74,7 @@ class BooksController
     @$scope.modal.hide()
 
   searchDoubanUser: (user)=>
+    console.log user,'...'
     if user is undefined or user.trim() is ''
       @IonicUtils.showLoading(@$scope, '请输入有效昵称')
     else
@@ -75,6 +84,7 @@ class BooksController
         @$scope.submitAllowed = true
         @$scope.doubanUser = data
       , (error)=>
+        @IonicUtils.showLoading(@$scope, '查找豆瓣用户失败，请稍后再试')
         console.log error
         @$scope.resultEnabled = false
         @$scope.submitAllowed = false
@@ -85,7 +95,6 @@ class BooksController
       navigator.notification.alert "添加图书《#{result.book.name}》成功", null, "Libr", "确定"
       @$scope.books.unshift result.book
     , (msg)=>
-      alert '扫描出错了。。。' + msg
       @IonicUtils.showLoading(@$scope, msg)
 
   submitDoubanUser: =>
@@ -93,6 +102,7 @@ class BooksController
     username = username.val()
     @DoubanService.submitUser username, (data) =>
       @$scope.doubanInputDisabled = true
+      @LocalStorageUtils.storeDoubanUser(username)
       alert '成功绑定豆瓣用户'
       , (data)=>
         @IonicUtils.showLoading(@$scope, '绑定豆瓣用户失败，请稍后再试')

@@ -19,9 +19,8 @@ class ScanService
             errorCallback data.message
           else
             callback(data)
-        , (data,status)->
-          console.log '错误', data,status
-          errorCallback '添加图书失败' + data.message
+        , (error)->
+          errorCallback '添加图书失败' + error.data.message
       , (error)->
         errorCallback "扫描图书失败:#{error} "
     , 600

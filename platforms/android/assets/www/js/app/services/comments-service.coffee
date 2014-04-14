@@ -2,9 +2,9 @@ libr = angular.module 'libr.services.comment', ['ngResource']
 
 class CommentService
 
-  @$inject: ['$http', '$resource','Constant']
-  constructor: (@$resource,@Constant)->
-    baseUrl = @Constant.baseUrl+ '/books/:book_id/comments/:comment_id'
+  @$inject: ['$http', '$resource', 'Constant']
+  constructor: (@$resource, @Constant)->
+    baseUrl = @Constant.baseUrl + '/books/:book_id/comments/:comment_id'
     return @$resource(baseUrl, {
         user_email: localStorage.getItem 'email'
         user_token: localStorage.getItem 'token'
@@ -15,11 +15,11 @@ class CommentService
         'query':
           method: 'GET'
           isArray: true
-          cache: false
+          cache: true
       }, {
         'save':
           params:
             comment_id: '@commentId'
       })
 
-libr.factory 'Comments', ['$resource','Constant', CommentService]
+libr.factory 'Comments', ['$resource', 'Constant', CommentService]
