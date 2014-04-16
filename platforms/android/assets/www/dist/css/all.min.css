@@ -7,3 +7,4 @@ a.comment-item:after{content:""!important;right:0!important;width:0!important}
 .has-header{-webkit-transition:200ms top}
 .bar-loading.ng-enter,.bar-loading.ng-leave.ng-leave-active{height:0;border-width:0}
 .bar-loading.ng-enter.ng-enter-active,.bar-loading.ng-leave{height:24px;border-width:1px}
+.android-bar{top:44px!important}

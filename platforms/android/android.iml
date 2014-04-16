@@ -14,8 +14,7 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 19 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="classes3" level="project" />
-    <orderEntry type="library" name="classes2" level="project" />
+    <orderEntry type="library" name="classes" level="project" />
     <orderEntry type="module" module-name="CordovaLib" />
   </component>
 </module>

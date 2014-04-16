@@ -31,7 +31,7 @@ a.comment-item:after {
     width: 0 !important;
 }
 
- /*custom loading*/
+/*custom loading*/
 .bar.bar-loading {
     display: block;
     height: 24px;
@@ -43,7 +43,6 @@ a.comment-item:after {
     text-align: center;
     padding: 0;
     line-height: 24px;
-
 
     /* transition 'sliding down' (check below)*/
     -webkit-transition: 200ms all;
@@ -58,7 +57,6 @@ a.comment-item:after {
     -webkit-transition: 200ms top;
 }
 
-
 /* make loading bar slide up/down */
 .bar-loading.ng-enter,
 .bar-loading.ng-leave.ng-leave-active {
@@ -70,6 +68,10 @@ a.comment-item:after {
 .bar-loading.ng-leave {
     height: 24px;
     border-width: 1px;
+}
+
+.android-bar {
+    top: 44px !important;
 }
 
 

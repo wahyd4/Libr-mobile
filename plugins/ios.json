@@ -4,46 +4,97 @@
         "uninstalled": []
     },
     "config_munge": {
-        "framework": {
-            "libiconv.dylib": {
-                "false": 1
+        "files": {
+            "framework": {
+                "parents": {
+                    "libiconv.dylib": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
+                    "AVFoundation.framework": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
+                    "AssetsLibrary.framework": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
+                    "CoreVideo.framework": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
+                    "QuartzCore.framework": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
+                    "AudioToolbox.framework": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        },
+                        {
+                            "xml": "true",
+                            "count": 4
+                        }
+                    ],
+                    "CoreGraphics.framework": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
+                    "SystemConfiguration.framework": [
+                        {
+                            "xml": "true",
+                            "count": 1
+                        }
+                    ]
+                }
             },
-            "AVFoundation.framework": {
-                "false": 1
-            },
-            "AssetsLibrary.framework": {
-                "false": 1
-            },
-            "CoreVideo.framework": {
-                "false": 1
-            },
-            "QuartzCore.framework": {
-                "false": 1
-            },
-            "AudioToolbox.framework": {
-                "false": 1,
-                "true": 2
-            },
-            "CoreGraphics.framework": {
-                "false": 1
-            }
-        },
-        "config.xml": {
-            "/*": {
-                "<feature name=\"BarcodeScanner\"><param name=\"ios-package\" value=\"CDVBarcodeScanner\" /></feature>": 1,
-                "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>": 1,
-                "<feature name=\"Notification\"><param name=\"ios-package\" value=\"CDVNotification\" /></feature>": 1,
-                "<feature name=\"Geolocation\"><param name=\"ios-package\" value=\"CDVLocation\" /></feature>": 1,
-                "<feature name=\"InAppBrowser\"><param name=\"ios-package\" value=\"CDVInAppBrowser\" /></feature>": 1,
-                "<feature name=\"Vibration\"><param name=\"ios-package\" value=\"CDVVibration\" /></feature>": 1
+            "config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"BarcodeScanner\"><param name=\"ios-package\" value=\"CDVBarcodeScanner\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Notification\"><param name=\"ios-package\" value=\"CDVNotification\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Geolocation\"><param name=\"ios-package\" value=\"CDVLocation\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"InAppBrowser\"><param name=\"ios-package\" value=\"CDVInAppBrowser\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Vibration\"><param name=\"ios-package\" value=\"CDVVibration\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"NetworkStatus\"><param name=\"ios-package\" value=\"CDVConnection\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
             }
         }
     },
     "installed_plugins": {
         "com.phonegap.plugins.barcodescanner": {
-            "PACKAGE_NAME": "com.toozhao.libr"
-        },
-        "org.apache.cordova.device": {
             "PACKAGE_NAME": "com.toozhao.libr"
         },
         "org.apache.cordova.dialogs": {
@@ -56,6 +107,9 @@
             "PACKAGE_NAME": "com.toozhao.libr"
         },
         "org.apache.cordova.vibration": {
+            "PACKAGE_NAME": "com.toozhao.libr"
+        },
+        "org.apache.cordova.network-information": {
             "PACKAGE_NAME": "com.toozhao.libr"
         }
     },

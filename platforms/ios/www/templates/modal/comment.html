@@ -3,7 +3,7 @@
         <button class="button button-icon ion-arrow-left-c" ng-click="closeDialog()"></button>
         <h1 class="title">添加评论</h1>
     </header>
-    <div class="bar bar-loading bar-assertive" ng-if="data.isLoading">
+    <div class="bar bar-loading bar-assertive" id="x-bar" ng-if="data.isLoading">
         {{data.text}}
     </div>
     <ion-content has-header="true" padding="true">
