@@ -33,12 +33,6 @@ class BooksController
     @$scope.doubanUsername = @LocalStorageUtils.getDoubanUser()
 
 
-    #    destory $scope
-    @$scope.$on '$destroy', ()=>
-      @Books = null
-      @ScanService = null
-      console.log '销毁。。。。。', @Books
-
   refresh: ()=>
     afterBookId = localStorage.getItem 'user_max_book_id'
     @Books.fetchNew {afterId: afterBookId}, (data)=>
@@ -74,7 +68,7 @@ class BooksController
     @$scope.modal.hide()
 
   searchDoubanUser: (user)=>
-    console.log user,'...'
+    console.log user, '...'
     if user is undefined or user.trim() is ''
       @IonicUtils.showLoading(@$scope, '请输入有效昵称')
     else
@@ -95,7 +89,10 @@ class BooksController
       navigator.notification.alert "添加图书《#{result.book.name}》成功", null, "Libr", "确定"
       @$scope.books.unshift result.book
     , (msg)=>
+      console.log 'trying to show loading...', msg
       @IonicUtils.showLoading(@$scope, msg)
+      @$scope.$apply()
+      console.log 'applied'
 
   submitDoubanUser: =>
     username = angular.element document.getElementById('douban-username')
@@ -103,8 +100,8 @@ class BooksController
     @DoubanService.submitUser username, (data) =>
       @$scope.doubanInputDisabled = true
       @LocalStorageUtils.storeDoubanUser(username)
-      alert '成功绑定豆瓣用户'
-      , (data)=>
-        @IonicUtils.showLoading(@$scope, '绑定豆瓣用户失败，请稍后再试')
+      alert '成功绑定豆瓣用户,请返回,系统将自动为你导入豆瓣图书'
+    , (data)=>
+      @IonicUtils.showLoading(@$scope, '绑定豆瓣用户失败，请稍后再试')
 
 libr.controller 'BooksController', BooksController
