@@ -12,7 +12,7 @@ class ScanService
         if result.cancelled is 1 then return
         if result.format isnt 'EAN_13'
           console.log '条码不匹配'
-          errorCallback '条形码类型不匹配，请确认所扫为书籍，并更换角度'
+          errorCallback '条形码类型错误，请确认所扫为书籍，并更换角度'
           return
         @Books.save {isbn: result.text}, null, (data)->
           console.log 'get server response'
