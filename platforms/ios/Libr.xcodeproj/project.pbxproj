@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		065BD2C28C6B41F8AB6D2552 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CAF401B76349A08DDFA493 /* QuartzCore.framework */; };
 		09B9BCFD0D0644B5B28C74B0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE201C5C086344918228AC08 /* AVFoundation.framework */; };
@@ -20,8 +19,8 @@
 		30A0434814DC770100060A13 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30A0434314DC770100060A13 /* Localizable.strings */; };
 		40B6689626AB486FB3F9FA0A /* CDVInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCC7105821C4C9A8627AC92 /* CDVInAppBrowser.m */; };
 		43A2AF139ECD486384E8220A /* CDVBarcodeScanner.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C091933A7CF042B084852349 /* CDVBarcodeScanner.bundle */; };
+		490EE2F21900D4E500D3BF9E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490EE2F11900D4E500D3BF9E /* AudioToolbox.framework */; };
 		498EC7D018CF4957005AFA9C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 498EC7CF18CF4957005AFA9C /* Images.xcassets */; };
-		49EE34781900BD5600B6F2F2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EE34771900BD5600B6F2F2 /* AudioToolbox.framework */; };
 		5AEE5B35173C68D80009041E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AEE5B34173C68D80009041E /* CoreLocation.framework */; };
 		5B1594DD16A7569C00FEF299 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */; };
 		6ED926DBC4E54C569BD5FD4A /* CDVReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B9BD0FBD67A2430995266C15 /* CDVReachability.m */; };
@@ -79,9 +78,9 @@
 		3622B124C41D45AC84B5C7ED /* CDVInAppBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVInAppBrowser.h; path = org.apache.cordova.inappbrowser/CDVInAppBrowser.h; sourceTree = "<group>"; };
 		3C76C2AD27504113B627678B /* CDVDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVDevice.h; path = org.apache.cordova.device/CDVDevice.h; sourceTree = "<group>"; };
 		46D690C5743F4C208816B828 /* SystemConfiguration.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		490EE2F11900D4E500D3BF9E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		498EC7CF18CF4957005AFA9C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Libr/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		49CAF401B76349A08DDFA493 /* QuartzCore.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		49EE34771900BD5600B6F2F2 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		49EE34791900BD5600B6F2F2 /* Libr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Libr.entitlements; path = Libr/Libr.entitlements; sourceTree = "<group>"; };
 		523850053F8142BC8D99DD80 /* CDVNotification.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CDVNotification.bundle; sourceTree = "<group>"; };
 		5AEE5B34173C68D80009041E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -117,7 +116,7 @@
 				5B1594DD16A7569C00FEF299 /* AssetsLibrary.framework in Frameworks */,
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
-				49EE34781900BD5600B6F2F2 /* AudioToolbox.framework in Frameworks */,
+				490EE2F21900D4E500D3BF9E /* AudioToolbox.framework in Frameworks */,
 				305D5FD1115AB8F900A74A75 /* MobileCoreServices.framework in Frameworks */,
 				5AEE5B35173C68D80009041E /* CoreLocation.framework in Frameworks */,
 				E5D6F6F409E14200AA758A1D /* libiconv.dylib in Frameworks */,
@@ -219,7 +218,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				49EE34771900BD5600B6F2F2 /* AudioToolbox.framework */,
+				490EE2F11900D4E500D3BF9E /* AudioToolbox.framework */,
 				5AEE5B34173C68D80009041E /* CoreLocation.framework */,
 				5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
@@ -584,7 +583,7 @@
 					"\"$(OBJROOT)/UninstalledProducts/include\"",
 					"\"$(BUILT_PRODUCTS_DIR)\"",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-weak_framework",
@@ -630,7 +629,7 @@
 					"\"$(OBJROOT)/UninstalledProducts/include\"",
 					"\"$(BUILT_PRODUCTS_DIR)\"",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = (
 					"-weak_framework",
 					CoreFoundation,
