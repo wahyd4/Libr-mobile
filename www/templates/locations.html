@@ -12,7 +12,8 @@
         </div>
         <div class="item-balanced">
             <div class="item item-text-wrap balanced">
-                <span class="ion-location"></span> {{address}}
+                <div ng-show="!address"><span class="ion-ios7-reloading"></span>定位中</div>
+                <div ng-show="address"><span class="ion-location"></span> {{address}}</div>
             </div>
         </div>
         <div class="item item-divider">
