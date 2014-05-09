@@ -20,4 +20,10 @@ class IonicUtils
       @initCustomLoading(scope)
     , timing
 
+  cacheImage: (imageUrl)->
+    unless ImgCache.isCached(imageUrl)
+      ImgCache.cacheFile(imageUrl, null)
+
+
+
 libr.service 'IonicUtils', IonicUtils

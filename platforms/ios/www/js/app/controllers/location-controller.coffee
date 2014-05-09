@@ -17,6 +17,7 @@ class LocationController
     ]
     @GeolocationService.getLocations (locations)=>
       @$scope.locations = locations
+
     @GeolocationService.getDetailAddress (position)=>
       localStorage.setItem 'cur_address_detail', position.result.formatted_address
       localStorage.setItem 'cur_lat', position.result.location.lat

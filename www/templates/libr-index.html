@@ -1,9 +1,9 @@
-<ion-view title="{{title}}" hide-back-button="false" >
+<ion-view title="{{title}}">
     <ion-nav-buttons side="right">
         <button class="button  icon ion-shuffle" ng-click="showRecommendActionSheet()">
         </button>
     </ion-nav-buttons>
-    <ion-content has-header="true" has-tabs="true" padding="true">
+    <ion-content class="padding has-header">
         <div class="list">
             <a ng-repeat="book in books" class="item item-thumbnail-left" href="#/book/{{book.isbn}}">
                 <img data-ng-src="{{book.image}}">
@@ -11,6 +11,7 @@
                 <h2>{{ book.name }}</h2>
 
                 <p>{{book.author}}</p>
+
                 <p>有{{book.sort_id}}人看过</p>
             </a>
         </div>

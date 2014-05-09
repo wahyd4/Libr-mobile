@@ -8,11 +8,16 @@ class HomeController
     if @LocalStorageUtils.isUserLogedIn()
       showLoading(@$scope, @$ionicLoading)
       @$scope.title = '随便看看吧'
-      @RecommendService.randomBooks (result)=>
-        @$scope.books = result
+      if localStorage.getItem('home.books') is null
+        @RecommendService.randomBooks (result)=>
+          @$scope.books = result
+          localStorage.setItem 'home.books', JSON.stringify(result)
+          @$scope.loading.hide()
+        , (error)=>
+          @ErrorHandler.loadingHandler @$scope, null
+      else
+        @$scope.books = JSON.parse(localStorage.getItem('home.books'))
         @$scope.loading.hide()
-      , (error)=>
-        @ErrorHandler.loadingHandler @$scope, null
 
     else
       @$location.path '/tab/settings'
@@ -47,6 +52,7 @@ class HomeController
         navigator.notification.alert(msg, null, 'libr', '确定')
       else
         @$scope.books = result
+        localStorage.setItem 'home.books', JSON.stringify(result)
         listArray = JSON.parse(localStorage.getItem 'recommend_action_sheet_full_arr')
         @$scope.title = listArray[index].text
     , (error)=>

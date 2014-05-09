@@ -14,3 +14,482 @@
 2014-04-16 11:35:40.642 Libr[2534:70b] Unlimited access to network resources
 2014-04-16 11:35:40.728 Libr[2534:70b] Resetting plugins due to page load.
 2014-04-16 11:35:40.881 Libr[2534:70b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/689C9FCB-41B1-4F23-A468-5913ACF7FA66/Libr.app/www/index.html#/login
+2014-04-25 22:24:24.069 Libr[15035:70b] Multi-tasking -> Device: YES, App: YES
+2014-04-25 22:24:24.112 Libr[15035:70b] Unlimited access to network resources
+2014-04-25 22:24:24.302 Libr[15035:70b] [CDVTimer][file] 2.106965ms
+2014-04-25 22:24:24.480 Libr[15035:70b] [CDVTimer][statusbar] 177.947998ms
+2014-04-25 22:24:24.481 Libr[15035:70b] [CDVTimer][TotalPluginStartup] 180.913985ms
+2014-04-25 22:24:24.579 Libr[15035:70b] Resetting plugins due to page load.
+2014-04-25 22:24:25.055 Libr[15035:70b] CDVPlugin class CDVDevice (pluginName: Device) does not exist.
+2014-04-25 22:24:25.055 Libr[15035:70b] ERROR: Plugin 'Device' not found, or is not a CDVPlugin. Check your plugin mapping in config.xml.
+2014-04-25 22:24:25.055 Libr[15035:70b] -[CDVCommandQueue executePending] [Line 158] FAILED pluginJSON = [
+  "Device328058139",
+  "Device",
+  "getDeviceInfo",
+  [
+
+  ]
+]
+2014-04-25 22:24:25.092 Libr[15035:70b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/29C1C28C-296F-4A3B-BC66-AF1B7707D8AB/Libr.app/www/index.html#/tab/home
+2014-04-25 22:26:55.273 Libr[15495:70b] Multi-tasking -> Device: YES, App: YES
+2014-04-25 22:26:55.280 Libr[15495:70b] Unlimited access to network resources
+2014-04-25 22:26:55.297 Libr[15495:70b] [CDVTimer][file] 1.975000ms
+2014-04-25 22:26:55.304 Libr[15495:70b] [CDVTimer][statusbar] 6.623983ms
+2014-04-25 22:26:55.305 Libr[15495:70b] [CDVTimer][TotalPluginStartup] 9.431005ms
+2014-04-25 22:26:55.334 Libr[15495:70b] Resetting plugins due to page load.
+2014-04-25 22:26:55.616 Libr[15495:70b] CDVPlugin class CDVDevice (pluginName: Device) does not exist.
+2014-04-25 22:26:55.616 Libr[15495:70b] ERROR: Plugin 'Device' not found, or is not a CDVPlugin. Check your plugin mapping in config.xml.
+2014-04-25 22:26:55.617 Libr[15495:70b] -[CDVCommandQueue executePending] [Line 158] FAILED pluginJSON = [
+  "Device1105718901",
+  "Device",
+  "getDeviceInfo",
+  [
+
+  ]
+]
+2014-04-25 22:26:55.842 Libr[15495:70b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/29C1C28C-296F-4A3B-BC66-AF1B7707D8AB/Libr.app/www/index.html#/tab/home
+2014-04-25 22:29:11.490 Libr[15959:70b] Multi-tasking -> Device: YES, App: YES
+2014-04-25 22:29:11.496 Libr[15959:70b] Unlimited access to network resources
+2014-04-25 22:29:11.512 Libr[15959:70b] [CDVTimer][file] 1.268983ms
+2014-04-25 22:29:11.518 Libr[15959:70b] [CDVTimer][statusbar] 5.899012ms
+2014-04-25 22:29:11.518 Libr[15959:70b] [CDVTimer][TotalPluginStartup] 7.999957ms
+2014-04-25 22:29:11.548 Libr[15959:70b] Resetting plugins due to page load.
+2014-04-25 22:29:11.826 Libr[15959:70b] CDVPlugin class CDVDevice (pluginName: Device) does not exist.
+2014-04-25 22:29:11.826 Libr[15959:70b] ERROR: Plugin 'Device' not found, or is not a CDVPlugin. Check your plugin mapping in config.xml.
+2014-04-25 22:29:11.826 Libr[15959:70b] -[CDVCommandQueue executePending] [Line 158] FAILED pluginJSON = [
+  "Device1942197024",
+  "Device",
+  "getDeviceInfo",
+  [
+
+  ]
+]
+2014-04-25 22:29:11.986 Libr[15959:70b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/29C1C28C-296F-4A3B-BC66-AF1B7707D8AB/Libr.app/www/index.html#/tab/home
+2014-05-09 17:41:37.606 Libr[28053:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-09 17:41:37.660 Libr[28053:70b] Unlimited access to network resources
+2014-05-09 17:41:37.897 Libr[28053:70b] [CDVTimer][file] 2.865016ms
+2014-05-09 17:41:37.950 Libr[28053:70b] [CDVTimer][statusbar] 52.471995ms
+2014-05-09 17:41:37.950 Libr[28053:70b] [CDVTimer][TotalPluginStartup] 56.259990ms
+2014-05-09 17:41:38.052 Libr[28053:70b] Resetting plugins due to page load.
+2014-05-09 17:41:38.569 Libr[28053:70b] CDVPlugin class CDVDevice (pluginName: Device) does not exist.
+2014-05-09 17:41:38.570 Libr[28053:70b] ERROR: Plugin 'Device' not found, or is not a CDVPlugin. Check your plugin mapping in config.xml.
+2014-05-09 17:41:38.570 Libr[28053:70b] -[CDVCommandQueue executePending] [Line 158] FAILED pluginJSON = [
+  "Device1289770572",
+  "Device",
+  "getDeviceInfo",
+  [
+
+  ]
+]
+2014-05-09 17:41:40.132 Libr[28053:70b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/29C1C28C-296F-4A3B-BC66-AF1B7707D8AB/Libr.app/www/index.html#/tab/home
+2014-05-09 17:51:50.297 Libr[28053:70b] THREAD WARNING: ['Notification'] took '46.842041' ms. Plugin should use a background thread.
+2014-05-09 17:59:08.559 Libr[29895:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-09 17:59:08.582 Libr[29895:70b] Unlimited access to network resources
+2014-05-09 17:59:08.758 Libr[29895:70b] [CDVTimer][file] 3.189981ms
+2014-05-09 17:59:08.801 Libr[29895:70b] [CDVTimer][statusbar] 41.875958ms
+2014-05-09 17:59:08.802 Libr[29895:70b] [CDVTimer][TotalPluginStartup] 46.485007ms
+2014-05-09 17:59:08.908 Libr[29895:70b] Resetting plugins due to page load.
+2014-05-09 17:59:09.412 Libr[29895:70b] CDVPlugin class CDVDevice (pluginName: Device) does not exist.
+2014-05-09 17:59:09.413 Libr[29895:70b] ERROR: Plugin 'Device' not found, or is not a CDVPlugin. Check your plugin mapping in config.xml.
+2014-05-09 17:59:09.413 Libr[29895:70b] -[CDVCommandQueue executePending] [Line 158] FAILED pluginJSON = [
+  "Device569014785",
+  "Device",
+  "getDeviceInfo",
+  [
+
+  ]
+]
+2014-05-09 17:59:11.198 Libr[29895:70b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/29C1C28C-296F-4A3B-BC66-AF1B7707D8AB/Libr.app/www/index.html#/tab/home
+2014-05-09 18:01:07.872 Libr[30495:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-09 18:01:07.878 Libr[30495:70b] Unlimited access to network resources
+2014-05-09 18:01:07.894 Libr[30495:70b] [CDVTimer][file] 1.276016ms
+2014-05-09 18:01:07.903 Libr[30495:70b] [CDVTimer][statusbar] 8.648992ms
+2014-05-09 18:01:07.903 Libr[30495:70b] [CDVTimer][TotalPluginStartup] 10.729015ms
+2014-05-09 18:01:07.972 Libr[30495:70b] Resetting plugins due to page load.
+2014-05-09 18:01:08.204 Libr[30495:70b] CDVPlugin class CDVDevice (pluginName: Device) does not exist.
+2014-05-09 18:01:08.204 Libr[30495:70b] ERROR: Plugin 'Device' not found, or is not a CDVPlugin. Check your plugin mapping in config.xml.
+2014-05-09 18:01:08.204 Libr[30495:70b] -[CDVCommandQueue executePending] [Line 158] FAILED pluginJSON = [
+  "Device708176289",
+  "Device",
+  "getDeviceInfo",
+  [
+
+  ]
+]
+2014-05-09 18:01:09.525 Libr[30495:70b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/29C1C28C-296F-4A3B-BC66-AF1B7707D8AB/Libr.app/www/index.html#/tab/home
+2014-05-09 18:08:43.715 Libr[32229:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-09 18:08:43.722 Libr[32229:70b] Unlimited access to network resources
+2014-05-09 18:08:43.743 Libr[32229:70b] [CDVTimer][file] 1.148999ms
+2014-05-09 18:08:43.757 Libr[32229:70b] [CDVTimer][statusbar] 14.250994ms
+2014-05-09 18:08:43.758 Libr[32229:70b] [CDVTimer][TotalPluginStartup] 16.249001ms
+2014-05-09 18:08:43.873 Libr[32229:70b] Resetting plugins due to page load.
+2014-05-09 18:08:44.129 Libr[32229:70b] CDVPlugin class CDVDevice (pluginName: Device) does not exist.
+2014-05-09 18:08:44.129 Libr[32229:70b] ERROR: Plugin 'Device' not found, or is not a CDVPlugin. Check your plugin mapping in config.xml.
+2014-05-09 18:08:44.129 Libr[32229:70b] -[CDVCommandQueue executePending] [Line 158] FAILED pluginJSON = [
+  "Device1730805002",
+  "Device",
+  "getDeviceInfo",
+  [
+
+  ]
+]
+2014-05-09 18:08:45.439 Libr[32229:70b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/29C1C28C-296F-4A3B-BC66-AF1B7707D8AB/Libr.app/www/index.html#/tab/home
+2014-05-09 18:09:37.267 Libr[32817:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-09 18:09:37.276 Libr[32817:70b] Unlimited access to network resources
+2014-05-09 18:09:37.300 Libr[32817:70b] [CDVTimer][file] 1.740992ms
+2014-05-09 18:09:37.310 Libr[32817:70b] [CDVTimer][statusbar] 9.974957ms
+2014-05-09 18:09:37.311 Libr[32817:70b] [CDVTimer][TotalPluginStartup] 12.860000ms
+2014-05-09 18:09:37.352 Libr[32817:70b] Resetting plugins due to page load.
+2014-05-09 18:09:37.547 Libr[32817:70b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/29C1C28C-296F-4A3B-BC66-AF1B7707D8AB/Libr.app/www/index.html#/tab/home
+2014-05-09 18:09:37.604 Libr[32817:70b] CDVPlugin class CDVDevice (pluginName: Device) does not exist.
+2014-05-09 18:09:37.604 Libr[32817:70b] ERROR: Plugin 'Device' not found, or is not a CDVPlugin. Check your plugin mapping in config.xml.
+2014-05-09 18:09:37.605 Libr[32817:70b] -[CDVCommandQueue executePending] [Line 158] FAILED pluginJSON = [
+  "Device1572454560",
+  "Device",
+  "getDeviceInfo",
+  [
+
+  ]
+]
+2014-05-09 18:10:53.283 Libr[33969:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-09 18:10:53.292 Libr[33969:70b] Unlimited access to network resources
+2014-05-09 18:10:53.314 Libr[33969:70b] [CDVTimer][file] 1.206994ms
+2014-05-09 18:10:53.325 Libr[33969:70b] [CDVTimer][statusbar] 10.630965ms
+2014-05-09 18:10:53.326 Libr[33969:70b] [CDVTimer][TotalPluginStartup] 12.915969ms
+2014-05-09 18:10:53.401 Libr[33969:70b] Resetting plugins due to page load.
+2014-05-09 18:10:53.682 Libr[33969:70b] CDVPlugin class CDVDevice (pluginName: Device) does not exist.
+2014-05-09 18:10:53.682 Libr[33969:70b] ERROR: Plugin 'Device' not found, or is not a CDVPlugin. Check your plugin mapping in config.xml.
+2014-05-09 18:10:53.682 Libr[33969:70b] -[CDVCommandQueue executePending] [Line 158] FAILED pluginJSON = [
+  "Device1409215153",
+  "Device",
+  "getDeviceInfo",
+  [
+
+  ]
+]
+2014-05-09 18:10:54.476 Libr[33969:70b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/29C1C28C-296F-4A3B-BC66-AF1B7707D8AB/Libr.app/www/index.html#/tab/home
+2014-05-09 18:12:30.863 Libr[35123:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-09 18:12:30.869 Libr[35123:70b] Unlimited access to network resources
+2014-05-09 18:12:30.890 Libr[35123:70b] [CDVTimer][file] 1.417994ms
+2014-05-09 18:12:30.898 Libr[35123:70b] [CDVTimer][statusbar] 7.268012ms
+2014-05-09 18:12:30.898 Libr[35123:70b] [CDVTimer][TotalPluginStartup] 9.624958ms
+2014-05-09 18:12:31.049 Libr[35123:70b] Resetting plugins due to page load.
+2014-05-09 18:12:31.175 Libr[35123:70b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/BEBEE4AE-9B93-45DC-B457-BA5B31164AF9/Libr.app/www/index.html#/login
+2014-05-09 18:12:31.225 Libr[35123:70b] CDVPlugin class CDVDevice (pluginName: Device) does not exist.
+2014-05-09 18:12:31.225 Libr[35123:70b] ERROR: Plugin 'Device' not found, or is not a CDVPlugin. Check your plugin mapping in config.xml.
+2014-05-09 18:12:31.226 Libr[35123:70b] -[CDVCommandQueue executePending] [Line 158] FAILED pluginJSON = [
+  "Device1797114004",
+  "Device",
+  "getDeviceInfo",
+  [
+
+  ]
+]
+2014-05-09 18:13:51.633 Libr[35715:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-09 18:13:51.640 Libr[35715:70b] Unlimited access to network resources
+2014-05-09 18:13:51.656 Libr[35715:70b] [CDVTimer][file] 1.277983ms
+2014-05-09 18:13:51.664 Libr[35715:70b] [CDVTimer][statusbar] 7.341027ms
+2014-05-09 18:13:51.664 Libr[35715:70b] [CDVTimer][TotalPluginStartup] 9.480953ms
+2014-05-09 18:13:51.733 Libr[35715:70b] Resetting plugins due to page load.
+2014-05-09 18:13:51.974 Libr[35715:70b] CDVPlugin class CDVDevice (pluginName: Device) does not exist.
+2014-05-09 18:13:51.974 Libr[35715:70b] ERROR: Plugin 'Device' not found, or is not a CDVPlugin. Check your plugin mapping in config.xml.
+2014-05-09 18:13:51.974 Libr[35715:70b] -[CDVCommandQueue executePending] [Line 158] FAILED pluginJSON = [
+  "Device1080069649",
+  "Device",
+  "getDeviceInfo",
+  [
+
+  ]
+]
+2014-05-09 18:13:53.133 Libr[35715:70b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/BEBEE4AE-9B93-45DC-B457-BA5B31164AF9/Libr.app/www/index.html#/tab/home
+2014-05-09 18:13:58.652 Libr[36303:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-09 18:13:58.658 Libr[36303:70b] Unlimited access to network resources
+2014-05-09 18:13:58.675 Libr[36303:70b] [CDVTimer][file] 1.304984ms
+2014-05-09 18:13:58.681 Libr[36303:70b] [CDVTimer][statusbar] 6.066978ms
+2014-05-09 18:13:58.681 Libr[36303:70b] [CDVTimer][TotalPluginStartup] 8.163035ms
+2014-05-09 18:13:58.712 Libr[36303:70b] Resetting plugins due to page load.
+2014-05-09 18:13:58.954 Libr[36303:70b] CDVPlugin class CDVDevice (pluginName: Device) does not exist.
+2014-05-09 18:13:58.955 Libr[36303:70b] ERROR: Plugin 'Device' not found, or is not a CDVPlugin. Check your plugin mapping in config.xml.
+2014-05-09 18:13:58.955 Libr[36303:70b] -[CDVCommandQueue executePending] [Line 158] FAILED pluginJSON = [
+  "Device1777865224",
+  "Device",
+  "getDeviceInfo",
+  [
+
+  ]
+]
+2014-05-09 18:13:59.864 Libr[36303:70b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/BEBEE4AE-9B93-45DC-B457-BA5B31164AF9/Libr.app/www/index.html#/tab/home
+2014-05-09 18:17:07.288 Libr[36954:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-09 18:17:07.294 Libr[36954:70b] Unlimited access to network resources
+2014-05-09 18:17:07.313 Libr[36954:70b] [CDVTimer][file] 1.636028ms
+2014-05-09 18:17:07.321 Libr[36954:70b] [CDVTimer][statusbar] 7.318020ms
+2014-05-09 18:17:07.322 Libr[36954:70b] [CDVTimer][TotalPluginStartup] 9.851038ms
+2014-05-09 18:17:07.418 Libr[36954:70b] Resetting plugins due to page load.
+2014-05-09 18:17:07.704 Libr[36954:70b] CDVPlugin class CDVDevice (pluginName: Device) does not exist.
+2014-05-09 18:17:07.704 Libr[36954:70b] ERROR: Plugin 'Device' not found, or is not a CDVPlugin. Check your plugin mapping in config.xml.
+2014-05-09 18:17:07.705 Libr[36954:70b] -[CDVCommandQueue executePending] [Line 158] FAILED pluginJSON = [
+  "Device575453911",
+  "Device",
+  "getDeviceInfo",
+  [
+
+  ]
+]
+2014-05-09 18:18:47.932 Libr[38121:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-09 18:18:47.938 Libr[38121:70b] Unlimited access to network resources
+2014-05-09 18:18:47.954 Libr[38121:70b] [CDVTimer][file] 1.389027ms
+2014-05-09 18:18:47.962 Libr[38121:70b] [CDVTimer][statusbar] 6.851971ms
+2014-05-09 18:18:47.962 Libr[38121:70b] [CDVTimer][TotalPluginStartup] 9.072959ms
+2014-05-09 18:18:48.092 Libr[38121:70b] Resetting plugins due to page load.
+2014-05-09 18:18:48.219 Libr[38121:70b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/A80A0E5E-A0C8-4817-B2BA-29E6ADE6FC0F/Libr.app/www/index.html#/login
+2014-05-09 18:18:48.278 Libr[38121:70b] CDVPlugin class CDVDevice (pluginName: Device) does not exist.
+2014-05-09 18:18:48.279 Libr[38121:70b] ERROR: Plugin 'Device' not found, or is not a CDVPlugin. Check your plugin mapping in config.xml.
+2014-05-09 18:18:48.279 Libr[38121:70b] -[CDVCommandQueue executePending] [Line 158] FAILED pluginJSON = [
+  "Device1705627884",
+  "Device",
+  "getDeviceInfo",
+  [
+
+  ]
+]
+2014-05-09 18:23:29.074 Libr[39509:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-09 18:23:29.082 Libr[39509:70b] Unlimited access to network resources
+2014-05-09 18:23:29.104 Libr[39509:70b] [CDVTimer][file] 2.161026ms
+2014-05-09 18:23:29.104 Libr[39509:70b] [CDVTimer][TotalPluginStartup] 2.667010ms
+2014-05-09 18:23:29.313 Libr[39509:70b] Resetting plugins due to page load.
+2014-05-09 18:23:29.469 Libr[39509:70b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/782A0646-EA24-46A8-8875-EA30A9BB0E54/Libr.app/www/index.html#/login
+2014-05-09 18:23:29.583 Libr[39509:70b] CDVPlugin class CDVDevice (pluginName: Device) does not exist.
+2014-05-09 18:23:29.583 Libr[39509:70b] ERROR: Plugin 'Device' not found, or is not a CDVPlugin. Check your plugin mapping in config.xml.
+2014-05-09 18:23:29.584 Libr[39509:70b] -[CDVCommandQueue executePending] [Line 158] FAILED pluginJSON = [
+  "Device65131035",
+  "Device",
+  "getDeviceInfo",
+  [
+
+  ]
+]
+2014-05-09 18:26:11.170 Libr[41899:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-09 18:26:11.176 Libr[41899:70b] Unlimited access to network resources
+2014-05-09 18:26:11.195 Libr[41899:70b] [CDVTimer][file] 1.922011ms
+2014-05-09 18:26:11.207 Libr[41899:70b] [CDVTimer][statusbar] 12.279034ms
+2014-05-09 18:26:11.208 Libr[41899:70b] [CDVTimer][TotalPluginStartup] 15.180051ms
+2014-05-09 18:26:11.379 Libr[41899:70b] Resetting plugins due to page load.
+2014-05-09 18:26:11.535 Libr[41899:70b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/97FD10BE-9DF3-41B8-AFFA-3769DF8EC8E7/Libr.app/www/index.html#/login
+2014-05-09 18:26:11.600 Libr[41899:70b] CDVPlugin class CDVDevice (pluginName: Device) does not exist.
+2014-05-09 18:26:11.600 Libr[41899:70b] ERROR: Plugin 'Device' not found, or is not a CDVPlugin. Check your plugin mapping in config.xml.
+2014-05-09 18:26:11.601 Libr[41899:70b] -[CDVCommandQueue executePending] [Line 158] FAILED pluginJSON = [
+  "Device605123081",
+  "Device",
+  "getDeviceInfo",
+  [
+
+  ]
+]
+2014-05-09 18:29:20.629 Libr[43811:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-09 18:29:20.635 Libr[43811:70b] Unlimited access to network resources
+2014-05-09 18:29:20.658 Libr[43811:70b] [CDVTimer][file] 1.610994ms
+2014-05-09 18:29:20.675 Libr[43811:70b] [CDVTimer][statusbar] 16.324043ms
+2014-05-09 18:29:20.676 Libr[43811:70b] [CDVTimer][TotalPluginStartup] 18.898964ms
+2014-05-09 18:29:20.808 Libr[43811:70b] Resetting plugins due to page load.
+2014-05-09 18:29:20.938 Libr[43811:70b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/97FD10BE-9DF3-41B8-AFFA-3769DF8EC8E7/Libr.app/www/index.html#/login
+2014-05-09 18:29:20.991 Libr[43811:70b] CDVPlugin class CDVDevice (pluginName: Device) does not exist.
+2014-05-09 18:29:20.991 Libr[43811:70b] ERROR: Plugin 'Device' not found, or is not a CDVPlugin. Check your plugin mapping in config.xml.
+2014-05-09 18:29:20.992 Libr[43811:70b] -[CDVCommandQueue executePending] [Line 158] FAILED pluginJSON = [
+  "Device1053083677",
+  "Device",
+  "getDeviceInfo",
+  [
+
+  ]
+]
+2014-05-09 18:31:29.329 Libr[44408:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-09 18:31:29.335 Libr[44408:70b] Unlimited access to network resources
+2014-05-09 18:31:29.354 Libr[44408:70b] [CDVTimer][file] 1.259983ms
+2014-05-09 18:31:29.368 Libr[44408:70b] [CDVTimer][statusbar] 13.936043ms
+2014-05-09 18:31:29.368 Libr[44408:70b] [CDVTimer][TotalPluginStartup] 16.000032ms
+2014-05-09 18:31:29.482 Libr[44408:70b] Resetting plugins due to page load.
+2014-05-09 18:31:29.609 Libr[44408:70b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/97FD10BE-9DF3-41B8-AFFA-3769DF8EC8E7/Libr.app/www/index.html#/login
+2014-05-09 18:31:29.658 Libr[44408:70b] CDVPlugin class CDVDevice (pluginName: Device) does not exist.
+2014-05-09 18:31:29.659 Libr[44408:70b] ERROR: Plugin 'Device' not found, or is not a CDVPlugin. Check your plugin mapping in config.xml.
+2014-05-09 18:31:29.659 Libr[44408:70b] -[CDVCommandQueue executePending] [Line 158] FAILED pluginJSON = [
+  "Device20350631",
+  "Device",
+  "getDeviceInfo",
+  [
+
+  ]
+]
+2014-05-09 18:32:53.075 Libr[45021:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-09 18:32:53.081 Libr[45021:70b] Unlimited access to network resources
+2014-05-09 18:32:53.098 Libr[45021:70b] [CDVTimer][file] 1.762986ms
+2014-05-09 18:32:53.122 Libr[45021:70b] [CDVTimer][statusbar] 24.125993ms
+2014-05-09 18:32:53.123 Libr[45021:70b] [CDVTimer][TotalPluginStartup] 26.763022ms
+2014-05-09 18:32:53.194 Libr[45021:70b] Resetting plugins due to page load.
+2014-05-09 18:32:53.355 Libr[45021:70b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/97FD10BE-9DF3-41B8-AFFA-3769DF8EC8E7/Libr.app/www/index.html#/login
+2014-05-09 18:32:53.368 Libr[45021:70b] CDVPlugin class CDVDevice (pluginName: Device) does not exist.
+2014-05-09 18:32:53.368 Libr[45021:70b] ERROR: Plugin 'Device' not found, or is not a CDVPlugin. Check your plugin mapping in config.xml.
+2014-05-09 18:32:53.368 Libr[45021:70b] -[CDVCommandQueue executePending] [Line 158] FAILED pluginJSON = [
+  "Device1873446365",
+  "Device",
+  "getDeviceInfo",
+  [
+
+  ]
+]
+2014-05-09 18:33:10.365 Libr[45618:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-09 18:33:10.371 Libr[45618:70b] Unlimited access to network resources
+2014-05-09 18:33:10.387 Libr[45618:70b] [CDVTimer][file] 1.360953ms
+2014-05-09 18:33:10.397 Libr[45618:70b] [CDVTimer][statusbar] 8.875966ms
+2014-05-09 18:33:10.397 Libr[45618:70b] [CDVTimer][TotalPluginStartup] 11.223018ms
+2014-05-09 18:33:10.578 Libr[45618:70b] Resetting plugins due to page load.
+2014-05-09 18:33:10.750 Libr[45618:70b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/A283CA32-C44E-470F-87B6-E92AFDCE45C0/Libr.app/www/index.html#/login
+2014-05-09 18:33:10.807 Libr[45618:70b] CDVPlugin class CDVDevice (pluginName: Device) does not exist.
+2014-05-09 18:33:10.807 Libr[45618:70b] ERROR: Plugin 'Device' not found, or is not a CDVPlugin. Check your plugin mapping in config.xml.
+2014-05-09 18:33:10.808 Libr[45618:70b] -[CDVCommandQueue executePending] [Line 158] FAILED pluginJSON = [
+  "Device821581219",
+  "Device",
+  "getDeviceInfo",
+  [
+
+  ]
+]
+2014-05-09 18:34:45.364 Libr[46235:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-09 18:34:45.373 Libr[46235:70b] Unlimited access to network resources
+2014-05-09 18:34:45.396 Libr[46235:70b] [CDVTimer][file] 2.204955ms
+2014-05-09 18:34:45.407 Libr[46235:70b] [CDVTimer][statusbar] 10.416031ms
+2014-05-09 18:34:45.407 Libr[46235:70b] [CDVTimer][TotalPluginStartup] 13.698995ms
+2014-05-09 18:34:45.462 Libr[46235:70b] Resetting plugins due to page load.
+2014-05-09 18:34:45.689 Libr[46235:70b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/A283CA32-C44E-470F-87B6-E92AFDCE45C0/Libr.app/www/index.html#/login
+2014-05-09 18:34:45.712 Libr[46235:70b] CDVPlugin class CDVDevice (pluginName: Device) does not exist.
+2014-05-09 18:34:45.713 Libr[46235:70b] ERROR: Plugin 'Device' not found, or is not a CDVPlugin. Check your plugin mapping in config.xml.
+2014-05-09 18:34:45.713 Libr[46235:70b] -[CDVCommandQueue executePending] [Line 158] FAILED pluginJSON = [
+  "Device1013264425",
+  "Device",
+  "getDeviceInfo",
+  [
+
+  ]
+]
+2014-05-09 18:35:57.486 Libr[46834:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-09 18:35:57.492 Libr[46834:70b] Unlimited access to network resources
+2014-05-09 18:35:57.509 Libr[46834:70b] [CDVTimer][file] 1.259029ms
+2014-05-09 18:35:57.525 Libr[46834:70b] [CDVTimer][statusbar] 15.130997ms
+2014-05-09 18:35:57.525 Libr[46834:70b] [CDVTimer][TotalPluginStartup] 17.265975ms
+2014-05-09 18:35:57.706 Libr[46834:70b] Resetting plugins due to page load.
+2014-05-09 18:35:57.849 Libr[46834:70b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/A283CA32-C44E-470F-87B6-E92AFDCE45C0/Libr.app/www/index.html#/login
+2014-05-09 18:35:57.904 Libr[46834:70b] CDVPlugin class CDVDevice (pluginName: Device) does not exist.
+2014-05-09 18:35:57.905 Libr[46834:70b] ERROR: Plugin 'Device' not found, or is not a CDVPlugin. Check your plugin mapping in config.xml.
+2014-05-09 18:35:57.905 Libr[46834:70b] -[CDVCommandQueue executePending] [Line 158] FAILED pluginJSON = [
+  "Device276969172",
+  "Device",
+  "getDeviceInfo",
+  [
+
+  ]
+]
+2014-05-09 18:37:17.068 Libr[47341:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-09 18:37:17.103 Libr[47341:70b] Unlimited access to network resources
+2014-05-09 18:37:17.259 Libr[47341:70b] [CDVTimer][file] 2.068996ms
+2014-05-09 18:37:17.275 Libr[47341:70b] [CDVTimer][statusbar] 16.238034ms
+2014-05-09 18:37:17.276 Libr[47341:70b] [CDVTimer][TotalPluginStartup] 19.142985ms
+2014-05-09 18:37:17.409 Libr[47341:70b] Resetting plugins due to page load.
+2014-05-09 18:37:17.608 Libr[47341:70b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/A283CA32-C44E-470F-87B6-E92AFDCE45C0/Libr.app/www/index.html#/login
+2014-05-09 18:37:17.625 Libr[47341:70b] CDVPlugin class CDVDevice (pluginName: Device) does not exist.
+2014-05-09 18:37:17.626 Libr[47341:70b] ERROR: Plugin 'Device' not found, or is not a CDVPlugin. Check your plugin mapping in config.xml.
+2014-05-09 18:37:17.626 Libr[47341:70b] -[CDVCommandQueue executePending] [Line 158] FAILED pluginJSON = [
+  "Device1949745796",
+  "Device",
+  "getDeviceInfo",
+  [
+
+  ]
+]
+2014-05-09 18:37:52.266 Libr[49219:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-09 18:37:52.275 Libr[49219:70b] Unlimited access to network resources
+2014-05-09 18:37:52.298 Libr[49219:70b] [CDVTimer][file] 1.908958ms
+2014-05-09 18:37:52.308 Libr[49219:70b] [CDVTimer][statusbar] 10.129988ms
+2014-05-09 18:37:52.309 Libr[49219:70b] [CDVTimer][TotalPluginStartup] 12.938023ms
+2014-05-09 18:37:52.396 Libr[49219:70b] Resetting plugins due to page load.
+2014-05-09 18:37:52.584 Libr[49219:70b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/890978F4-E76B-4981-B68C-BD15860E1710/Libr.app/www/index.html#/login
+2014-05-09 18:37:52.602 Libr[49219:70b] CDVPlugin class CDVDevice (pluginName: Device) does not exist.
+2014-05-09 18:37:52.602 Libr[49219:70b] ERROR: Plugin 'Device' not found, or is not a CDVPlugin. Check your plugin mapping in config.xml.
+2014-05-09 18:37:52.603 Libr[49219:70b] -[CDVCommandQueue executePending] [Line 158] FAILED pluginJSON = [
+  "Device391931659",
+  "Device",
+  "getDeviceInfo",
+  [
+
+  ]
+]
+2014-05-09 18:42:35.859 Libr[50399:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-09 18:42:35.865 Libr[50399:70b] Unlimited access to network resources
+2014-05-09 18:42:35.881 Libr[50399:70b] [CDVTimer][file] 1.273990ms
+2014-05-09 18:42:35.897 Libr[50399:70b] [CDVTimer][statusbar] 15.564024ms
+2014-05-09 18:42:35.898 Libr[50399:70b] [CDVTimer][TotalPluginStartup] 17.660022ms
+2014-05-09 18:42:36.023 Libr[50399:70b] Resetting plugins due to page load.
+2014-05-09 18:42:36.200 Libr[50399:70b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/890978F4-E76B-4981-B68C-BD15860E1710/Libr.app/www/index.html#/login
+2014-05-09 18:42:36.230 Libr[50399:70b] CDVPlugin class CDVDevice (pluginName: Device) does not exist.
+2014-05-09 18:42:36.231 Libr[50399:70b] ERROR: Plugin 'Device' not found, or is not a CDVPlugin. Check your plugin mapping in config.xml.
+2014-05-09 18:42:36.231 Libr[50399:70b] -[CDVCommandQueue executePending] [Line 158] FAILED pluginJSON = [
+  "Device1622136625",
+  "Device",
+  "getDeviceInfo",
+  [
+
+  ]
+]
+2014-05-09 19:45:35.632 Libr[51583:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-09 19:45:35.639 Libr[51583:70b] Unlimited access to network resources
+2014-05-09 19:45:35.658 Libr[51583:70b] [CDVTimer][file] 1.426995ms
+2014-05-09 19:45:35.675 Libr[51583:70b] [CDVTimer][statusbar] 16.489983ms
+2014-05-09 19:45:35.675 Libr[51583:70b] [CDVTimer][TotalPluginStartup] 18.760979ms
+2014-05-09 19:45:35.813 Libr[51583:70b] Resetting plugins due to page load.
+2014-05-09 19:45:35.954 Libr[51583:70b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/890978F4-E76B-4981-B68C-BD15860E1710/Libr.app/www/index.html#/login
+2014-05-09 19:45:36.084 Libr[51583:70b] CDVPlugin class CDVDevice (pluginName: Device) does not exist.
+2014-05-09 19:45:36.085 Libr[51583:70b] ERROR: Plugin 'Device' not found, or is not a CDVPlugin. Check your plugin mapping in config.xml.
+2014-05-09 19:45:36.085 Libr[51583:70b] -[CDVCommandQueue executePending] [Line 158] FAILED pluginJSON = [
+  "Device1830293615",
+  "Device",
+  "getDeviceInfo",
+  [
+
+  ]
+]
+2014-05-09 19:49:31.493 Libr[52675:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-09 19:49:31.499 Libr[52675:70b] Unlimited access to network resources
+2014-05-09 19:49:31.529 Libr[52675:70b] [CDVTimer][statusbar] 14.587998ms
+2014-05-09 19:49:31.529 Libr[52675:70b] [CDVTimer][TotalPluginStartup] 15.012980ms
+2014-05-09 19:49:31.708 Libr[52675:70b] Resetting plugins due to page load.
+2014-05-09 19:49:31.850 Libr[52675:70b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/890978F4-E76B-4981-B68C-BD15860E1710/Libr.app/www/index.html#/login
+2014-05-09 19:50:40.554 Libr[53209:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-09 19:50:40.586 Libr[53209:70b] Unlimited access to network resources
+2014-05-09 19:50:40.868 Libr[53209:70b] [CDVTimer][statusbar] 61.187983ms
+2014-05-09 19:50:40.869 Libr[53209:70b] [CDVTimer][TotalPluginStartup] 61.578035ms
+2014-05-09 19:50:41.016 Libr[53209:70b] Resetting plugins due to page load.
+2014-05-09 19:50:41.220 Libr[53209:70b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/890978F4-E76B-4981-B68C-BD15860E1710/Libr.app/www/index.html#/login
+2014-05-09 19:56:33.300 Libr[53771:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-09 19:56:33.307 Libr[53771:70b] Unlimited access to network resources
+2014-05-09 19:56:33.337 Libr[53771:70b] [CDVTimer][statusbar] 13.748050ms
+2014-05-09 19:56:33.338 Libr[53771:70b] [CDVTimer][TotalPluginStartup] 14.138997ms
+2014-05-09 19:56:33.451 Libr[53771:70b] Resetting plugins due to page load.
+2014-05-09 19:56:33.731 Libr[53771:70b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/890978F4-E76B-4981-B68C-BD15860E1710/Libr.app/www/index.html#/login
+2014-05-09 20:00:09.933 Libr[54326:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-09 20:00:09.940 Libr[54326:70b] Unlimited access to network resources
+2014-05-09 20:00:09.968 Libr[54326:70b] [CDVTimer][statusbar] 12.805045ms
+2014-05-09 20:00:09.968 Libr[54326:70b] [CDVTimer][TotalPluginStartup] 13.197958ms
+2014-05-09 20:00:10.104 Libr[54326:70b] Resetting plugins due to page load.
+2014-05-09 20:00:10.248 Libr[54326:70b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/890978F4-E76B-4981-B68C-BD15860E1710/Libr.app/www/index.html#/login
+2014-05-09 20:02:52.637 Libr[55411:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-09 20:02:52.643 Libr[55411:70b] Unlimited access to network resources
+2014-05-09 20:02:52.668 Libr[55411:70b] [CDVTimer][statusbar] 9.273946ms
+2014-05-09 20:02:52.669 Libr[55411:70b] [CDVTimer][keyboard] 0.077009ms
+2014-05-09 20:02:52.669 Libr[55411:70b] [CDVTimer][TotalPluginStartup] 10.012031ms
+2014-05-09 20:02:52.745 Libr[55411:70b] Resetting plugins due to page load.
+2014-05-09 20:02:53.688 Libr[55411:70b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/890978F4-E76B-4981-B68C-BD15860E1710/Libr.app/www/index.html#/tab/home
+2014-05-09 20:03:26.292 Libr[56456:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-09 20:03:26.298 Libr[56456:70b] Unlimited access to network resources
+2014-05-09 20:03:26.324 Libr[56456:70b] [CDVTimer][statusbar] 5.915999ms
+2014-05-09 20:03:26.324 Libr[56456:70b] [CDVTimer][keyboard] 0.093997ms
+2014-05-09 20:03:26.325 Libr[56456:70b] [CDVTimer][TotalPluginStartup] 6.776989ms
+2014-05-09 20:03:26.483 Libr[56456:70b] Resetting plugins due to page load.
+2014-05-09 20:03:26.645 Libr[56456:70b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/106DCF59-159C-472B-B5D1-9C3DD06A6882/Libr.app/www/index.html#/login

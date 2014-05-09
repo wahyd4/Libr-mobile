@@ -24,7 +24,14 @@ angular.module('libr', [
     'libr.controllers.books',
     'libr.controllers.location'
 ])
-
+    .run(function ($ionicPlatform) {
+        $ionicPlatform.ready(function () {
+            if (window.StatusBar) {
+                // org.apache.cordova.statusbar required
+                StatusBar.styleDefault();
+            }
+        });
+    })
     .config(function ($stateProvider, $urlRouterProvider) {
 
         // Ionic uses AngularUI Router which uses the concept of states
