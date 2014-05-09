@@ -11,18 +11,19 @@
         {{data.text}}
     </div>
 
-    <ion-content has-header="true" has-tabs="true" padding="true">
+    <ion-content class="padding has-header">
         <ion-infinite-scroll on-infinite="loadMore()" distance="1%" ng-if="moreItemsAvailable">
         </ion-infinite-scroll>
-        <div class="list">
-            <a ng-repeat="book in books | orderBy: 'sort_id' :true" class="item item-thumbnail-left"
-               href="#/book/{{book.isbn}}">
+        <ion-list>
+            <ion-item ng-repeat="book in books | orderBy: 'sort_id' :true" class="item item-thumbnail-left"
+                      item="book"
+                      href="#/book/{{book.isbn}}">
                 <img data-ng-src="{{book.image}}">
 
                 <h2>{{ book.name }}</h2>
 
                 <p>{{book.author}}</p>
-            </a>
-        </div>
+            </ion-item>
+        </ion-list>
     </ion-content>
 </ion-view>

@@ -15,3 +15,6 @@
 
 /platforms/*/assets/www/dist/js-app/
 /platforms/*/www/assets/
+
+/platforms/ios/cordova/console.log
+/platforms/android/cordova/console.log

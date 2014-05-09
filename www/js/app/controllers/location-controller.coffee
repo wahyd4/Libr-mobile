@@ -25,6 +25,7 @@ class LocationController
       @$scope.address = position.result.formatted_address
 
     @IonicUtils.initCustomLoading(@$scope)
+    @$scope.deleteItem = @deleteItem
 
   addLocation: () =>
     if @$scope.locations.length >= 3
@@ -37,5 +38,8 @@ class LocationController
       @GeolocationService.createLocation (result)=>
         @$scope.locations.push result
 
+  deleteItem: (item)=>
+    @GeolocationService.deleteLocation item, (result)=>
+      @$scope.locations.splice @$scope.locations.indexOf(item), 1
 
 libr.controller 'LocationController', LocationController

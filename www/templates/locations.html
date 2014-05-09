@@ -20,7 +20,12 @@
             我的常用位置
         </div>
         <ion-list option-buttons="itemButtons">
-            <ion-item ng-repeat="location in locations" item="location">{{location.address}}</ion-item>
+            <ion-item ng-repeat="location in locations" item="location">{{location.address}}
+                <ion-option-button class="button-assertive"
+                                   ng-click="deleteItem(location)">
+                    删除
+                </ion-option-button>
+            </ion-item>
         </ion-list>
     </ion-content>
 </ion-view>

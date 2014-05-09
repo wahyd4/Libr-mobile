@@ -493,3 +493,67 @@
 2014-05-09 20:03:26.325 Libr[56456:70b] [CDVTimer][TotalPluginStartup] 6.776989ms
 2014-05-09 20:03:26.483 Libr[56456:70b] Resetting plugins due to page load.
 2014-05-09 20:03:26.645 Libr[56456:70b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/106DCF59-159C-472B-B5D1-9C3DD06A6882/Libr.app/www/index.html#/login
+2014-05-09 20:07:04.911 Libr[56456:70b] Resetting plugins due to page load.
+2014-05-09 20:07:12.180 Libr[56456:70b] Finished load of: https://jinshuju.net/f/F96z3s
+2014-05-09 20:07:19.559 Libr[56456:5207] CFNetwork SSLHandshake failed (-9806)
+2014-05-09 20:07:44.343 Libr[56456:70b] Resetting plugins due to page load.
+2014-05-09 20:07:45.805 Libr[56456:70b] Finished load of: https://jinshuju.net/f/F96z3s/success?auth_token=sV_RdM6uJnwq72KY7oRFWw
+2014-05-09 20:07:48.591 Libr[56456:70b] Resetting plugins due to page load.
+2014-05-09 20:07:52.155 Libr[56456:70b] Finished load of: https://jinshuju.net/templates_center
+2014-05-09 20:07:59.364 Libr[56456:70b] Resetting plugins due to page load.
+2014-05-09 20:07:59.661 Libr[56456:70b] Finished load of: https://jinshuju.net/templates_center/dhR4rM?plaza=hot
+2014-05-09 20:08:08.533 Libr[56456:70b] Resetting plugins due to page load.
+2014-05-09 20:08:08.855 Libr[56456:70b] Finished load of: https://jinshuju.net/templates_center?plaza=hot
+2014-05-09 20:28:28.679 Libr[57154:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-09 20:28:28.686 Libr[57154:70b] Unlimited access to network resources
+2014-05-09 20:28:28.714 Libr[57154:70b] [CDVTimer][statusbar] 13.464987ms
+2014-05-09 20:28:28.714 Libr[57154:70b] [CDVTimer][keyboard] 0.078022ms
+2014-05-09 20:28:28.714 Libr[57154:70b] [CDVTimer][TotalPluginStartup] 14.241993ms
+2014-05-09 20:28:28.824 Libr[57154:70b] Resetting plugins due to page load.
+2014-05-09 20:33:14.378 Libr[57717:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-09 20:33:14.386 Libr[57717:70b] Unlimited access to network resources
+2014-05-09 20:33:14.411 Libr[57717:70b] [CDVTimer][statusbar] 7.613957ms
+2014-05-09 20:33:14.411 Libr[57717:70b] [CDVTimer][keyboard] 0.086010ms
+2014-05-09 20:33:14.412 Libr[57717:70b] [CDVTimer][TotalPluginStartup] 8.419991ms
+2014-05-09 20:33:14.559 Libr[57717:70b] Resetting plugins due to page load.
+2014-05-09 20:33:14.709 Libr[57717:70b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/BC289B3A-0567-46EB-99CB-34C33052A2BC/Libr.app/www/index.html#/login
+2014-05-09 20:34:07.249 Libr[58256:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-09 20:34:07.256 Libr[58256:70b] Unlimited access to network resources
+2014-05-09 20:34:07.278 Libr[58256:70b] [CDVTimer][statusbar] 6.405056ms
+2014-05-09 20:34:07.278 Libr[58256:70b] [CDVTimer][keyboard] 0.115991ms
+2014-05-09 20:34:07.279 Libr[58256:70b] [CDVTimer][TotalPluginStartup] 7.345021ms
+2014-05-09 20:34:07.314 Libr[58256:70b] Resetting plugins due to page load.
+2014-05-09 20:34:13.539 Libr[58256:70b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/BC289B3A-0567-46EB-99CB-34C33052A2BC/Libr.app/www/index.html#/tab/home
+2014-05-09 20:37:56.466 Libr[58819:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-09 20:37:56.475 Libr[58819:70b] Unlimited access to network resources
+2014-05-09 20:37:56.500 Libr[58819:70b] [CDVTimer][statusbar] 8.632004ms
+2014-05-09 20:37:56.500 Libr[58819:70b] [CDVTimer][keyboard] 0.074983ms
+2014-05-09 20:37:56.501 Libr[58819:70b] [CDVTimer][TotalPluginStartup] 9.393990ms
+2014-05-09 20:37:56.571 Libr[58819:70b] Resetting plugins due to page load.
+2014-05-09 20:42:20.343 Libr[59372:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-09 20:42:20.351 Libr[59372:70b] Unlimited access to network resources
+2014-05-09 20:42:20.376 Libr[59372:70b] [CDVTimer][statusbar] 6.484985ms
+2014-05-09 20:42:20.377 Libr[59372:70b] [CDVTimer][keyboard] 0.117004ms
+2014-05-09 20:42:20.377 Libr[59372:70b] [CDVTimer][TotalPluginStartup] 7.449985ms
+2014-05-09 20:42:20.410 Libr[59372:70b] Resetting plugins due to page load.
+2014-05-09 20:42:22.196 Libr[59372:70b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/BC289B3A-0567-46EB-99CB-34C33052A2BC/Libr.app/www/index.html#/tab/home
+2014-05-09 20:43:51.459 Libr[59948:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-09 20:43:51.466 Libr[59948:70b] Unlimited access to network resources
+2014-05-09 20:43:51.489 Libr[59948:70b] [CDVTimer][statusbar] 6.435037ms
+2014-05-09 20:43:51.490 Libr[59948:70b] [CDVTimer][keyboard] 0.111997ms
+2014-05-09 20:43:51.490 Libr[59948:70b] [CDVTimer][TotalPluginStartup] 7.355988ms
+2014-05-09 20:43:51.541 Libr[59948:70b] Resetting plugins due to page load.
+2014-05-09 20:43:52.655 Libr[59948:70b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/BC289B3A-0567-46EB-99CB-34C33052A2BC/Libr.app/www/index.html#/tab/home
+2014-05-09 20:44:49.433 Libr[60497:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-09 20:44:49.441 Libr[60497:70b] Unlimited access to network resources
+2014-05-09 20:44:49.466 Libr[60497:70b] [CDVTimer][statusbar] 6.282032ms
+2014-05-09 20:44:49.467 Libr[60497:70b] [CDVTimer][keyboard] 0.084043ms
+2014-05-09 20:44:49.467 Libr[60497:70b] [CDVTimer][TotalPluginStartup] 7.205009ms
+2014-05-09 20:44:49.508 Libr[60497:70b] Resetting plugins due to page load.
+2014-05-09 20:46:09.142 Libr[61039:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-09 20:46:09.148 Libr[61039:70b] Unlimited access to network resources
+2014-05-09 20:46:09.172 Libr[61039:70b] [CDVTimer][statusbar] 8.242965ms
+2014-05-09 20:46:09.173 Libr[61039:70b] [CDVTimer][keyboard] 0.110030ms
+2014-05-09 20:46:09.173 Libr[61039:70b] [CDVTimer][TotalPluginStartup] 9.142041ms
+2014-05-09 20:46:09.234 Libr[61039:70b] Resetting plugins due to page load.
+2014-05-09 20:46:10.845 Libr[61039:70b] Finished load of: file:///Users/twer/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/BC289B3A-0567-46EB-99CB-34C33052A2BC/Libr.app/www/index.html#/tab/home
