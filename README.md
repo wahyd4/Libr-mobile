@@ -18,6 +18,15 @@ Libr-图书社交、附近热门图书、根据兴趣推荐图书、导入豆瓣
 - gulp dist （默认将连接librme.com，如需连接其他服务器，需自行至<https://github.com/wahyd4/libr>下载代码）
 - cordova emualte ios 或者 cordova emulate android 即可完成
 
+### 技术栈
+
+1. cordova
+2. Angular.js
+3. Node.js
+4. Ionic framework
+5. Gulp.js
+
+
 ### 非常欢迎贡献代码与功能
 
     请先fork代码，进行相应修改和添加功能后，pull request即可
