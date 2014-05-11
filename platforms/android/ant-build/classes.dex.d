@@ -1,4 +1,6 @@
 /Users/twer/gitrepo/libr-mobile/platforms/android/ant-build/classes.dex : \
+/Users/twer/gitrepo/libr-mobile/platforms/android/ant-build/classes/com/ionic/keyboard/IonicKeyboard$1.class \
+/Users/twer/gitrepo/libr-mobile/platforms/android/ant-build/classes/com/ionic/keyboard/IonicKeyboard.class \
 /Users/twer/gitrepo/libr-mobile/platforms/android/ant-build/classes/com/phonegap/plugins/barcodescanner/BarcodeScanner.class \
 /Users/twer/gitrepo/libr-mobile/platforms/android/ant-build/classes/com/toozhao/libr/BuildConfig.class \
 /Users/twer/gitrepo/libr-mobile/platforms/android/ant-build/classes/com/toozhao/libr/Libr.class \

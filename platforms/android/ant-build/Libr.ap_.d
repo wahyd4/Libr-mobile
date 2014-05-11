@@ -552,6 +552,7 @@
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/js/app/services/scan-service.coffee \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/js/app/utils/ionic-utils.coffee \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/js/app/utils/localstorage-utils.coffee \
+/Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/plugins/com.ionic.keyboard \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/plugins/com.phonegap.plugins.barcodescanner \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/plugins/org.apache.cordova.device \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/plugins/org.apache.cordova.dialogs \
@@ -562,6 +563,8 @@
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/plugins/org.apache.cordova.network-information \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/plugins/org.apache.cordova.statusbar \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/plugins/org.apache.cordova.vibration \
+/Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/plugins/com.ionic.keyboard/www \
+/Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/plugins/com.ionic.keyboard/www/keyboard.js \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/plugins/com.phonegap.plugins.barcodescanner/www \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/plugins/com.phonegap.plugins.barcodescanner/www/barcodescanner.js \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/plugins/org.apache.cordova.device/www \

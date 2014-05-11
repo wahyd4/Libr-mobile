@@ -38,7 +38,7 @@ class LoginController
 
   registerUser: (user)=>
     if !user || user.email == '' || user.password == '' || user.email == undefined || user.password == undefined
-      @IonicUtils.showLoading(@$scope, '请输入有效的用户名和密码')
+      @IonicUtils.showLoading(@$scope, '用户名或密码错误，请重试')
       return
     else
       @AuthService.register user, (result, status)=>

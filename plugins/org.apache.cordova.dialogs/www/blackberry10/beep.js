@@ -18,25 +18,25 @@
  * under the License.
  *
 */
-var beep,
-    count = 0,
-    beepObj = new Audio('file:///usr/share/sounds/notification_text_message_im_received.wav');
 
-beep = function (quantity) {
-    var callback = function () {
-        if (--count > 0) {
+module.exports = function (quantity) {
+    var count = 0,
+        beepObj,
+        play = function () { 
+            //create new object every time due to strage playback behaviour
+            beepObj = new Audio('local:///chrome/plugin/org.apache.cordova.dialogs/notification-beep.wav');
+            beepObj.addEventListener("ended", callback);
             beepObj.play();
-        } else {
-            beepObj.removeEventListener("ended", callback);
-            delete beepObj;
-        }
-    };
-
-    count += quantity;
-    if (count === quantity) {
-        beepObj.addEventListener("ended", callback);
-        beepObj.play();
+        },
+        callback = function () {
+            if (--count > 0) {
+                play();
+            } else {
+                delete beepObj;
+            }
+        };
+    count += quantity || 1;
+    if (count > 0) {
+        play();
     }
 };
-
-module.exports = beep;

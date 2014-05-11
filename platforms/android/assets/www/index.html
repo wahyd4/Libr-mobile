@@ -10,14 +10,15 @@
     <script>
         document.addEventListener('deviceready', function () {
             ionic.Platform.detect();
+            ionic.Platform.fullScreen(false, true);
 //            alert('network type:' + navigator.connection.type);
 //            ImgCache.init(function () {
 //                console.log('cache created successfully!');
 //            }, function () {
 //                console.log('check the log for errors');
 //            });
-        });
 
+        });
     </script>
 </head>
 <body animation="slide-left-right-ios7">

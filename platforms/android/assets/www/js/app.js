@@ -27,11 +27,7 @@ angular.module('libr', [
     .run(function ($ionicPlatform) {
         $ionicPlatform.ready(function () {
             if (window.StatusBar) {
-                alert('xxxx');
-                // org.apache.cordova.statusbar required
                 StatusBar.styleDefault();
-            } else {
-                alert('yyyy');
             }
         });
     })

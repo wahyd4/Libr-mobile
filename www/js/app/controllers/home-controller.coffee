@@ -12,12 +12,12 @@ class HomeController
         @RecommendService.randomBooks (result)=>
           @$scope.books = result
           localStorage.setItem 'home.books', JSON.stringify(result)
-          @$scope.loading.hide()
+          @$ionicLoading.hide()
         , (error)=>
           @ErrorHandler.loadingHandler @$scope, null
       else
         @$scope.books = JSON.parse(localStorage.getItem('home.books'))
-        @$scope.loading.hide()
+        @$ionicLoading.hide()
 
     else
       @$location.path '/tab/settings'

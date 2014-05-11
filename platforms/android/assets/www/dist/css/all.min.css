@@ -3,7 +3,7 @@ textarea.comment-container{border:1px solid gray;margin:0 auto;height:8em;color:
 a.comment-item{height:auto;overflow:auto!important;padding-right:10px!important}
 a.comment-item p:last-child{overflow:auto;text-overflow:clip;white-space:normal}
 a.comment-item:after{content:""!important;right:0!important;width:0!important}
-.bar.bar-loading{display:block;height:24px;top:44px;text-align:center;padding:0;line-height:24px;-webkit-transition:200ms all}
+.bar.bar-loading{display:block;height:24px;top:64px;text-align:center;padding:0;line-height:24px;-webkit-transition:200ms all}
 .has-header{-webkit-transition:200ms top}
 .bar-loading.ng-enter,.bar-loading.ng-leave.ng-leave-active{height:0;border-width:0}
 .bar-loading.ng-enter.ng-enter-active,.bar-loading.ng-leave{height:24px;border-width:1px}

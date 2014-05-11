@@ -6,7 +6,7 @@
     <div class="bar bar-loading bar-assertive" id="x-bar" ng-if="data.isLoading">
         {{data.text}}
     </div>
-    <ion-content has-header="true" padding="true">
+    <ion-content  class="padding has-header">
         <form novalidate>
             <h3 ng-if="doubanInputDisabled">已成功绑定豆瓣用户，你的豆瓣用户名为:{{doubanUsername}}</h3>
             <label class="item item-input" ng-hide="doubanInputDisabled">
