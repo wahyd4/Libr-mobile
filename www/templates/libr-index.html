@@ -1,4 +1,8 @@
 <ion-view title="{{title}}">
+    <ion-nav-buttons side="left">
+        <button class="button  icon ion-ios7-refresh-empty" ng-click="changeRecommend(0)" ng-show="title=='随便看看吧'">
+        </button>
+    </ion-nav-buttons>
     <ion-nav-buttons side="right">
         <button class="button  icon ion-shuffle" ng-click="showRecommendActionSheet()">
         </button>

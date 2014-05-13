@@ -7,7 +7,7 @@ class RecommendService
 
   getActionSheetList: ()->
     actionList = []
-    actionList.push {text: '随机找几本书看看'}
+    actionList.push {text: '随便看看吧'}
     actionList.push {text: "你可能喜欢的书"}
     @GeolocationService.getLocations (locations)=>
       locationIds = []
@@ -40,7 +40,7 @@ class RecommendService
       url: @Constant.baseUrl + "/recommend/random?user_email=#{email}&user_token=#{token}"
       method: 'GET'
       timeout: 15000
-      cache: true
+      cache: false
     )
     .success (data, status, headers, config)->
       callback data

@@ -6,17 +6,20 @@
     <div class="bar bar-loading bar-assertive" id="x-bar" ng-if="data.isLoading">
         {{data.text}}
     </div>
-    <ion-content  class="padding has-header">
+    <ion-content class="padding has-header">
         <form novalidate>
-            <h3 ng-if="doubanInputDisabled">已成功绑定豆瓣用户，你的豆瓣用户名为:{{doubanUsername}}</h3>
+            <h3 ng-if="doubanInputDisabled">已成功绑定豆瓣用户:{{doubanUsername}}</h3>
             <label class="item item-input" ng-hide="doubanInputDisabled">
                 <span class="input-label">豆瓣用户名</span>
-                <input type="text" placeholder="请输入豆瓣用户名" ng-model="user" id="douban-username" ng-disabled="doubanInputDisabled"/>
+                <input type="text" placeholder="请输入豆瓣用户名" ng-model="user" id="douban-username"
+                       ng-disabled="doubanInputDisabled"/>
             </label>
-            <button ng-hide="doubanInputDisabled" class="button button-full button-royal" ng-click="searchDoubanUser(user)">
+            <button ng-hide="doubanInputDisabled" class="button button-full button-royal"
+                    ng-click="searchDoubanUser(user)">
                 搜索用户
             </button>
-            <button ng-if="submitAllowed" type="submit" class="button button-full button-energized" ng-click="submitDoubanUser()" >
+            <button ng-if="submitAllowed" type="submit" class="button button-full button-energized"
+                    ng-click="submitDoubanUser()">
                 提交
             </button>
         </form>

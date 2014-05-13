@@ -22,6 +22,7 @@ class HomeController
     else
       @$location.path '/tab/settings'
       return
+    @$scope.changeRecommend = @changeRecommend
 
   showLoading = ($scope, $ionicLoading)->
     $scope.loading = $ionicLoading.show {
