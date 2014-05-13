@@ -22,6 +22,21 @@ class DoubanService
     .error (data)->
       error data
 
+  bookDetail: (isbn, callback, error)->
+    @$http(
+      url: "https://api.douban.com/v2/book/isbn/#{isbn}"
+      method: 'GET'
+      timeout: 10000
+      cache: true
+    )
+    .success (data, status, headers, config)->
+      if status is 200
+        callback data
+      else
+        error data
+    .error (data)->
+      error data
+
   submitUser: (user, callback, error)=>
     email = localStorage.getItem 'email'
     token = localStorage.getItem 'token'

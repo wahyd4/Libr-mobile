@@ -28,6 +28,11 @@
                     评论
                 </a>
             </div>
+            <!--book Summary-->
+            <div class="item item-divider"> 图书简介：</div>
+            <div class="item item-body">
+                {{bookDetail.summary}}
+            </div>
             <!-- comments -->
             <div class="item item-divider"> 评论：</div>
             <a class="item item-avatar comment-item" ng-repeat="comment in comments | orderBy: 'id' :false">
