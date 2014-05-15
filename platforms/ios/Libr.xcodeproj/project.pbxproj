@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		1407A44D22484B4395C72B89 /* scannerOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = E12B99CB376A490BA963436B /* scannerOverlay.xib */; };
 		1A60A167A53E41DC9AB3A5B5 /* CDVReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = CB86B589F04E43CD95185886 /* CDVReachability.m */; };
