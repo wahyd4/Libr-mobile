@@ -20,13 +20,22 @@
             </div>
             <div class="item tabs tabs-secondary tabs-icon-left">
                 <a class="tab-item">
-                    <i class="icon ion-ios7-people"></i>
+                    <i class="icon button-icon ion-ios7-people"></i>
                     <span>{{usersAccount}}人看过</span>
                 </a>
                 <a class="tab-item" ng-click="openDialog()">
                     <i class="icon ion-chatbox"></i>
                     评论
                 </a>
+                <a class="tab-item" onclick="goShare()" id="xyz">
+                    <i class="icon ion-share"></i>
+                    分享
+                </a>
+            </div>
+            <!--book Summary-->
+            <div class="item item-divider"> 图书简介：</div>
+            <div class="item item-body">
+                {{bookDetail.summary}}
             </div>
             <!-- comments -->
             <div class="item item-divider"> 评论：</div>

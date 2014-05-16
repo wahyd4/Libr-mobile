@@ -19,7 +19,9 @@
         "gulp-bower": "0.0.4"
     },
     "scripts": {
-        "preinstall": "npm install -g http-server"
+        "preinstall": "npm install -g http-server",
+        "preinstall": "npm install -g cordova"
     }
+
 
 }
