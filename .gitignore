@@ -11,13 +11,8 @@
 
 **/.idea/*
 
-/platforms/*/assets/www/dist/js-app/
-/platforms/*/www/assets/
-
-
-
-/platforms/ios/cordova/console.log
-/platforms/android/cordova/console.log
+/platforms/ios/**
+/platforms/android/**
 
 /dist
 /www/assets/**
@@ -26,3 +21,4 @@
 /www/js/**
 /www/templates/**
 /www/index.html
+/www/www.iml
