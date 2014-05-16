@@ -25,6 +25,8 @@ Libr-图书社交、附近热门图书、根据兴趣推荐图书、导入豆瓣
 3. Node.js
 4. Ionic framework
 5. Gulp.js
+6. CoffeeScript
+7. Bower
 
 
 ### 非常欢迎贡献代码与功能
