@@ -4,8 +4,6 @@
 /bower_components/**
 /out/**
 
-/www/assets/**
-/www/dist/**
 
 /platforms/android/bin/**
 /platforms/android/out/**
@@ -18,3 +16,11 @@
 
 /platforms/ios/cordova/console.log
 /platforms/android/cordova/console.log
+
+/dist
+/www/assets/**
+/www/dist/**
+/www/img/**
+/www/js/**
+/www/templates/**
+/www/index.html

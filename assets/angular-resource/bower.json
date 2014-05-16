@@ -1,0 +1,8 @@
+{
+  "name": "angular-resource",
+  "version": "1.2.17-build.104+sha.e987efd",
+  "main": "./angular-resource.js",
+  "dependencies": {
+    "angular": "1.2.17-build.104+sha.e987efd"
+  }
+}

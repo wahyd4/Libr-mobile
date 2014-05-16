@@ -9,17 +9,23 @@ var bower = require('gulp-bower');
 
 var paths = {
     scripts: [
-        'www/js/app/utils/*.coffee',
-        'www/js/app/handler/*.coffee',
-        'www/js/app/services/*.coffee',
-        'www/js/app/controllers/*.coffee',
-        'www/js/*.coffee'],
-    css: ['www/css/*.css'],
-    fonts: ['www/fonts/*.*'],
+        'js/app/utils/*.coffee',
+        'js/app/handler/*.coffee',
+        'js/app/services/*.coffee',
+        'js/app/controllers/*.coffee',
+        'js/*.coffee'],
+    css: ['css/*.css'],
+    fonts: ['fonts/*.*'],
     dev: ['env/dev/**.coffee'],
     local: ['env/local/**.coffee'],
-    prod: ['env/prod/**.coffee']
-
+    prod: ['env/prod/**.coffee'],
+    cordova:{
+        js:['js/**/*.js'],
+        dist:['dist/**'],
+        img:['img/**'],
+        templates:['templates/**'],
+        index:['index.html']
+    }
 };
 
 var options = {
@@ -35,7 +41,7 @@ gulp.task('css', function () {
     gulp.src(paths.css)
         .pipe(minifyCSS(opts))
         .pipe(concat('all.min.css'))
-        .pipe(gulp.dest('www/dist/css'))
+        .pipe(gulp.dest('dist/css'))
 });
 
 gulp.task('scripts', function () {
@@ -43,7 +49,7 @@ gulp.task('scripts', function () {
     gulp.src(paths.scripts.concat(paths.dev))
         .pipe(coffee())
         .pipe(concat('all.min.js'))
-        .pipe(gulp.dest('www/dist/js'));
+        .pipe(gulp.dest('dist/js'));
 });
 
 gulp.task('uglify-scripts', function () {
@@ -51,12 +57,12 @@ gulp.task('uglify-scripts', function () {
         .pipe(coffee())
         .pipe(uglify({mangle: false}))
         .pipe(concat('all.min.js'))
-        .pipe(gulp.dest('www/dist/js'));
+        .pipe(gulp.dest('dist/js'));
 });
 
 gulp.task('fonts', function () {
     gulp.src(paths.fonts)
-        .pipe(gulp.dest('www/dist/fonts'))
+        .pipe(gulp.dest('dist/fonts'))
 });
 
 gulp.task('watch', function () {
@@ -67,12 +73,12 @@ gulp.task('watch', function () {
 
 gulp.task('server', function () {
     gulp.src('')
-        .pipe(exec('http-server ./www/ -p 4000'), options);
+        .pipe(exec('http-server ./ -p 4000'), options);
 });
 
 gulp.task('bower', function() {
     bower('./bower_components')
-        .pipe(gulp.dest('www/assets'))
+        .pipe(gulp.dest('assets'))
 });
 
 gulp.task('coffee', function () {
@@ -82,10 +88,27 @@ gulp.task('coffee', function () {
         console.log('[coffee-error]:', err)
     });
 
-    gulp.src(paths.scripts.concat(paths.dev))
-        .pipe(coffee())
-        .pipe(gulp.dest('www/dist/js-app/'));
+    // gulp.src(paths.scripts.concat(paths.dev))
+    //     .pipe(coffee())
+    //     .pipe(gulp.dest('dist/js-app/'));
 });
+
+gulp.task('copy',function(){
+    gulp.src(paths.cordova.js)
+        .pipe(gulp.dest('./www/js'));
+
+    gulp.src(paths.cordova.dist)
+        .pipe(gulp.dest('./www/dist'));
+
+    gulp.src(paths.cordova.img)
+        .pipe(gulp.dest('./www/img'));
+
+    gulp.src(paths.cordova.templates)
+        .pipe(gulp.dest('./www/templates'));
+
+    gulp.src(paths.cordova.index)
+        .pipe(gulp.dest('./www'));
+})
 
 gulp.task('default', ['bower','scripts', 'css', 'watch', 'fonts', 'server']);
 
