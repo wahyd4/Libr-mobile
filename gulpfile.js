@@ -19,13 +19,13 @@ var paths = {
     dev: ['env/dev/**.coffee'],
     local: ['env/local/**.coffee'],
     prod: ['env/prod/**.coffee'],
-    cordova:{
-        js:['js/**/*.js'],
-        dist:['dist/**'],
-        img:['img/**'],
-        templates:['templates/**'],
-        assets:['assets/**'],
-        index:['index.html']
+    cordova: {
+        js: ['js/**/*.js'],
+        dist: ['dist/**'],
+        img: ['img/**'],
+        templates: ['templates/**'],
+        assets: ['assets/**'],
+        index: ['index.html']
     }
 };
 
@@ -79,10 +79,10 @@ gulp.task('server', function () {
 
 gulp.task('emulate-ios', function () {
     gulp.src('')
-        .pipe(exec('cordova emulate ios'),options);
+        .pipe(exec('cordova emulate ios'), options);
 });
 
-gulp.task('bower', function() {
+gulp.task('bower', function () {
     bower('./bower_components')
         .pipe(gulp.dest('assets'))
 });
@@ -99,7 +99,7 @@ gulp.task('coffee', function () {
     //     .pipe(gulp.dest('dist/js-app/'));
 });
 
-gulp.task('copy',function(){
+gulp.task('copy', function () {
     gulp.src(paths.cordova.js)
         .pipe(gulp.dest('./www/js'));
 
@@ -118,10 +118,10 @@ gulp.task('copy',function(){
         .pipe(gulp.dest('./www/assets'));
 })
 
-gulp.task('default', ['bower','scripts', 'css', 'watch', 'fonts', 'server']);
+gulp.task('default', ['bower', 'scripts', 'css', 'watch', 'fonts', 'server', 'copy']);
 
-gulp.task('dist', ['bower','uglify-scripts', 'css', 'fonts','copy']);
+gulp.task('dist', ['bower', 'uglify-scripts', 'css', 'fonts', 'copy']);
 
 gulp.task('debug', ['scripts', 'css', 'fonts', 'watch']);
 
-gulp.task('emulate',['copy','emulate-ios'])
+gulp.task('emulate', ['copy', 'emulate-ios']);

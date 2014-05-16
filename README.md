@@ -16,7 +16,7 @@ Libr-图书社交、附近热门图书、根据兴趣推荐图书、导入豆瓣
 - 进行项目文件夹，bower install
 - npm install
 - gulp dist （默认将连接librme.com，如需连接其他服务器，需自行至<https://github.com/wahyd4/libr>下载代码）
-- cordova emualte ios 或者 cordova emulate android 即可完成
+- cordova emualte ios 或者 cordova emulate android 即可完成  或者 gulp emulate （将在ios模拟器上运行项目）
 
 ### 技术栈
 
