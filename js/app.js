@@ -17,6 +17,7 @@ angular.module('libr', [
     'libr.services.comment',
     'libr.services.recommend',
     'libr.services.utils',
+    'libr.directives.swipeBack',
     'libr.controllers.login',
     'libr.controllers.home',
     'libr.controllers.main',
@@ -99,6 +100,5 @@ angular.module('libr', [
 
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise('/login');
-
 
     });

@@ -259,52 +259,52 @@ ul.shareList li.shareList_item:focus {
     background-color: #E4EFFB;
 }
 
-.sharePage .sharePageTitle .sharePageBack {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-}
+/*.sharePage .sharePageTitle .sharePageBack {*/
+    /*position: absolute;*/
+    /*left: 0px;*/
+    /*top: 0px;*/
+/*}*/
 
-.sharePage .sharePageTitle .sharePageSubmit {
-    position: absolute;
-    right: 0px;
-    top: 0px;
-}
+/*.sharePage .sharePageTitle .sharePageSubmit {*/
+    /*position: absolute;*/
+    /*right: 0px;*/
+    /*top: 0px;*/
+/*}*/
 
-.sharePage .sharePageContent {
-    position: fixed;
-    display: block;
-    top: 50px;
-    bottom: 110px;
-    left: 10px;
-    right: 10px;
-    background: #FFF;
-    border: none;
-    position: fixed;
-    font-size: 1em;
-}
+/*.sharePage .sharePageContent {*/
+    /*position: fixed;*/
+    /*display: block;*/
+    /*top: 50px;*/
+    /*bottom: 110px;*/
+    /*left: 10px;*/
+    /*right: 10px;*/
+    /*background: #FFF;*/
+    /*border: none;*/
+    /*position: fixed;*/
+    /*font-size: 1em;*/
+/*}*/
 
-.sharePage .sharePageBottom {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    left: 0;
-    height: 40px;
-    line-height: 40px;
-    background: #EFF2F8;
-    border-top: 1px solid #DDD;
-}
+/*.sharePage .sharePageBottom {*/
+    /*position: fixed;*/
+    /*bottom: 0;*/
+    /*width: 100%;*/
+    /*left: 0;*/
+    /*height: 40px;*/
+    /*line-height: 40px;*/
+    /*background: #EFF2F8;*/
+    /*border-top: 1px solid #DDD;*/
+/*}*/
 
-.sharePage .sharePageBottom .shareBottomBtn {
-    width: 30px;
-    height: 30px;
-    background: #FF0;
-    border-radius: 5px;
-    position: relative;
-    display: block;
-    float: left;
-    margin: 5px 10px;
-}
+/*.sharePage .sharePageBottom .shareBottomBtn {*/
+    /*width: 30px;*/
+    /*height: 30px;*/
+    /*background: #FF0;*/
+    /*border-radius: 5px;*/
+    /*position: relative;*/
+    /*display: block;*/
+    /*float: left;*/
+    /*margin: 5px 10px;*/
+/*}*/
 
 .shareGeo {
     position: absolute;

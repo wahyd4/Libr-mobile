@@ -52,11 +52,6 @@ ul.shareList li.shareList_item:focus{background-color:#E3EDFC}
 .icon-submit{background:url(../../img/social.umeng/send.png) no-repeat center center;background-size:60%}
 .icon-submit.disabled{background:url(../../img/social.umeng/send_disable.png) no-repeat center center;background-size:60%}
 .icon-back:focus,.icon-submit:focus{background-color:#E4EFFB}
-.sharePage .sharePageTitle .sharePageBack{position:absolute;left:0;top:0}
-.sharePage .sharePageTitle .sharePageSubmit{position:absolute;right:0;top:0}
-.sharePage .sharePageContent{display:block;top:50px;bottom:110px;left:10px;right:10px;background:#FFF;border:none;position:fixed;font-size:1em}
-.sharePage .sharePageBottom{position:fixed;bottom:0;width:100%;left:0;height:40px;line-height:40px;background:#EFF2F8;border-top:1px solid #DDD}
-.sharePage .sharePageBottom .shareBottomBtn{width:30px;height:30px;background:#FF0;border-radius:5px;position:relative;display:block;float:left;margin:5px 10px}
 .shareGeo{position:absolute;top:-30px;left:10px;font-size:1em;height:20px;border:1px solid #CCC;border-radius:15px;line-height:20px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;width:150px;color:#666;text-align:center}
 .shareImg{position:absolute;bottom:50px;right:10px;max-height:70px;max-width:70px;display:none}
 .umTip{position:fixed;bottom:50px;left:0;width:100%;text-align:center;display:none;z-index:10000}

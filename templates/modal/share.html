@@ -1,0 +1,16 @@
+<div class="modal">
+    <header class="bar bar-header bar-positive">
+        <button class="button button-icon ion-arrow-left-c" ng-click="closeShare()"></button>
+        <h1 class="title"><img src="img/weibo24.png">分享到微博</h1>
+    </header>
+    <div class="bar bar-loading bar-assertive" id="x-bar" ng-if="data.isLoading">
+        {{data.text}}
+    </div>
+    <ion-content class="padding has-header">
+        <textarea name="content" class="comment-container" id="comment">
+        </textarea>
+        <button class="button button-full button-energized" ng-click="doComment()">
+            提交
+        </button>
+    </ion-content>
+</div>

@@ -12,6 +12,7 @@ var paths = {
         'js/app/utils/*.coffee',
         'js/app/handler/*.coffee',
         'js/app/services/*.coffee',
+        'js/app/directives/*.coffee',
         'js/app/controllers/*.coffee',
         'js/*.coffee'],
     css: ['css/*.css'],

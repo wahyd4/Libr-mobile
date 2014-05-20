@@ -1,12 +1,16 @@
 libr = angular.module('libr.controllers', ['ionic'])
 
 class BookDetailController
-  @$inject: ['$scope', '$stateParams', 'Books', '$window', '$ionicModal', 'Comments', 'DoubanService']
-  constructor: (@$scope, @$stateParams, @Books, @$window, @$ionicModal, @Comments, @DoubanService) ->
+  @$inject: ['$scope', '$stateParams', 'Books', '$window', '$ionicModal', 'Comments', 'DoubanService',
+             '$ionicActionSheet']
+  constructor: (@$scope, @$stateParams, @Books, @$window, @$ionicModal, @Comments, @DoubanService, @$ionicActionSheet) ->
     @$scope.openDialog = @openCommentDialog
     @$scope.closeDialog = @closeCommentDialog
     @$scope.doComment = @doComment
     @$scope.back = @back
+    @$scope.goShare = @goShare
+    @$scope.closeShare = @closeShare
+    @$scope.swipeRight = @swipeRight
 
     @$ionicModal.fromTemplateUrl 'templates/modal/comment.html', (modal)=>
       @$scope.modal = modal
@@ -14,6 +18,13 @@ class BookDetailController
         scope: @$scope,
         animation: 'slide-in-up'
       }
+    @$ionicModal.fromTemplateUrl 'templates/modal/share.html', (modal)=>
+      @$scope.shareModal = modal
+    , {
+        scope: @$scope,
+        animation: 'slide-in-up'
+      }
+
     @Books.get {book_id: @$stateParams.isbn},
     (result) =>
       @$scope.book = result
@@ -56,5 +67,11 @@ class BookDetailController
   back: ()=>
     @$window.history.back()
 
-
+  goShare: ()=>
+    @$scope.shareModal.show()
+  closeShare: ()=>
+    @$scope.shareModal.hide()
+  swipeRight: ()=>
+    @$window.history.back()
+    console.log 'swipe right..'
 libr.controller 'BookDetailController', BookDetailController
