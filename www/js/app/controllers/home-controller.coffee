@@ -4,10 +4,11 @@ class HomeController
   @$inject: ['$scope', '$location', 'ScanService', '$ionicLoading', '$ionicActionSheet',
              'RecommendService', 'ErrorHandler', 'LocalStorageUtils']
   constructor: (@$scope, @$location, ScanService, @$ionicLoading, @$ionicActionSheet, @RecommendService, @ErrorHandler, @LocalStorageUtils)->
+    console.log @$scope, '!!!!!!!'
     @$scope.showRecommendActionSheet = @showRecommendActionSheet
     if @LocalStorageUtils.isUserLogedIn()
       showLoading(@$scope, @$ionicLoading)
-      @$scope.title = '随便看看吧'
+      @$scope.title = {'name': 'Libr-随便看看吧'}
       if localStorage.getItem('home.books') is null
         @RecommendService.randomBooks (result)=>
           @$scope.books = result
@@ -55,7 +56,9 @@ class HomeController
         @$scope.books = result
         localStorage.setItem 'home.books', JSON.stringify(result)
         listArray = JSON.parse(localStorage.getItem 'recommend_action_sheet_full_arr')
-        @$scope.title = listArray[index].text
+        @$scope.title.name = listArray[index].text
+
+        console.log @$scope, '========'
     , (error)=>
       @ErrorHandler.whenError null
 libr.controller 'HomeCtrl', HomeController

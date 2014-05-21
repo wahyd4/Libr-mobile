@@ -1,9 +1,8 @@
 libr = angular.module('libr.controllers', ['ionic'])
 
 class BookDetailController
-  @$inject: ['$scope', '$stateParams', 'Books', '$window', '$ionicModal', 'Comments']
-
-  constructor: (@$scope, @$stateParams, @Books, @$window, @$ionicModal, @Comments) ->
+  @$inject: ['$scope', '$stateParams', 'Books', '$window', '$ionicModal', 'Comments', 'DoubanService']
+  constructor: (@$scope, @$stateParams, @Books, @$window, @$ionicModal, @Comments, @DoubanService) ->
     @$scope.openDialog = @openCommentDialog
     @$scope.closeDialog = @closeCommentDialog
     @$scope.doComment = @doComment
@@ -15,15 +14,19 @@ class BookDetailController
         scope: @$scope,
         animation: 'slide-in-up'
       }
-    console.log '===='
     @Books.get {book_id: @$stateParams.isbn},
     (result) =>
       @$scope.book = result
       @$scope.usersAccount = result.users.length
       @$scope.bookName = @$scope.book.name
       @Comments.query {book_id: result.id}, (data)=>
-        console.log data,'!!!!!'
+        console.log data, '!!!!!'
         @$scope.comments = data
+      @DoubanService.bookDetail result.isbn, (data)=>
+        console.log data
+        @$scope.bookDetail = data
+      , (error)->
+        console.log 'error', error
 
     @$scope.$on '$destroy', ()=>
       @$scope.modal.remove()
@@ -52,7 +55,6 @@ class BookDetailController
 
   back: ()=>
     @$window.history.back()
-
 
 
 libr.controller 'BookDetailController', BookDetailController
