@@ -203,13 +203,14 @@
             c.name = $.fn.umshare.defaults.data.platform[plat].name;
         }
         var sharePanel = function (plat, c) {
-            var panel = $('<div class="sharePage">\
-              <div class="sharePageTitle">\
-                  <b class="icon-back sharePageBack"></b>\
-                  <span>分享到' + c.name + '</span>\
-                  <b class="icon-submit sharePageSubmit"></b>\
-              </div>\
+            var panel = $('<div class="bar bar-header bar-positive">\
+                  <button class="button icon sharePageBack ion-arrow-left-c"></button>\
+                  <h1 class="title">分享到' + c.name + '</h1>\
+                  <button class="button sharePageSubmit icon ion-checkmark-round"></button>\
+              </div><div class="padding has-header">\
+              <div class="list">\
               <textarea class="sharePageContent">' + c.data.content.text + '</textarea>\
+               </div></div>\
               <div class="sharePageBottom">\
                   <span class="shareGeo"></span>\
                   <img id="shareImage" class="shareImg" src="' + (c.data.content.img ? c.data.content.img : c.data.content.furl) + '"/>\

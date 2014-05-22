@@ -500,6 +500,7 @@
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/img/douban_24.png \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/img/douban_32.png \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/img/social.umeng \
+/Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/img/weibo24.png \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/img/social.umeng/back.png \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/img/social.umeng/send.png \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/img/social.umeng/send_disable.png \
@@ -602,4 +603,5 @@
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/templates/modal/comment.html \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/templates/modal/import_books.html \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/templates/modal/registration.html \
+/Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/templates/modal/share.html \
 /Users/twer/gitrepo/libr-mobile/platforms/android/ant-build/AndroidManifest.xml \

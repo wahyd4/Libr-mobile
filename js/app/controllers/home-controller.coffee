@@ -7,7 +7,7 @@ class HomeController
     @$scope.showRecommendActionSheet = @showRecommendActionSheet
     if @LocalStorageUtils.isUserLogedIn()
       showLoading(@$scope, @$ionicLoading)
-      @$scope.title = '随便看看吧'
+      @$scope.title = {'name': 'Libr-随便看看吧'}
       if localStorage.getItem('home.books') is null
         @RecommendService.randomBooks (result)=>
           @$scope.books = result
@@ -57,7 +57,7 @@ class HomeController
         listArray = JSON.parse(localStorage.getItem 'recommend_action_sheet_full_arr')
         console.log '=========='
         console.log listArray,index
-        @$scope.title = listArray[index].text
+        @$scope.title.name = listArray[index].text
     , (error)=>
       @ErrorHandler.whenError null
 libr.controller 'HomeCtrl', HomeController
