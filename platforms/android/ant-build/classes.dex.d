@@ -16,6 +16,8 @@
 /Users/twer/gitrepo/libr-mobile/platforms/android/ant-build/classes/com/toozhao/libr/R$string.class \
 /Users/twer/gitrepo/libr-mobile/platforms/android/ant-build/classes/com/toozhao/libr/R$xml.class \
 /Users/twer/gitrepo/libr-mobile/platforms/android/ant-build/classes/com/toozhao/libr/R.class \
+/Users/twer/gitrepo/libr-mobile/platforms/android/ant-build/classes/nl/xservices/plugins/SocialSharing$1.class \
+/Users/twer/gitrepo/libr-mobile/platforms/android/ant-build/classes/nl/xservices/plugins/SocialSharing.class \
 /Users/twer/gitrepo/libr-mobile/platforms/android/ant-build/classes/org/apache/cordova/device/Device.class \
 /Users/twer/gitrepo/libr-mobile/platforms/android/ant-build/classes/org/apache/cordova/dialogs/Notification$1$1.class \
 /Users/twer/gitrepo/libr-mobile/platforms/android/ant-build/classes/org/apache/cordova/dialogs/Notification$1$2.class \

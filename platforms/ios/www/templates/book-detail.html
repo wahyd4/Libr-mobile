@@ -27,7 +27,7 @@
                     <i class="icon ion-chatbox"></i>
                     评论
                 </a>
-                <a class="tab-item" id="xyz">
+                <a class="tab-item" id="xyz" ng-click="goShare()">
                     <i class="icon ion-share"></i>
                     分享
                 </a>
@@ -46,20 +46,7 @@
 
                 <p>{{comment.body}}</p>
             </a>
+
         </div>
     </ion-content>
 </ion-view>
-<script>
-    var opt = {
-        'data': {
-            'content': {
-                'text': '这里请填写要分享的文字内容',
-                'img': 'img/default.jpg'
-            }
-        }
-    };
-    $("#xyz").umshare(opt);
-    console.log('called share');
-</script>
-
-

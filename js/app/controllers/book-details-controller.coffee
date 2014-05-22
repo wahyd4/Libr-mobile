@@ -9,17 +9,10 @@ class BookDetailController
     @$scope.doComment = @doComment
     @$scope.back = @back
     @$scope.goShare = @goShare
-    @$scope.closeShare = @closeShare
     @$scope.swipeRight = @swipeRight
 
     @$ionicModal.fromTemplateUrl 'templates/modal/comment.html', (modal)=>
       @$scope.modal = modal
-    , {
-        scope: @$scope,
-        animation: 'slide-in-up'
-      }
-    @$ionicModal.fromTemplateUrl 'templates/modal/share.html', (modal)=>
-      @$scope.shareModal = modal
     , {
         scope: @$scope,
         animation: 'slide-in-up'
@@ -68,10 +61,8 @@ class BookDetailController
     @$window.history.back()
 
   goShare: ()=>
-    @$scope.shareModal.show()
-  closeShare: ()=>
-    @$scope.shareModal.hide()
+    window.plugins.socialsharing.share('我刚通过Libr发现了好书《' + @$scope.book.name + '》，推荐你也来看看。', null,
+      @$scope.book.image_large, 'http://librme.com')
   swipeRight: ()=>
     @$window.history.back()
-    console.log 'swipe right..'
 libr.controller 'BookDetailController', BookDetailController

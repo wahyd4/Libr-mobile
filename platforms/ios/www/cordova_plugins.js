@@ -248,6 +248,13 @@ module.exports = [
         "merges": [
             "navigator.notification"
         ]
+    },
+    {
+        "file": "plugins/nl.x-services.plugins.socialsharing/www/SocialSharing.js",
+        "id": "nl.x-services.plugins.socialsharing.SocialSharing",
+        "clobbers": [
+            "window.plugins.socialsharing"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -264,7 +271,8 @@ module.exports.metadata =
     "org.apache.cordova.inappbrowser": "0.3.1",
     "org.apache.cordova.network-information": "0.2.7",
     "org.apache.cordova.statusbar": "0.1.3",
-    "org.apache.cordova.vibration": "0.3.7"
+    "org.apache.cordova.vibration": "0.3.7",
+    "nl.x-services.plugins.socialsharing": "4.0.8"
 }
 // BOTTOM OF METADATA
 });

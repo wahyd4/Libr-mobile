@@ -49,6 +49,9 @@
     <feature name="Vibration">
         <param name="ios-package" value="CDVVibration" />
     </feature>
+    <feature name="SocialSharing">
+        <param name="ios-package" value="SocialSharing" />
+    </feature>
     <name>Libr</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
