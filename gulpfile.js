@@ -117,7 +117,7 @@ gulp.task('copy', function () {
         .pipe(gulp.dest('./www'));
     gulp.src(paths.cordova.assets)
         .pipe(gulp.dest('./www/assets'));
-})
+});
 
 gulp.task('default', ['bower', 'scripts', 'css', 'watch', 'fonts', 'server', 'copy']);
 
