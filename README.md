@@ -35,3 +35,10 @@ Libr-图书社交、附近热门图书、根据兴趣推荐图书、导入豆瓣
 
 ### License
     GPL V3
+
+
+###### More
+
+Icon 来自：[地址][1]
+
+[1]:http://wildhusky318.deviantart.com/art/Little-Elephant-65950650

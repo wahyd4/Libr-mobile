@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		1407A44D22484B4395C72B89 /* scannerOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = E12B99CB376A490BA963436B /* scannerOverlay.xib */; };
 		1A60A167A53E41DC9AB3A5B5 /* CDVReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = CB86B589F04E43CD95185886 /* CDVReachability.m */; };
@@ -21,6 +22,7 @@
 		305D5FD1115AB8F900A74A75 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 305D5FD0115AB8F900A74A75 /* MobileCoreServices.framework */; };
 		30A0434814DC770100060A13 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30A0434314DC770100060A13 /* Localizable.strings */; };
 		3EBC36DF450B4352A465CE4D /* CDVLocalFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 59B32DD5AD9140FEBBE05E76 /* CDVLocalFilesystem.m */; };
+		4228E37DBB4A40279ABA99A9 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E9C43F0D2CD41AAB3B99F43 /* MessageUI.framework */; };
 		47853F29F0C541DB864465C9 /* CDVBarcodeScanner.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8DBE6D49CEC84D09B6B6626C /* CDVBarcodeScanner.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		496CE2DB191F7A0D00649ADE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 496CE2DA191F7A0D00649ADE /* Images.xcassets */; };
 		4A5DCC830E0541AC8EB1B0C6 /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = B1199BBF2E1241E68916C208 /* CDVDevice.m */; };
@@ -31,9 +33,11 @@
 		5AEE5B35173C68D80009041E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AEE5B34173C68D80009041E /* CoreLocation.framework */; };
 		5B1594DD16A7569C00FEF299 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */; };
 		5D3C5D622FA44FE08B9B1F9A /* CDVConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0846AC36912D48ABA8886949 /* CDVConnection.m */; };
+		61A1D667961B4BA5A947641F /* SocialSharing.m in Sources */ = {isa = PBXBuildFile; fileRef = 108BDFBAF4C54585BD886BC1 /* SocialSharing.m */; };
 		8C17A6FBBC024A1D8555290F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 626C12F23CC24CD59D7EA498 /* QuartzCore.framework */; };
 		8DA8D9CF12564C878EC90BE7 /* IonicKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 123D8557B61C4E47A2E3C69A /* IonicKeyboard.m */; };
 		8EFCF1C4081247FBA7C96BE5 /* zxing-all-in-one.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC6147E5AD3846089B9843D1 /* zxing-all-in-one.cpp */; };
+		98632C4321EA453787E8F2AE /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BCAA879B7774D83900F8B5C /* Social.framework */; };
 		BF1310236CCD422A9C5C5085 /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 961B8F740AE24191A5831BCF /* CDVStatusBar.m */; };
 		C058EDD2DF2C48E9833DFC95 /* CDVLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CB10E09FB94A84BC244615 /* CDVLogger.m */; };
 		CB720A11EB2E4056BACD93F5 /* CDVVibration.m in Sources */ = {isa = PBXBuildFile; fileRef = 897DFDB8AE9C49ED9C93D181 /* CDVVibration.m */; };
@@ -44,9 +48,6 @@
 		E7D2F9CFCCA74EA58ABA3E87 /* CDVNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF4D004A9C04870BBF8B2F1 /* CDVNotification.m */; };
 		F06F5A294F8A48C5A0602C68 /* CDVBarcodeScanner.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3E60B718F945467FBCDDDE37 /* CDVBarcodeScanner.bundle */; };
 		FFBC6AEE328745C3A4A46C34 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 794B300366854AA2B93F7B07 /* SystemConfiguration.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		61A1D667961B4BA5A947641F /* SocialSharing.m in Sources */ = {isa = PBXBuildFile; fileRef = 108BDFBAF4C54585BD886BC1 /* SocialSharing.m */; };
-		98632C4321EA453787E8F2AE /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BCAA879B7774D83900F8B5C /* Social.framework */; };
-		4228E37DBB4A40279ABA99A9 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E9C43F0D2CD41AAB3B99F43 /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,8 @@
 /* Begin PBXFileReference section */
 		0834D46D1B244DF5AC8BCD39 /* CDVNotification.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CDVNotification.bundle; sourceTree = "<group>"; };
 		0846AC36912D48ABA8886949 /* CDVConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVConnection.m; path = "org.apache.cordova.network-information/CDVConnection.m"; sourceTree = "<group>"; };
+		0E9C43F0D2CD41AAB3B99F43 /* MessageUI.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		108BDFBAF4C54585BD886BC1 /* SocialSharing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SocialSharing.m; path = "nl.x-services.plugins.socialsharing/SocialSharing.m"; sourceTree = "<group>"; };
 		123D8557B61C4E47A2E3C69A /* IonicKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IonicKeyboard.m; path = com.ionic.keyboard/IonicKeyboard.m; sourceTree = "<group>"; };
 		1D3623240D0F684500981E51 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -98,6 +101,7 @@
 		59B32DD5AD9140FEBBE05E76 /* CDVLocalFilesystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVLocalFilesystem.m; path = org.apache.cordova.file/CDVLocalFilesystem.m; sourceTree = "<group>"; };
 		5AEE5B34173C68D80009041E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		5BCAA879B7774D83900F8B5C /* Social.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		6008C28AE11847E5AA4F9C7C /* IonicKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IonicKeyboard.h; path = com.ionic.keyboard/IonicKeyboard.h; sourceTree = "<group>"; };
 		60A93578F27B4016ACAAA03A /* AudioToolbox.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		626C12F23CC24CD59D7EA498 /* QuartzCore.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -131,13 +135,10 @@
 		EB87FDF21871DA7A0020F90C /* merges */ = {isa = PBXFileReference; lastKnownFileType = folder; name = merges; path = ../../merges; sourceTree = "<group>"; };
 		EB87FDF31871DA8E0020F90C /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = ../../www; sourceTree = "<group>"; };
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
+		ED416604093248218D0B2E72 /* SocialSharing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SocialSharing.h; path = "nl.x-services.plugins.socialsharing/SocialSharing.h"; sourceTree = "<group>"; };
 		F46102B06EBD43078A1C382F /* UIWebViewAccessoryHiding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIWebViewAccessoryHiding.m; path = com.ionic.keyboard/UIWebViewAccessoryHiding.m; sourceTree = "<group>"; };
 		F81303C9736E489B9279F28E /* CDVInAppBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVInAppBrowser.h; path = org.apache.cordova.inappbrowser/CDVInAppBrowser.h; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = Libr/config.xml; sourceTree = "<group>"; };
-		108BDFBAF4C54585BD886BC1 /* SocialSharing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "SocialSharing.m"; path = "nl.x-services.plugins.socialsharing/SocialSharing.m"; sourceTree = "<group>"; fileEncoding = 4; };
-		ED416604093248218D0B2E72 /* SocialSharing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SocialSharing.h"; path = "nl.x-services.plugins.socialsharing/SocialSharing.h"; sourceTree = "<group>"; fileEncoding = 4; };
-		5BCAA879B7774D83900F8B5C /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Social.framework"; path = "System/Library/Frameworks/Social.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
-		0E9C43F0D2CD41AAB3B99F43 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "MessageUI.framework"; path = "System/Library/Frameworks/MessageUI.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

@@ -38,9 +38,12 @@ class BooksController
     @Books.fetchNew {afterId: afterBookId}, (data)=>
       @$scope.$broadcast('scroll.refreshComplete')
       if data.books.length isnt 0
+        localStorage.setItem 'user_has_books', true
         localStorage.setItem 'user_max_book_id', data.books[0].id
         data.books.forEach (item, index, array)=>
           @$scope.books.push item
+      else
+        localStorage.setItem 'user_has_books', false
 
   loadMore: ()=>
     currentPage = localStorage.getItem 'user_books_current_page'
@@ -99,6 +102,8 @@ class BooksController
     username = username.val()
     @DoubanService.submitUser username, (data) =>
       @$scope.doubanInputDisabled = true
+      @$scope.doubanUsername = username
+      @$scope.submitAllowed = false
       @LocalStorageUtils.storeDoubanUser(username)
       alert '成功绑定豆瓣用户,请返回,系统将自动为你导入豆瓣图书'
     , (data)=>

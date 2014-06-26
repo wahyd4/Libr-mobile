@@ -503,10 +503,6 @@
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/js/app.js \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/js/imgcache.js \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/js/libr.js \
-/Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/js/umeng \
-/Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/js/umeng/html2canvas.js \
-/Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/js/umeng/jquery.js \
-/Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/js/umeng/social.umeng.js \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/plugins/com.ionic.keyboard \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/plugins/com.phonegap.plugins.barcodescanner \
 /Users/twer/gitrepo/libr-mobile/platforms/android/assets/www/plugins/nl.x-services.plugins.socialsharing \

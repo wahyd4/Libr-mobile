@@ -61,7 +61,8 @@ class BookDetailController
     @$window.history.back()
 
   goShare: ()=>
-    window.plugins.socialsharing.share('我刚通过Libr发现了好书《' + @$scope.book.name + '》，推荐你也来看看。', null,
+    window.plugins.socialsharing.share('我刚通过Libr发现了好书《' + @$scope.book.name + '》，推荐你也来看看。' +
+        ' https://itunes.apple.com/cn/app/libr/id865672150?l=zh&ls=1&mt=8', null,
       @$scope.book.image_large, 'http://librme.com')
   swipeRight: ()=>
     @$window.history.back()
